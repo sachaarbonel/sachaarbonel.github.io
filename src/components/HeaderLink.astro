@@ -14,7 +14,7 @@ const isActive = href === pathname || href === pathname.replace(/\/$/, '');
 </a>
 <style>
 	a {
-		@apply uppercase text-foreground font-semibold;
+		@apply text-foreground text-lg hover:text-primary;
 	}
 	a.active {
 		@apply text-primary;

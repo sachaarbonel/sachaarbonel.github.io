@@ -4,18 +4,31 @@ import { SITE_TITLE } from '../consts'
 import { Image } from 'astro:assets'
 import { Icon } from 'astro-icon'
 import logo from '../../public/logo.svg'
+
+const links = [
+	{
+		display: 'Home',
+		location: '/'
+	},
+	{
+		display: 'Blog',
+		location: '/blog'
+	},
+	{
+		display: 'Contact',
+		location: 'mailto:yash25.j@gmail.com'
+	}
+]
 ---
 
-<header>
+<header class="fixed top-0 w-full">
   <nav class="bg-background text-foreground">
     <div
       class="container mx-auto flex px-6 justify-between items-center py-6"
     >
-      <h2><a href="/"><Image width={50} src={logo} alt={'Logo'} /></a></h2>
+      <h2><a href="/"><Image width={50} src={logo} alt={'Logo'} /><span class="hidden">Home</span></a></h2>
       <div class="gap-14 hidden md:flex">
-        <HeaderLink href="/">Home</HeaderLink>
-        <HeaderLink href="/blog">Blog</HeaderLink>
-        <HeaderLink href="/about">About</HeaderLink>
+				{links.map(link => <HeaderLink href={link.location}>{link.display}</HeaderLink>)}
       </div>
       <button class="hidden md:block">
         <Icon name="ic:baseline-brightness-medium" />
@@ -26,7 +39,7 @@ import logo from '../../public/logo.svg'
 
       <!-- Mobile nav -->
       <div
-        class="translate-x-full fixed top-0 right-0 bg-white h-screen w-5/6 px-8 py-6 transition-transform z-40 shadow-2xl" id="mobile-menu"
+        class="translate-x-full fixed top-0 right-0 bg-white h-screen w-5/6 px-8 py-6 transition-transform z-40 border-l-[1px] border-background" id="mobile-menu"
       >
         <div class="flex justify-between">
           <button>
@@ -36,10 +49,8 @@ import logo from '../../public/logo.svg'
             <Icon name="ic:round-close" />
           </button>
         </div>
-        <div class="flex flex-col items-center justify-center gap-12 pt-24">
-          <HeaderLink href="/">Home</HeaderLink>
-          <HeaderLink href="/blog">Blog</HeaderLink>
-          <HeaderLink href="/about">About</HeaderLink>
+        <div class="flex flex-col items-center justify-center gap-20 pt-24">
+					{links.map(link => <HeaderLink class='uppercase font-semibold' href={link.location}>{link.display}</HeaderLink>)}
         </div>
       </div>
     </div>

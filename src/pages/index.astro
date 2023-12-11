@@ -5,6 +5,67 @@ import Footer from '../components/Footer.astro'
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts'
 import BlogPost from '../layouts/BlogPost.astro'
 import '@fontsource/silkscreen'
+import { Icon } from 'astro-icon'
+import Card from '../components/Card.astro'
+
+const technologies = [
+  {
+    name: 'React JS',
+    link: 'https://react.dev',
+  },
+  {
+    name: 'Next JS',
+    link: 'https://react.dev',
+  },
+  {
+    name: 'Astro JS',
+    link: 'https://react.dev',
+  },
+  {
+    name: 'MySQL',
+    link: 'https://react.dev',
+  },
+	{
+    name: 'MongoDB',
+    link: 'https://react.dev',
+  },
+	{
+    name: 'SocketIO',
+    link: 'https://react.dev',
+  },
+	{
+    name: 'ElectronJS',
+    link: 'https://react.dev',
+  },
+	{
+    name: 'Framer',
+    link: 'https://react.dev',
+  },
+	{
+    name: 'Firebase',
+    link: 'https://react.dev',
+  },
+	{
+    name: 'Flask',
+    link: 'https://react.dev',
+  },
+	{
+    name: 'WiX',
+    link: 'https://react.dev',
+  },
+	{
+    name: 'Framer',
+    link: 'https://react.dev',
+  },
+	{
+    name: 'WordPress',
+    link: 'https://react.dev',
+  },
+	{
+    name: 'Linux',
+    link: 'https://react.dev',
+  },
+]
 ---
 
 <!doctype html>
@@ -13,45 +74,90 @@ import '@fontsource/silkscreen'
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
   </head>
   <body>
-			<Header title={SITE_TITLE} />
-			<div class="bg-background flex flex-col gap-8 justify-center items-center min-h-screen p-4">
-				<h1 class="font-title text-7xl md:text-8xl text-center">Coming Soon</h1>
-				<img src="/logo.svg" alt="logo" width="60"/>
-			</div>
-    <!-- 
-		<main>
-			<h1>🧑‍🚀 Hello, Astronaut!</h1>
-			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This
-				template serves as a lightweight, minimally-styled starting point for anyone looking to
-				build a personal website, blog, or portfolio with Astro.
-			</p>
-			<p>
-				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> file. You can customize your setup with
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like
-				Tailwind, React, or Vue to your project.
-			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included blog posts in <code>src/pages/blog/</code></li>
-				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-			</ul>
-			<p>
-				Have fun! If you get stuck, remember to <a href="https://docs.astro.build/"
-					>read the docs
-				</a> or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out <a
-					href="https://github.com/Charca/astro-blog-template"
-					>astro-blog-template
-				</a> by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p>
-		</main>
-		<Footer /> -->
-  </body>
+    <Header title={SITE_TITLE} />
+    <main
+      class="bg-background flex flex-col gap-12 justify-center items-center min-h-[96vh] p-4"
+    >
+      <h1
+        class="font-title text-7xl md:text-[112px] text-center leading-none px-4"
+      >
+        Yash Jawale
+      </h1>
+      <div
+        class="flex flex-wrap gap-8 border-[1.5px] border-[#bfbfbf] p-2 rounded-full [&>*]:p-2 [&>*]:w-[40px] [&>*]:h-[40px] [&>*]:flex [&>*]:justify-center [&>*]:items-center [&>*]:border-[2px] [&>*]:border-foreground [&>*]:bg-background [&>*]:rounded-full [&>*>*]:w-[24px] [&>*:hover]:brightness-90"
+      >
+        <a
+          href="https://github.com/yashjawale/"
+          target="_blank"
+          class="border-none"
+          style="padding: 0;"
+        >
+          <!-- GitHub -->
+          <svg
+            style="width: 40px; height: 40px;"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 496 512"
+            ><path
+              fill="currentColor"
+              d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6c-3.3.3-5.6-1.3-5.6-3.6c0-2 2.3-3.6 5.2-3.6c3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9c2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9c.3 2 2.9 3.3 5.9 2.6c2.9-.7 4.9-2.6 4.6-4.6c-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2c12.8 2.3 17.3-5.6 17.3-12.1c0-6.2-.3-40.4-.3-61.4c0 0-70 15-84.7-29.8c0 0-11.4-29.1-27.8-36.6c0 0-22.9-15.7 1.6-15.4c0 0 24.9 2 38.6 25.8c21.9 38.6 58.6 27.5 72.9 20.9c2.3-16 8.8-27.1 16-33.7c-55.9-6.2-112.3-14.3-112.3-110.5c0-27.5 7.6-41.3 23.6-58.9c-2.6-6.5-11.1-33.3 2.6-67.9c20.9-6.5 69 27 69 27c20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27c13.7 34.7 5.2 61.4 2.6 67.9c16 17.7 25.8 31.5 25.8 58.9c0 96.5-58.9 104.2-114.8 110.5c9.2 7.9 17 22.9 17 46.4c0 33.7-.3 75.4-.3 83.6c0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252C496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2c1.6 1.6 3.9 2.3 5.2 1c1.3-1 1-3.3-.7-5.2c-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9c1.6 1 3.6.7 4.3-.7c.7-1.3-.3-2.9-2.3-3.9c-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2c2.3 2.3 5.2 2.6 6.5 1c1.3-1.3.7-4.3-1.3-6.2c-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9c1.6 2.3 4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2c-1.4-2.3-4-3.3-5.6-2z"
+            ></path></svg
+          >
+        </a>
+				<a href="https://linkedin.com/in/yashjawale/" target="_blank">
+          <!-- LinkedIn -->
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1046.16 1000"
+            ><path
+              fill="currentColor"
+              d="M237.485 1000V325.301H13.229V1000h224.256zM125.386 233.127c78.202 0 126.879-51.809 126.879-116.553C250.808 50.37 203.591-.001 126.87-.001C50.161-.001-.002 50.371-.002 116.574c0 64.747 48.665 116.553 123.924 116.553h1.457zM361.61 1000h224.256V623.215c0-20.165 1.457-40.309 7.379-54.724c16.212-40.289 53.111-82.017 115.06-82.017c81.149 0 113.613 61.872 113.613 152.572v360.949h224.242V613.129c0-207.241-110.636-303.668-258.183-303.668c-120.977 0-174.094 67.622-203.603 113.679h1.497v-97.853H361.615c2.943 63.31 0 674.699 0 674.699z"
+            ></path></svg
+          >
+        </a>
+        <a href="https://x.com/imyashjawale" target="_blank">
+          <!-- Twitter -->
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
+            ><path
+              fill="currentColor"
+              d="M389.2 48h70.6L305.6 224.2L487 464H345L233.7 318.6L106.5 464H35.8l164.9-188.5L26.8 48h145.6l100.5 132.9L389.2 48zm-24.8 373.8h39.1L151.1 88h-42l255.3 333.8z"
+            ></path></svg
+          >
+        </a>
+        <a href="https://instagram.com/imyashjawale/" target="_blank">
+          <!-- Instagram -->
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"
+            ><path
+              fill="currentColor"
+              d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9S287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7s74.7 33.5 74.7 74.7s-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8c-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8s26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9c-26.2-26.2-58-34.4-93.9-36.2c-37-2.1-147.9-2.1-184.9 0c-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9c1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0c35.9-1.7 67.7-9.9 93.9-36.2c26.2-26.2 34.4-58 36.2-93.9c2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6c-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6c-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6c29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6c11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"
+            ></path></svg
+          >
+        </a>
+      </div>
+    </main>
+
+    <section
+      class="container mx-auto py-20 grid md:grid-cols-2 gap-8 px-6 text-lg"
+    >
+      <Card title="About">
+        <p>
+          I'm a Computer Engineering student at <a
+            href="https://engg.dypvp.edu.in/"
+            target="_blank">DIT, Pimpri</a
+          >. Anything even remotely related to computers excites me. I'm
+          proficient in web development & have been making websites for
+          businesses from a few years.
+        </p><p>
+          I'm always learning about new stuff in web. I enjoy messing around
+          with Linux & exploring its possibilities.
+        </p>
+      </Card>
+      <Card title="Tech Stack">
+				<div class="flex gap-3 flex-wrap">
+					{technologies.map(tech => <a class="border-[1px] border-foreground p-2 rounded-md text-sm transition-colors duration-75 hover:text-white hover:bg-foreground" href={tech.link} target="_blank">{tech.name}</a>)}
+				</div>
+			</Card>
+    </section>
+  </body><style>
+    [astro-icon] {
+      width: 42px;
+    }
+  </style>
 </html>
