@@ -25,43 +25,43 @@ const technologies = [
     name: 'MySQL',
     link: 'https://react.dev',
   },
-	{
+  {
     name: 'MongoDB',
     link: 'https://react.dev',
   },
-	{
+  {
     name: 'SocketIO',
     link: 'https://react.dev',
   },
-	{
+  {
     name: 'ElectronJS',
     link: 'https://react.dev',
   },
-	{
+  {
     name: 'Framer',
     link: 'https://react.dev',
   },
-	{
+  {
     name: 'Firebase',
     link: 'https://react.dev',
   },
-	{
+  {
     name: 'Flask',
     link: 'https://react.dev',
   },
-	{
+  {
     name: 'WiX',
     link: 'https://react.dev',
   },
-	{
+  {
     name: 'Framer',
     link: 'https://react.dev',
   },
-	{
+  {
     name: 'WordPress',
     link: 'https://react.dev',
   },
-	{
+  {
     name: 'Linux',
     link: 'https://react.dev',
   },
@@ -79,7 +79,7 @@ const technologies = [
       class="bg-background flex flex-col gap-12 justify-center items-center min-h-[96vh] p-4"
     >
       <h1
-        class="font-title text-7xl md:text-[112px] text-center leading-none px-4"
+        class="font-title text-7xl md:text-[112px] text-center leading-none px-4 hero-title"
       >
         Yash Jawale
       </h1>
@@ -103,7 +103,7 @@ const technologies = [
             ></path></svg
           >
         </a>
-				<a href="https://linkedin.com/in/yashjawale/" target="_blank">
+        <a href="https://linkedin.com/in/yashjawale/" target="_blank">
           <!-- LinkedIn -->
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1046.16 1000"
             ><path
@@ -150,14 +150,41 @@ const technologies = [
         </p>
       </Card>
       <Card title="Tech Stack">
-				<div class="flex gap-3 flex-wrap">
-					{technologies.map(tech => <a class="border-[1px] border-foreground p-2 rounded-md text-sm transition-colors duration-75 hover:text-white hover:bg-foreground" href={tech.link} target="_blank">{tech.name}</a>)}
-				</div>
-			</Card>
+        <div class="flex gap-3 flex-wrap">
+          {
+            technologies.map((tech) => (
+              <a
+                class="border-[1px] border-foreground p-2 rounded-md text-sm transition-colors duration-75 hover:text-white hover:bg-foreground"
+                href={tech.link}
+                target="_blank"
+              >
+                {tech.name}
+              </a>
+            ))
+          }
+        </div>
+      </Card>
     </section>
-  </body><style>
-    [astro-icon] {
-      width: 42px;
-    }
-  </style>
+		<section class="container mx-auto px-6 pb-20 flex flex-col justify-center items-center gap-8">
+			<h2 class="font-title text-5xl pb-8 text-center">Get in Touch</h2>
+			<a class="underline text-xl" href="mailto:yash25.j@gmail.com">yash25.j@gmail.com</a>
+			<a class="flex p-3 bg-foreground text-white rounded-md text-lg transition-transform hover:-translate-y-1 hover:shadow-lg" href="/">Download Resume <Icon style="width: 24px;" name="clarity:download-line"/></a>
+		</section>
+		<Footer/>
+    <style>
+      [astro-icon] {
+        width: 42px;
+      }
+
+      .hero-title {
+        text-shadow:
+          1px 1px #444,
+          -1px -1px white,
+          0px 2px 4px #999;
+        -webkit-background-clip: text;
+        -moz-background-clip: text;
+        background-clip: text;
+      }
+    </style>
+  </body>
 </html>
