@@ -1,0 +1,18 @@
+
+@keyframes disappear {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.pixel {
+  position: absolute;
+  height: 12px;
+  width: 12px;
+  /* background: #aaa; */
+  background: #FFB800;
+  animation: disappear 2s forwards;
+}

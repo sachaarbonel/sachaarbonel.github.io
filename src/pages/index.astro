@@ -72,15 +72,17 @@ const technologies = [
   <body>
     <Header title={SITE_TITLE} />
     <main
-      class="bg-background flex flex-col gap-12 justify-center items-center min-h-[96vh] p-4"
+      class="bg-background flex flex-col gap-12 justify-center items-center min-h-[96vh] p-4 relative"
+      id="pixel"
     >
+      <!-- <span class="pixel"></span> -->
       <h1
-        class="font-title text-7xl md:text-[112px] text-center leading-none px-4 hero-title"
+        class="font-title text-7xl md:text-[112px] text-center leading-none px-4 hero-title z-10"
       >
         Yash Jawale
       </h1>
       <div
-        class="flex flex-wrap gap-8 border-[1.5px] border-[#bfbfbf] p-2 rounded-full [&>*]:p-2 [&>*]:w-[40px] [&>*]:h-[40px] [&>*]:flex [&>*]:justify-center [&>*]:items-center [&>*]:border-[2px] [&>*]:border-foreground [&>*]:bg-background [&>*]:rounded-full [&>*>*]:w-[24px] [&>*:hover]:brightness-90"
+        class="flex bg-background flex-wrap gap-8 border-[1.5px] border-[#bfbfbf] p-2 rounded-full [&>*]:p-2 [&>*]:w-[40px] [&>*]:h-[40px] [&>*]:flex [&>*]:justify-center [&>*]:items-center [&>*]:border-[2px] [&>*]:border-foreground [&>*]:bg-background [&>*]:rounded-full [&>*>*]:w-[24px] [&>*:hover]:brightness-90 z-10"
       >
         <a
           href="https://github.com/yashjawale/"
@@ -130,7 +132,7 @@ const technologies = [
     </main>
 
     <section
-      class="container mx-auto py-20 grid md:grid-cols-2 gap-8 px-6 text-lg"
+      class="container mx-auto py-20 grid md:grid-cols-2 gap-8 px-6 sm:px-16"
     >
       <Card title="About">
         <p>
@@ -161,12 +163,23 @@ const technologies = [
         </div>
       </Card>
     </section>
-		<section class="container mx-auto px-6 pb-20 flex flex-col justify-center items-center gap-8">
-			<h2 class="font-title text-5xl pb-8 text-center">Get in Touch</h2>
-			<a class="underline text-xl" href="mailto:yash25.j@gmail.com">yash25.j@gmail.com</a>
-			<a class="flex p-3 bg-foreground text-white rounded-md text-lg transition-transform hover:-translate-y-1 hover:shadow-lg" href="/">Download Resume <Icon style="width: 24px;" name="clarity:download-line"/></a>
-		</section>
-		<Footer/>
+    <section
+      class="container mx-auto px-6 pb-20 flex flex-col justify-center items-center gap-8"
+    >
+      <h2 class="font-title text-5xl pb-8 text-center">Get in Touch</h2>
+      <a class="underline text-xl" href="mailto:yash25.j@gmail.com"
+        >yash25.j@gmail.com</a
+      >
+      <a
+        class="flex p-3 bg-foreground text-white rounded-md text-lg transition-transform hover:-translate-y-1 hover:shadow-lg"
+        href="/"
+        >Download Resume <Icon
+          style="width: 24px;"
+          name="clarity:download-line"
+        /></a
+      >
+    </section>
+    <Footer />
     <style>
       [astro-icon] {
         width: 42px;
@@ -182,5 +195,28 @@ const technologies = [
         background-clip: text;
       }
     </style>
-  </body>
+  </body><script>
+    const pixelContainer = document.querySelector('#pixel')
+
+    if (pixelContainer) {
+      function randomIntFromInterval(min:number, max:number):number {
+        return Math.floor(Math.random() * (max - min + 1) + min)
+      }
+  
+      setInterval(() => {
+        let containerWidth = pixelContainer?.clientWidth
+        let containerHeight = pixelContainer?.clientHeight
+        let pixelX = randomIntFromInterval(0, containerWidth - 12)
+        let pixelY = randomIntFromInterval(0, containerHeight - 12)
+        const pixel = document.createElement('span')
+        pixel.className = 'pixel'
+        pixel.style.top = `${pixelY}px`
+        pixel.style.left = `${pixelX}px`
+        pixelContainer.appendChild(pixel)
+        setTimeout(() => pixelContainer.removeChild(pixel), 2000)
+        console.log('done', pixelX, pixelY)
+      }, 500)
+    }
+
+  </script>
 </html>
