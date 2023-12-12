@@ -1,3 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-primary: 255 184 0;
+    --color-foreground: 31 31 31;
+    --color-background: 239 239 239;
+    --color-base: 255 255 255;
+  }
+  :root[class~="dark"] {
+    /* --color-foreground: 211 215 217; */
+    --color-foreground: 215 215 211;
+    --color-background: 29 29 29;
+    --color-base: 18 18 18;
+  }
+}
+
 
 @keyframes disappear {
   0% {
@@ -16,3 +35,15 @@
   background: #FFB800;
   animation: disappear 2s forwards;
 }
+
+* {
+  @apply transition-colors duration-75;
+}
+
+/* .main-logo:hover + .yellow-logo-bar {
+  fill: 'red';
+} */
+
+/* .yellow-logo-bar {
+  fill: blue;
+} */

@@ -42,6 +42,10 @@ const technologies = [
     link: 'https://firebase.google.com/',
   },
   {
+    name: 'Google Admin',
+    link: 'https://workspace.google.com/intl/en_in/products/admin/',
+  },
+  {
     name: 'Flask',
     link: 'https://flask.palletsprojects.com/',
   },
@@ -69,7 +73,7 @@ const technologies = [
   <head>
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
   </head>
-  <body>
+  <body class="text-foreground bg-basecolor">
     <Header title={SITE_TITLE} />
     <main
       class="bg-background flex flex-col gap-12 justify-center items-center min-h-[96vh] p-4 relative"
@@ -82,7 +86,7 @@ const technologies = [
         Yash Jawale
       </h1>
       <div
-        class="flex bg-background flex-wrap gap-8 border-[1.5px] border-[#bfbfbf] p-2 rounded-full [&>*]:p-2 [&>*]:w-[40px] [&>*]:h-[40px] [&>*]:flex [&>*]:justify-center [&>*]:items-center [&>*]:border-[2px] [&>*]:border-foreground [&>*]:bg-background [&>*]:rounded-full [&>*>*]:w-[24px] [&>*:hover]:brightness-90 z-10"
+        class="flex bg-background flex-wrap gap-8 border-[1.5px] border-[#bfbfbf] dark:border-[#626262] p-2 rounded-full [&>*]:p-2 [&>*]:w-[40px] [&>*]:h-[40px] [&>*]:flex [&>*]:justify-center [&>*]:items-center [&>*]:border-[2px] [&>*]:border-foreground [&>*]:bg-background [&>*]:rounded-full [&>*>*]:w-[24px] [&>*:hover]:brightness-90 dark:[&>*:hover]:brightness-75 z-10"
       >
         <a
           href="https://github.com/yashjawale/"
@@ -132,12 +136,12 @@ const technologies = [
     </main>
 
     <section
-      class="container mx-auto py-20 grid md:grid-cols-2 gap-8 px-6 sm:px-16"
+      class="container mx-auto py-20 grid md:grid-cols-2 gap-8 px-6 sm:px-20 2xl:px-16"
     >
       <Card title="About">
         <p>
           I'm a Computer Engineering student at <a
-            href="https://engg.dypvp.edu.in/"
+            href="https://engg.dypvp.edu.in/" class="underline"
             target="_blank">DIT, Pimpri</a
           >. Anything even remotely related to computers excites me. I'm
           proficient in web development & have been making websites for
@@ -152,7 +156,7 @@ const technologies = [
           {
             technologies.map((tech) => (
               <a
-                class="border-[1px] border-foreground p-2 rounded-md text-sm transition-colors duration-75 hover:text-white hover:bg-foreground"
+                class="border-[1px] border-foreground p-2 rounded-md text-sm transition-colors duration-75 hover:text-basecolor hover:bg-foreground"
                 href={tech.link}
                 target="_blank"
               >
@@ -171,8 +175,10 @@ const technologies = [
         >yash25.j@gmail.com</a
       >
       <a
-        class="flex p-3 bg-foreground text-white rounded-md text-lg transition-transform hover:-translate-y-1 hover:shadow-lg"
-        href="/"
+        class="flex p-3 bg-foreground text-basecolor rounded-md text-lg transition-transform hover:-translate-y-1 hover:shadow-lg"
+        href="yash-resume.pdf"
+        download
+        target="_blank"
         >Download Resume <Icon
           style="width: 24px;"
           name="clarity:download-line"
@@ -190,33 +196,38 @@ const technologies = [
           1px 1px #444,
           -1px -1px white,
           0px 2px 4px #999;
-        -webkit-background-clip: text;
-        -moz-background-clip: text;
-        background-clip: text;
+        transition: all;
+      }
+
+      .dark .hero-title {
+        text-shadow:
+          1px 1px #444,
+          -1px -1px white,
+          0px 2px 4px #999, 0 0 24px white;
+        color: white;
       }
     </style>
-  </body><script>
-    const pixelContainer = document.querySelector('#pixel')
+    <script>
+      const pixelContainer = document.querySelector('#pixel')
 
-    if (pixelContainer) {
-      function randomIntFromInterval(min:number, max:number):number {
-        return Math.floor(Math.random() * (max - min + 1) + min)
+      if (pixelContainer) {
+        function randomIntFromInterval(min: number, max: number): number {
+          return Math.floor(Math.random() * (max - min + 1) + min)
+        }
+
+        setInterval(() => {
+          let containerWidth = pixelContainer?.clientWidth
+          let containerHeight = pixelContainer?.clientHeight
+          let pixelX = randomIntFromInterval(0, containerWidth - 12)
+          let pixelY = randomIntFromInterval(0, containerHeight - 12)
+          const pixel = document.createElement('span')
+          pixel.className = 'pixel'
+          pixel.style.top = `${pixelY}px`
+          pixel.style.left = `${pixelX}px`
+          pixelContainer.appendChild(pixel)
+          setTimeout(() => pixelContainer.removeChild(pixel), 2000)
+        }, 600)
       }
-  
-      setInterval(() => {
-        let containerWidth = pixelContainer?.clientWidth
-        let containerHeight = pixelContainer?.clientHeight
-        let pixelX = randomIntFromInterval(0, containerWidth - 12)
-        let pixelY = randomIntFromInterval(0, containerHeight - 12)
-        const pixel = document.createElement('span')
-        pixel.className = 'pixel'
-        pixel.style.top = `${pixelY}px`
-        pixel.style.left = `${pixelX}px`
-        pixelContainer.appendChild(pixel)
-        setTimeout(() => pixelContainer.removeChild(pixel), 2000)
-        console.log('done', pixelX, pixelY)
-      }, 500)
-    }
-
-  </script>
+    </script>
+  </body>
 </html>
