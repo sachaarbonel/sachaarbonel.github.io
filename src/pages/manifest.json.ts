@@ -28,8 +28,8 @@ export const GET: APIRoute = async () => {
     start_url: '/',
     display: 'standalone',
     id: 'yash-jawale',
-    theme_color: '#d9d9d9',
-    background_color: '#d9d9d9',
+    theme_color: '#efefef',
+    // background_color: '#d9d9d9',
     icons
   }
 
