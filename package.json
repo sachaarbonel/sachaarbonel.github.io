@@ -18,6 +18,7 @@
     "@fontsource/silkscreen": "^5.0.18",
     "astro": "^4.0.2",
     "astro-icon": "^0.8.2",
+    "sharp-ico": "^0.1.5",
     "tailwindcss": "^3.3.6",
     "typescript": "^5.3.2"
   }
