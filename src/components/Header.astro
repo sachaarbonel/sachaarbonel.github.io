@@ -1,21 +1,21 @@
 ---
-import HeaderLink from './HeaderLink.astro'
+// import HeaderLink from './HeaderLink.astro'
 import { Icon } from 'astro-icon'
 
-const links = [
-  {
-    display: 'Home',
-    location: '/',
-  },
-  {
-    display: 'Blog',
-    location: '/blog',
-  },
-  {
-    display: 'Contact',
-    location: 'mailto:yash25.j@gmail.com',
-  },
-]
+// const links = [
+//   {
+//     display: 'Home',
+//     location: '/',
+//   },
+//   {
+//     display: 'Blog',
+//     location: '/blog',
+//   },
+//   {
+//     display: 'Contact',
+//     location: 'mailto:yash25.j@gmail.com',
+//   },
+// ]
 ---
 
 <header class="fixed top-0 w-full z-40">
@@ -26,12 +26,14 @@ const links = [
       <h2>
         <a href="/" class="text-foreground"
           ><svg
+          role="img"
             width="50"
             viewBox="0 0 67 45"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
             class="main-logo group"
           >
+            <title>Home</title>
             <rect
               x="18.6135"
               y="31.6147"
@@ -76,7 +78,7 @@ const links = [
       <!-- <div class="gap-14 hidden md:flex">
 				{links.map(link => <HeaderLink href={link.location}>{link.display}</HeaderLink>)}
       </div> -->
-      <button class="block" id="theme-toggle">
+      <button class="block" id="theme-toggle" aria-label="Toggle Dark Mode">
         <Icon name="ic:baseline-brightness-medium" />
       </button>
       <!-- <button class="md:hidden" id="nav-open-btn">
@@ -84,7 +86,7 @@ const links = [
       </button> -->
 
       <!-- Mobile nav -->
-      <div
+      <!-- <div
         class="translate-x-full fixed top-0 right-0 bg-white h-screen w-5/6 px-8 py-6 transition-transform z-40 border-l-[1px] border-background"
         id="mobile-menu"
       >
@@ -105,7 +107,7 @@ const links = [
             ))
           }
         </div>
-      </div>
+      </div> -->
     </div>
   </nav>
 
