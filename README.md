@@ -1,3 +1,7 @@
-# My Portfolio & Blog
+# My Portfolio Website
 
-This website is implemented using [AstroJS](https://astro.build)
+Website for showcasing my projects & sharing my links
+
+Visit at [https://yashjawale.github.io/](https://yashjawale.github.io/)
+
+Built with [AstroJS](https://astro.build/)
