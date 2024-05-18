@@ -5,7 +5,7 @@ import Footer from '../components/Footer.astro'
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts'
 import '@fontsource/silkscreen'
 import '@fontsource/manrope'
-import { Icon } from 'astro-icon'
+import { Icon } from 'astro-icon/components'
 import Card from '../components/Card.astro'
 import HeaderSocials from '../components/HeaderSocials.astro'
 
@@ -77,7 +77,7 @@ const technologies = [
   <body class="text-foreground bg-basecolor">
     <Header title={SITE_TITLE} />
     <main
-      class="bg-background flex flex-col gap-12 justify-center items-center min-h-[96vh] p-4 relative"
+      class="bg-background flex flex-col gap-12 justify-center items-center min-h-[96vh] p-4 relative transition-colors duration-300"
       id="pixel"
     >
       <h1
@@ -129,15 +129,13 @@ const technologies = [
         >yash25.j@gmail.com</a
       >
       <a
-        class="flex p-3 bg-foreground text-basecolor rounded-md text-lg transition-transform hover:-translate-y-1 hover:shadow-lg"
+        class="flex px-4 py-3 gap-2 bg-foreground text-basecolor rounded-md text-lg transition-transform hover:-translate-y-1 hover:shadow-lg"
         href="https://yashjawale.github.io/resume/cv.pdf"
         download
         target="_blank"
-        >Download Resume <Icon
-          style="width: 24px;"
-          name="clarity:download-line"
-        /></a
-      >
+        >Download Resume
+        <Icon size={24} name="mdi:tray-download" />
+      </a>
     </section>
     <Footer />
     <style>

@@ -1,6 +1,6 @@
 ---
 // import HeaderLink from './HeaderLink.astro'
-import { Icon } from 'astro-icon'
+import { Icon } from 'astro-icon/components'
 
 // const links = [
 //   {
@@ -19,7 +19,7 @@ import { Icon } from 'astro-icon'
 ---
 
 <header class="fixed top-0 w-full z-40">
-  <nav class="bg-background text-foreground">
+  <nav class="bg-background text-foreground transition-colors duration-300">
     <div
       class="container mx-auto flex px-6 justify-between items-center py-6 sm:px-20 2xl:px-16"
     >
@@ -79,7 +79,7 @@ import { Icon } from 'astro-icon'
 				{links.map(link => <HeaderLink href={link.location}>{link.display}</HeaderLink>)}
       </div> -->
       <button class="block" id="theme-toggle" aria-label="Toggle Dark Mode">
-        <Icon name="ic:baseline-brightness-medium" />
+        <Icon name="mdi:brightness-6" size={26} />
       </button>
       <!-- <button class="md:hidden" id="nav-open-btn">
         <Icon name="ic:round-menu" />
@@ -112,7 +112,7 @@ import { Icon } from 'astro-icon'
   </nav>
 
   <style lang="css">
-    [astro-icon] {
+    [data-icon] {
       width: 26px;
     }
   </style>
