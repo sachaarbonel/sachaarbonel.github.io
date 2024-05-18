@@ -13,17 +13,18 @@ export default {
 				basecolor: 'rgb(var(--color-base) / <alpha-value>)',
 			},
 			fontFamily: {
-				title: ["Silkscreen", ...defaultTheme.fontFamily.sans]
+				title: ["Silkscreen", ...defaultTheme.fontFamily.sans],
+				sans: ["Manrope", ...defaultTheme.fontFamily.sans]
 			},
 			keyframes: {
-        wiggle: {
-          // '0%, 100%': { transform: '' },
-          '50%': { opacity: '10%' },
-        }
-      },
+				wiggle: {
+					// '0%, 100%': { transform: '' },
+					'50%': { opacity: '10%' },
+				}
+			},
 			animation: {
-        wiggle: 'wiggle 1s ease infinite',
-      }
+				wiggle: 'wiggle 1s ease infinite',
+			}
 		},
 	},
 	plugins: [],
