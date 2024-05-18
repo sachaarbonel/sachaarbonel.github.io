@@ -9,14 +9,13 @@
     --color-background: 239 239 239;
     --color-base: 255 255 255;
   }
-  :root[class~="dark"] {
+  :root[class~='dark'] {
     /* --color-foreground: 211 215 217; */
     --color-foreground: 215 215 211;
     --color-background: 29 29 29;
     --color-base: 18 18 18;
   }
 }
-
 
 @keyframes disappear {
   0% {
@@ -32,7 +31,7 @@
   height: 12px;
   width: 12px;
   /* background: #aaa; */
-  background: #FFB800;
+  background: #ffb800;
   animation: disappear 2s forwards;
 }
 
