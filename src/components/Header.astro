@@ -1,21 +1,21 @@
 ---
-// import HeaderLink from './HeaderLink.astro'
+import HeaderLink from './HeaderLink.astro'
 import { Icon } from 'astro-icon/components'
 
-// const links = [
-//   {
-//     display: 'Home',
-//     location: '/',
-//   },
-//   {
-//     display: 'Blog',
-//     location: '/blog',
-//   },
-//   {
-//     display: 'Contact',
-//     location: 'mailto:yash25.j@gmail.com',
-//   },
-// ]
+const links = [
+  {
+    display: 'Home',
+    location: '/',
+  },
+  {
+    display: 'Blog',
+    location: '/blog',
+  },
+  {
+    display: 'Contact',
+    location: 'mailto:yash25.j@gmail.com',
+  },
+]
 ---
 
 <header class="fixed top-0 w-full z-40">
@@ -75,27 +75,35 @@ import { Icon } from 'astro-icon/components'
           </svg><span class="hidden">Home</span></a
         >
       </h2>
-      <!-- <div class="gap-14 hidden md:flex">
-				{links.map(link => <HeaderLink href={link.location}>{link.display}</HeaderLink>)}
-      </div> -->
-      <button class="block" id="theme-toggle" aria-label="Toggle Dark Mode">
+      <div class="gap-14 hidden md:flex items-center">
+        {
+          links.map((link) => (
+            <HeaderLink href={link.location}>{link.display}</HeaderLink>
+          ))
+        }
+      </div>
+      <button
+        class="md:block hidden"
+        id="theme-toggle"
+        aria-label="Toggle Dark Mode"
+      >
         <Icon name="mdi:brightness-6" size={26} />
       </button>
-      <!-- <button class="md:hidden" id="nav-open-btn">
-        <Icon name="ic:round-menu" />
-      </button> -->
+      <button class="md:hidden" id="nav-open-btn">
+        <Icon name="mdi:menu" size={32} />
+      </button>
 
       <!-- Mobile nav -->
-      <!-- <div
-        class="translate-x-full fixed top-0 right-0 bg-white h-screen w-5/6 px-8 py-6 transition-transform z-40 border-l-[1px] border-background"
+      <div
+        class="translate-x-full fixed top-0 right-0 bg-white dark:bg-neutral-900 h-screen w-5/6 px-8 py-6 transition-transform z-40 border-l-[1px] border-background"
         id="mobile-menu"
       >
         <div class="flex justify-between">
           <button>
-            <Icon name="ic:baseline-brightness-medium" />
+            <Icon name="mdi:brightness-6" size={32} />
           </button>
           <button id="nav-close-btn">
-            <Icon name="ic:round-close" />
+            <Icon name="mdi:close" size={32} />
           </button>
         </div>
         <div class="flex flex-col items-center justify-center gap-20 pt-24">
@@ -107,7 +115,7 @@ import { Icon } from 'astro-icon/components'
             ))
           }
         </div>
-      </div> -->
+      </div>
     </div>
   </nav>
 
