@@ -1,0 +1,91 @@
+---
+import { Icon } from 'astro-icon/components'
+const { class: className } = Astro.props
+---
+
+<!-- class="border-[1px] border-foreground rounded-full flex justify-center items-center" -->
+<div
+  class:list={[
+    className,
+    'border-[1px] border-foreground rounded-full flex justify-center items-center text-foreground [&>*:hover]:brightness-75',
+  ]}
+>
+  <button
+    id="theme-auto"
+    aria-label="Auto Theme"
+    class="p-2 rounded-full duration-0"
+  >
+    <Icon name="mdi:brightness-auto" class:list="duration-0" size={28} />
+  </button>
+  <!-- class="p-2 text-primary bg-primary bg-opacity-10 rounded-full" -->
+  <button
+    id="theme-light"
+    aria-label="Light Theme"
+    class="p-2 rounded-full duration-0"
+  >
+    <Icon name="mdi:white-balance-sunny" class:list="duration-0" size={28} />
+  </button>
+  <button
+    id="theme-dark"
+    aria-label="Dark Theme"
+    class="p-2 rounded-full duration-0"
+  >
+    <Icon name="mdi:moon-and-stars" class:list="duration-0" size={28} />
+  </button>
+</div>
+
+<style>
+  button.active {
+    @apply text-primary bg-primary bg-opacity-10;
+  }
+</style>
+
+<script is:inline>
+  function reComputeTheme() {
+    console.log(window.matchMedia('(prefers-color-scheme: dark)').matches)
+    console.log(localStorage.theme)
+    if (
+      localStorage.theme === 'dark' ||
+      (!('theme' in localStorage) &&
+        window.matchMedia('(prefers-color-scheme: dark)').matches)
+    ) {
+      document.documentElement.classList.add('dark')
+    } else {
+      document.documentElement.classList.remove('dark')
+    }
+
+    let theme = localStorage.theme || 'auto'
+    document.getElementById(`theme-${theme}`)?.classList.add('active')
+  }
+
+  // Switch theme with buttons & add active class to current one
+  const themeButtons = document.querySelectorAll('[id^="theme-"]')
+  themeButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+      themeButtons.forEach((btn) => btn.classList.remove('active'))
+      button.classList.add('active')
+      if (button.id === 'theme-auto') {
+        localStorage.removeItem('theme')
+        reComputeTheme()
+      } else {
+        localStorage.theme = button.id.replace('theme-', '')
+        document.documentElement.classList.toggle(
+          'dark',
+          button.id === 'theme-dark'
+        )
+      }
+    })
+  })
+
+  // Set active class on OS theme change
+  window
+    .matchMedia('(prefers-color-scheme: dark)')
+    .addEventListener('change', (e) => {
+      // let theme = localStorage.theme || (e.matches ? 'dark' : 'light')
+      // document.getElementById(`theme-${theme}`)?.classList.add('active')
+      // document.documentElement.classList.toggle('dark', theme === 'dark')
+      reComputeTheme()
+    })
+
+  reComputeTheme()
+</script>

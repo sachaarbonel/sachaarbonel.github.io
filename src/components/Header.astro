@@ -1,6 +1,7 @@
 ---
 import HeaderLink from './HeaderLink.astro'
 import { Icon } from 'astro-icon/components'
+import ThemeSelector from './ThemeSelector.astro'
 
 const links = [
   {
@@ -12,8 +13,8 @@ const links = [
     location: '/blog',
   },
   {
-    display: 'Contact',
-    location: 'mailto:yash25.j@gmail.com',
+    display: 'Projects',
+    location: '/projects',
   },
 ]
 ---
@@ -78,52 +79,72 @@ const links = [
       <div class="gap-14 hidden md:flex items-center">
         {
           links.map((link) => (
-            <HeaderLink href={link.location}>{link.display}</HeaderLink>
+            <HeaderLink
+              class:list="uppercase font-semibold"
+              href={link.location}
+            >
+              {link.display}
+            </HeaderLink>
           ))
         }
       </div>
-      <button
+      <!-- <button
         class="md:block hidden"
         id="theme-toggle"
         aria-label="Toggle Dark Mode"
       >
         <Icon name="mdi:brightness-6" size={26} />
-      </button>
+      </button> -->
+      <a
+        href="mailto:yash25.j@gmail.com"
+        class="md:block hidden border-[1px] border-foreground px-4 py-2 rounded-lg font-semibold text-sm uppercase transition-colors duration-75 hover:text-basecolor hover:bg-foreground"
+        >Contact</a
+      >
       <button class="md:hidden" id="nav-open-btn">
         <Icon name="mdi:menu" size={32} />
       </button>
 
       <!-- Mobile nav -->
       <div
-        class="translate-x-full fixed top-0 right-0 bg-white dark:bg-neutral-900 h-screen w-5/6 px-8 py-6 transition-transform z-40 border-l-[1px] border-background"
+        class="fixed top-0 right-0 bg-white dark:bg-neutral-900 h-screen w-5/6 px-8 py-6 transition-transform z-40 border-l-[1px] border-background"
         id="mobile-menu"
       >
-        <div class="flex justify-between">
+        <!-- <div class="flex justify-between">
           <button>
             <Icon name="mdi:brightness-6" size={32} />
           </button>
           <button id="nav-close-btn">
             <Icon name="mdi:close" size={32} />
           </button>
-        </div>
-        <div class="flex flex-col items-center justify-center gap-20 pt-24">
+        </div> -->
+        <button id="nav-close-btn" class="ml-auto block">
+          <Icon name="mdi:close" size={32} />
+        </button>
+        <div class="flex flex-col h-full items-start gap-8 pt-28">
           {
             links.map((link) => (
-              <HeaderLink class="uppercase font-semibold" href={link.location}>
+              <HeaderLink class="text-5xl font-light" href={link.location}>
                 {link.display}
               </HeaderLink>
             ))
           }
+          <HeaderLink
+            class="text-5xl font-light"
+            href="mailto:yash25.j@gmail.com"
+          >
+            Contact
+          </HeaderLink>
+          <ThemeSelector class:list="mt-4" />
         </div>
       </div>
     </div>
   </nav>
-
+  <!-- 
   <style lang="css">
     [data-icon] {
       width: 26px;
     }
-  </style>
+  </style> -->
 
   <script>
     function toggleNav() {
@@ -141,7 +162,7 @@ const links = [
   </script>
 </header>
 
-<script is:inline>
+<!-- <script is:inline>
   const theme = (() => {
     if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
       return localStorage.getItem('theme')
@@ -172,4 +193,4 @@ const links = [
   document
     .getElementById('theme-toggle')
     .addEventListener('click', handleToggleClick)
-</script>
+</script> -->
