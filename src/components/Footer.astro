@@ -1,10 +1,23 @@
 ---
+import ThemeSelector from './ThemeSelector.astro'
+
 const today = new Date()
 ---
 
-<footer class="bg-black">
+<!-- <footer class="bg-black">
   <div class="container mx-auto px-6 py-3 text-white text-center">
     &copy; {today.getFullYear()} Yash Jawale
   </div>
+</footer> -->
+<footer class="bg-background">
+  <div
+    class="container mx-auto flex justify-between px-6 py-3 text-foreground text-center"
+  >
+    <p class="text-center md:text-left w-full">
+      &copy; {today.getFullYear()} Yash Jawale
+    </p>
+    <div class="hidden md:block">
+      <ThemeSelector />
+    </div>
+  </div>
 </footer>
-<style></style>

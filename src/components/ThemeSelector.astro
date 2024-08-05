@@ -7,34 +7,46 @@ const { class: className } = Astro.props
 <div
   class:list={[
     className,
-    'border-[1px] border-foreground rounded-full flex justify-center items-center text-foreground [&>*:hover]:brightness-75',
+    'border-[1px] border-foreground rounded-full flex justify-center items-center text-foreground [&>*:hover]:brightness-75 md:opacity-80',
   ]}
 >
   <button
-    id="theme-auto"
+    data-theme="theme-auto"
     aria-label="Auto Theme"
-    class="p-2 rounded-full duration-0"
+    class="theme-button theme-auto"
   >
-    <Icon name="mdi:brightness-auto" class:list="duration-0" size={28} />
+    <Icon
+      name="mdi:brightness-auto"
+      class:list="duration-0 text-3xl md:text-xl"
+    />
   </button>
   <!-- class="p-2 text-primary bg-primary bg-opacity-10 rounded-full" -->
   <button
-    id="theme-light"
+    data-theme="theme-light"
     aria-label="Light Theme"
-    class="p-2 rounded-full duration-0"
+    class="theme-button theme-light"
   >
-    <Icon name="mdi:white-balance-sunny" class:list="duration-0" size={28} />
+    <Icon
+      name="mdi:white-balance-sunny"
+      class:list="duration-0 text-3xl md:text-xl"
+    />
   </button>
   <button
-    id="theme-dark"
+    data-theme="theme-dark"
     aria-label="Dark Theme"
-    class="p-2 rounded-full duration-0"
+    class="theme-button theme-dark"
   >
-    <Icon name="mdi:moon-and-stars" class:list="duration-0" size={28} />
+    <Icon
+      name="mdi:moon-and-stars"
+      class:list="duration-0 text-3xl md:text-xl"
+    />
   </button>
 </div>
 
 <style>
+  button.theme-button {
+    @apply p-2 md:p-1 rounded-full duration-0;
+  }
   button.active {
     @apply text-primary bg-primary bg-opacity-10;
   }
@@ -55,23 +67,32 @@ const { class: className } = Astro.props
     }
 
     let theme = localStorage.theme || 'auto'
-    document.getElementById(`theme-${theme}`)?.classList.add('active')
+    // document.getElementById(`theme-${theme}`)?.classList.add('active')
+    document
+      .querySelector(`[data-theme="theme-${theme}"]`)
+      ?.classList.add('active')
   }
 
   // Switch theme with buttons & add active class to current one
-  const themeButtons = document.querySelectorAll('[id^="theme-"]')
+  // const themeButtons = document.querySelectorAll('[data-theme="theme-"]')
+  const themeButtons = document.querySelectorAll('.theme-button')
   themeButtons.forEach((button) => {
     button.addEventListener('click', () => {
+      console.log('first')
       themeButtons.forEach((btn) => btn.classList.remove('active'))
       button.classList.add('active')
-      if (button.id === 'theme-auto') {
+      // if (button.id === 'theme-auto') {
+      console.log(button.dataset.theme)
+      if (button.dataset.theme === 'theme-auto') {
         localStorage.removeItem('theme')
         reComputeTheme()
       } else {
-        localStorage.theme = button.id.replace('theme-', '')
+        // localStorage.theme = button.id.replace('theme-', '')
+        console.log('THEIS', button.dataset.theme.replace('theme-', ''))
+        localStorage.theme = button.dataset.theme.replace('theme-', '')
         document.documentElement.classList.toggle(
           'dark',
-          button.id === 'theme-dark'
+          button.dataset.theme === 'theme-dark'
         )
       }
     })
