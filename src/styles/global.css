@@ -46,3 +46,7 @@
 /* .yellow-logo-bar {
   fill: blue;
 } */
+
+.app-container {
+  @apply container mx-auto px-6 sm:px-20 2xl:px-16;
+}

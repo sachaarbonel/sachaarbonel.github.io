@@ -86,20 +86,18 @@ const technologies = [
         Yash Jawale
       </h1>
       <HeaderSocials />
-      <a
+      <!-- <a
         class="text-foreground px-4 py-3 rounded-full text-center bg-neutral-300 dark:bg-neutral-700 hover:bg-neutral-400 dark:hover:bg-neutral-600 transition-colors"
         href="https://yashjawale.github.io/playground/"
         target="_blank"
         >Explore Playground<span class="hidden md:inline"
           >: Interactive simulators for CS Concepts</span
         ></a
-      >
+      > -->
     </main>
 
-    <section
-      class="container mx-auto py-20 grid md:grid-cols-2 gap-8 px-6 sm:px-20 2xl:px-16"
-    >
-      <Card title="About">
+    <section class="app-container py-20 grid md:grid-cols-2 gap-8">
+      <Card title="About Me">
         <p>
           I'm a Computer Engineering student at <a
             href="https://engg.dypvp.edu.in/"
@@ -113,7 +111,7 @@ const technologies = [
           with Linux & exploring its possibilities.
         </p>
       </Card>
-      <Card title="Tech Stack">
+      <Card title="My toolkit">
         <div class="flex gap-3 flex-wrap">
           {
             technologies.map((tech) => (
@@ -130,7 +128,7 @@ const technologies = [
       </Card>
     </section>
     <section
-      class="container mx-auto px-6 pb-20 flex flex-col justify-center items-center gap-8"
+      class="app-container pb-20 flex flex-col justify-center items-center gap-8"
     >
       <h2 class="font-title text-5xl pb-8 text-center">Get in Touch</h2>
       <a class="underline text-xl" href="mailto:yash25.j@gmail.com"
