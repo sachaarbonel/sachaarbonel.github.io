@@ -62,17 +62,32 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props
           </div>
         </div>
         <div
-          class="app-container flex flex-col md:flex-row gap-8 py-8 md:py-12 relative"
+          class="app-container flex flex-col md:flex-row justify-between gap-8 py-8 md:py-12"
         >
-          <div class="blog-content md:max-w-3xl">
+          <div class="blog-content md:max-w-3xl w-full md:w-3/4">
             <slot />
           </div>
-          <div class="sticky top-0">
+          <div class="md:w-1/4">
             <img
               src={heroImage}
               alt={title}
-              class="rounded-lg shadow-lg w-full md:w-96"
+              class="rounded-lg shadow-lg mb-8"
             />
+            <div
+              class="bg-background p-8 rounded-lg sticky top-24 md:opacity-50 md:hover:opacity-100 transition-opacity"
+            >
+              <h2 class="font-title uppercase text-4xl">
+                Join My Mailing List
+              </h2>
+              <p class="py-6">
+                Get the latest posts delivered right to your inbox. No spam
+                emails.
+              </p>
+              <button
+                class="flex px-3 py-2 gap-2 bg-foreground text-basecolor rounded-md uppercase font-medium transition-opacity hover:opacity-70"
+                >Subscribe
+              </button>
+            </div>
           </div>
         </div>
       </article>
