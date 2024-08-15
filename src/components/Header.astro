@@ -79,10 +79,7 @@ const links = [
       <div class="gap-14 hidden md:flex items-center">
         {
           links.map((link) => (
-            <HeaderLink
-              class:list="uppercase font-semibold"
-              href={link.location}
-            >
+            <HeaderLink class:list="font-medium uppercase" href={link.location}>
               {link.display}
             </HeaderLink>
           ))
