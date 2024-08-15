@@ -39,6 +39,26 @@
   @apply transition-colors duration-75;
 }
 
+.yellow-card {
+  display: block;
+  background: rgb(255, 184, 0);
+  background: radial-gradient(
+    circle at top left,
+    rgba(255, 184, 0, 0.6) 0%,
+    rgba(255, 184, 0, 0) 100%
+  );
+}
+
+/* for dark mode */
+.dark .yellow-card {
+  background: rgb(255, 184, 0);
+  background: radial-gradient(
+    circle at top left,
+    hsla(43, 85%, 65%, 0.6) 0%,
+    rgba(255, 184, 0, 0) 100%
+  );
+}
+
 /* .main-logo:hover + .yellow-logo-bar {
   fill: 'red';
 } */
