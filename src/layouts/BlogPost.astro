@@ -16,71 +16,27 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props
 <html lang="en">
   <head>
     <BaseHead title={title} description={description} />
-    <!-- <style>
-      main {
-        width: calc(100% - 2em);
-        max-width: 100%;
-        margin: 0;
-      }
-      .hero-image {
-        width: 100%;
-      }
-      .hero-image img {
-        display: block;
-        margin: 0 auto;
-        border-radius: 12px;
-        box-shadow: var(--box-shadow);
-      }
-      .prose {
-        width: 720px;
-        max-width: calc(100% - 2em);
-        margin: auto;
-        padding: 1em;
-        color: rgb(var(--gray-dark));
-      }
-      .title {
-        margin-bottom: 1em;
-        padding: 1em 0;
-        text-align: center;
-        line-height: 1;
-      }
-      .title h1 {
-        margin: 0 0 0.5em 0;
-      }
-      .date {
-        margin-bottom: 0.5em;
-        color: rgb(var(--gray));
-      }
-      .last-updated-on {
-        font-style: italic;
-      }
-    </style> -->
   </head>
 
   <body class="text-foreground bg-basecolor">
     <Header />
     <main>
       <article>
-        <!-- <div class="hero-image">
-          {
-            heroImage && (
-              <img width={1020} height={510} src={heroImage} alt="" />
-            )
-          }
-        </div> -->
         <div class="bg-background pt-28 md:pt-32 pb-8 md:pb-16">
           <div class="app-container">
-            <a
-              href="/blog"
-              class="font-title uppercase text-3xl hover:text-primary transition-colors opacity-70"
-              >Blog /</a
-            >
+            <p class="font-title uppercase text-3xl opacity-70">
+              <a href="/blog" class="hover:text-primary transition-colors"
+                >Blog</a
+              > /
+            </p>
             <h1
-              class="font-semibold text-5xl md:text-6xl leading-tight md:w-4/5 py-6"
+              class="font-semibold text-5xl md:text-6xl leading-snug md:w-4/5 py-6"
             >
               {title}
             </h1>
-            <hr class="bg-foreground h-px rounded-full mb-4" />
+            <hr
+              class="bg-foreground h-[1.5px] opacity-50 rounded-full md:mt-2 mb-4"
+            />
             <div class="flex gap-12 flex-wrap items-center">
               <div class="text-lg flex items-center gap-2 flex-nowrap">
                 <Icon name="mdi:calendar" size={24} class="inline-block" />
@@ -105,10 +61,18 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props
             </div>
           </div>
         </div>
-        <div class="app-container py-8 md:py-12">
-          <!-- <div class="blog-content md:max-w-3xl"> -->
+        <div
+          class="app-container flex flex-col md:flex-row gap-8 py-8 md:py-12 relative"
+        >
           <div class="blog-content md:max-w-3xl">
             <slot />
+          </div>
+          <div class="sticky top-0">
+            <img
+              src={heroImage}
+              alt={title}
+              class="rounded-lg shadow-lg w-full md:w-96"
+            />
           </div>
         </div>
       </article>
