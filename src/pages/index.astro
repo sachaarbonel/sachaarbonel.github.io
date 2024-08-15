@@ -96,7 +96,7 @@ const technologies = [
       > -->
     </main>
 
-    <section class="app-container py-20 grid md:grid-cols-2 gap-8">
+    <section class="app-container py-20 grid md:grid-cols-2 gap-10">
       <Card title="About Me" class="border-[1px] border-foreground">
         <p>
           I'm a Computer Engineering student at <a
@@ -111,7 +111,41 @@ const technologies = [
           with Linux & exploring its possibilities.
         </p>
       </Card>
-      <!-- <Card title="My toolkit">
+      <Card title="Read my blog!" class="yellow-card">
+        <p>
+          I write about web development, Linux, and other tech stuff on my blog.
+          Check it out to learn something new or to get a different perspective
+          on a topic.
+        </p>
+        <a
+          class="flex px-3 py-2 mt-8 gap-2 bg-foreground items-center text-basecolor rounded-md text-lg transition-transform hover:-translate-y-1 hover:shadow-lg w-fit"
+          href="/blog"
+          target="_blank"
+          >Read Blog
+          <Icon size={24} name="mdi:arrow-right" />
+        </a>
+      </Card>
+      <Card
+        title="Explore Playground"
+        class="playground-card relative overflow-hidden bg-background"
+      >
+        <p class="z-10">
+          Interactive simulators for Computer Science concepts.
+        </p>
+        <a
+          class="flex px-3 py-2 mt-8 gap-2 bg-foreground items-center text-basecolor rounded-md text-lg transition-transform hover:-translate-y-1 hover:shadow-lg w-fit z-10"
+          href="/blog"
+          target="_blank"
+          >Go to Playground
+          <Icon size={24} name="mdi:open-in-new" />
+        </a>
+        <Icon
+          size={240}
+          class="text-primary absolute bottom-0 -right-8 rotate-45 opacity-20"
+          name="mdi:puzzle"
+        />
+      </Card>
+      <Card title="My toolkit" class="border-[1px] border-foreground">
         <div class="flex gap-3 flex-wrap">
           {
             technologies.map((tech) => (
@@ -125,20 +159,6 @@ const technologies = [
             ))
           }
         </div>
-      </Card> -->
-      <Card title="Read my blog!" class="yellow-card">
-        <p>
-          I write about web development, Linux, and other tech stuff on my blog.
-          Check it out to learn something new or to get a different perspective
-          on a topic.
-        </p>
-        <a
-          class="flex px-3 py-2 mt-8 gap-2 bg-foreground text-basecolor rounded-md text-lg transition-transform hover:-translate-y-1 hover:shadow-lg w-fit"
-          href="https://yashjawale.github.io/blog/"
-          target="_blank"
-          >Read Blog
-          <Icon size={24} name="mdi:open-in-new" />
-        </a>
       </Card>
     </section>
     <section
