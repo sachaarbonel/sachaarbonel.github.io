@@ -4,6 +4,9 @@ import BaseHead from '../components/BaseHead.astro'
 import Header from '../components/Header.astro'
 import Footer from '../components/Footer.astro'
 import FormattedDate from '../components/FormattedDate.astro'
+import '@fontsource/silkscreen'
+import '@fontsource-variable/manrope'
+import { Icon } from 'astro-icon/components'
 
 type Props = CollectionEntry<'blog'>['data']
 
@@ -13,7 +16,7 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props
 <html lang="en">
   <head>
     <BaseHead title={title} description={description} />
-    <style>
+    <!-- <style>
       main {
         width: calc(100% - 2em);
         max-width: 100%;
@@ -51,36 +54,62 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props
       .last-updated-on {
         font-style: italic;
       }
-    </style>
+    </style> -->
   </head>
 
   <body class="text-foreground bg-basecolor">
     <Header />
     <main>
       <article>
-        <div class="hero-image">
+        <!-- <div class="hero-image">
           {
             heroImage && (
               <img width={1020} height={510} src={heroImage} alt="" />
             )
           }
-        </div>
-        <div class="prose">
-          <div class="title">
-            <div class="date">
-              <FormattedDate date={pubDate} />
-              {
-                updatedDate && (
-                  <div class="last-updated-on">
-                    Last updated on <FormattedDate date={updatedDate} />
-                  </div>
-                )
-              }
+        </div> -->
+        <div class="bg-background pt-28 md:pt-32 pb-8 md:pb-16">
+          <div class="app-container">
+            <a
+              href="/blog"
+              class="font-title uppercase text-3xl hover:text-primary transition-colors opacity-70"
+              >Blog /</a
+            >
+            <h1
+              class="font-semibold text-5xl md:text-6xl leading-tight md:w-4/5 py-6"
+            >
+              {title}
+            </h1>
+            <hr class="bg-foreground h-px rounded-full mb-4" />
+            <div class="flex gap-12 flex-wrap items-center">
+              <div class="text-lg flex items-center gap-2 flex-nowrap">
+                <Icon name="mdi:calendar" size={24} class="inline-block" />
+                <FormattedDate date={pubDate} />
+                <!-- {
+                    updatedDate && (
+                      <span>
+                        <Icon
+                          name="mdi:calendar-month"
+                          size={32}
+                          class="inline-block"
+                        />
+                        Last updated on <FormattedDate date={updatedDate} />
+                      </span>
+                    )
+                  } -->
+              </div>
+              <div class="text-lg flex items-center gap-2 flex-nowrap">
+                <Icon name="mdi:access-time" size={24} class="inline-block" />
+                12 mins
+              </div>
             </div>
-            <h1>{title}</h1>
-            <hr />
           </div>
-          <slot />
+        </div>
+        <div class="app-container py-8 md:py-12">
+          <!-- <div class="blog-content md:max-w-3xl"> -->
+          <div class="blog-content md:max-w-3xl">
+            <slot />
+          </div>
         </div>
       </article>
     </main>
