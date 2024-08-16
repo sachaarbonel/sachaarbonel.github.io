@@ -74,7 +74,8 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props
               class="rounded-lg shadow-lg mb-8"
             />
             <div
-              class="bg-background p-8 rounded-lg sticky top-24 md:opacity-50 md:hover:opacity-100 transition-opacity"
+              class="bg-background p-8 rounded-lg sticky top-24 transition-opacity"
+              id="mailing-list-callout"
             >
               <h2 class="font-title uppercase text-4xl">
                 Join My Mailing List
@@ -92,6 +93,27 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props
         </div>
       </article>
     </main>
+    <style>
+      .callout-dulled {
+        @apply md:opacity-70 hover:opacity-100;
+      }
+    </style>
+    <script is:inline>
+      window.onscroll = function () {
+        if (
+          document.body.scrollTop > 768 ||
+          document.documentElement.scrollTop > 768
+        ) {
+          document
+            .getElementById('mailing-list-callout')
+            .classList.add('callout-dulled')
+        } else {
+          document
+            .getElementById('mailing-list-callout')
+            .classList.remove('callout-dulled')
+        }
+      }
+    </script>
     <Footer />
   </body>
 </html>
