@@ -14,7 +14,7 @@ type Props = CollectionEntry<'blog'>['data']
 const { title, description, pubDate, updatedDate, heroImage } = Astro.props
 ---
 
-<html lang="en">
+<html lang="en" class="monsoon">
   <head>
     <BaseHead title={title} description={description} />
   </head>
@@ -25,7 +25,7 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props
       <article>
         <div class="bg-background pt-28 md:pt-32 pb-8 md:pb-16">
           <div class="app-container">
-            <p class="font-title uppercase text-3xl opacity-70">
+            <p class="font-title text-4xl text-foreground/70">
               <a href="/blog" class="hover:text-primary transition-colors"
                 >Blog</a
               > /
@@ -72,21 +72,19 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props
             <img
               src={heroImage}
               alt={title}
-              class="rounded-lg shadow-lg mb-8"
+              class="rounded-3xl shadow-lg mb-8"
             />
             <div
-              class="bg-background p-8 rounded-lg sticky top-24 transition-opacity"
+              class="bg-background p-8 rounded-3xl sticky top-24 transition-opacity"
               id="mailing-list-callout"
             >
-              <h2 class="font-title uppercase text-4xl">
-                Join My Mailing List
-              </h2>
-              <p class="py-6">
+              <h2 class="font-title text-4xl">Join My Mailing List</h2>
+              <p class="pt-6">
                 Get the latest posts delivered right to your inbox. Plus a few
                 interesting finds I discover along the way.
               </p>
               <a
-                class="px-3 py-2 gap-2 bg-foreground text-basecolor rounded-md uppercase font-medium transition-opacity hover:opacity-70"
+                class="btn-primary"
                 href="https://yashjawale.beehiiv.com/subscribe"
                 target="_blank"
                 >Subscribe
@@ -98,7 +96,7 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props
     </main>
     <style>
       .callout-dulled {
-        @apply md:opacity-70 hover:opacity-100;
+        @apply md:opacity-50 saturate-0 hover:saturate-100 hover:opacity-100;
       }
     </style>
     <script is:inline>

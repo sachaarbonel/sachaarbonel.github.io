@@ -4,101 +4,70 @@
 
 @layer base {
   :root {
-    /* --color-primary: 255 184 0; */
-    --color-primary: 65 117 5;
     --color-foreground: 31 31 31;
     --color-background: 239 239 239;
-    /* --color-background: 255 249 231; */
     --color-base: 255 255 255;
   }
   :root[class~='dark'] {
-    /* --color-foreground: 211 215 217; */
     --color-foreground: 215 215 211;
     --color-background: 29 29 29;
     --color-base: 18 18 18;
   }
-}
 
-@keyframes disappear {
-  0% {
-    opacity: 1;
+  :root.monsoon {
+    --color-primary: 65 117 5;
   }
-  100% {
-    opacity: 0;
+  :root.monsoon.dark {
+    --color-primary: 139 191 81;
   }
-}
-
-.pixel {
-  position: absolute;
-  height: 12px;
-  width: 12px;
-  /* background: #aaa; */
-  background: #ffb800;
-  animation: disappear 2s forwards;
 }
 
 * {
   @apply transition-colors duration-75;
 }
 
-.yellow-card {
-  display: block;
-  background: rgb(65, 117, 5);
-  background: radial-gradient(
-    circle at top left,
-    rgba(65, 117, 5, 0.45) 0%,
-    rgba(65, 117, 5, 0) 92%
-  );
-}
-
-/* for dark mode */
-.dark .yellow-card {
-  background: rgb(65, 117, 5);
-  background: radial-gradient(
-    circle at top left,
-    rgba(65, 117, 5, 0.6) 0%,
-    rgba(65, 117, 5, 0) 100%
-  );
-}
-
-/* .main-logo:hover + .yellow-logo-bar {
-  fill: 'red';
-} */
-
-/* .yellow-logo-bar {
-  fill: blue;
-} */
-
 .app-container {
   @apply container mx-auto px-6 sm:px-20 2xl:px-16;
 }
 
+.btn-primary {
+  @apply flex px-4 py-2 mt-8 gap-2 bg-primary items-center text-basecolor rounded-full text-lg transition-transform hover:-translate-y-1 hover:shadow-lg w-fit;
+}
+
+.btn-secondary {
+  @apply flex items-center gap-2 w-fit px-4 py-2 md:bg-primary md:bg-opacity-20 rounded-full font-semibold text-sm uppercase transition-colors duration-75 hover:bg-primary/50;
+}
+
+.btn-primary.btn-lg {
+  @apply px-6 py-4;
+}
+
 .blog-content {
-  @apply leading-relaxed;
+  @apply leading-relaxed text-lg font-[350];
 }
 
 .blog-content h1 {
-  @apply text-4xl font-semibold pb-3 pt-4;
+  @apply text-4xl font-light pb-3 pt-4;
 }
 
 .blog-content h2 {
-  @apply text-3xl font-semibold pb-3 pt-4;
+  @apply text-3xl font-light pb-3 pt-4;
 }
 
 .blog-content h3 {
-  @apply text-2xl font-semibold pb-2 pt-3;
+  @apply text-2xl font-light pb-2 pt-3;
 }
 
 .blog-content h4 {
-  @apply text-xl font-semibold pb-2 pt-3;
+  @apply text-xl font-medium pb-2 pt-3;
 }
 
 .blog-content h5 {
-  @apply text-lg font-semibold pb-1 pt-2;
+  @apply text-lg font-medium pb-1 pt-2;
 }
 
 .blog-content h6 {
-  @apply text-base font-semibold pb-1 pt-1;
+  @apply text-base font-medium pb-1 pt-1;
 }
 
 .blog-content p {
@@ -126,7 +95,7 @@
 }
 
 .blog-content pre {
-  @apply p-4 bg-background text-foreground rounded-lg overflow-x-auto mt-2 mb-6 shadow-lg;
+  @apply p-5 bg-background text-foreground rounded-2xl overflow-x-auto mt-2 mb-6 shadow-lg;
 }
 
 .blog-content code {
@@ -138,7 +107,7 @@
 }
 
 .blog-content table {
-  @apply w-full border-collapse rounded-lg my-4 text-sm overflow-x-scroll;
+  @apply w-full border-collapse my-4 text-sm overflow-x-scroll;
 }
 
 .blog-content th {
