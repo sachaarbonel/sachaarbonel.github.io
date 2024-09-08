@@ -4,9 +4,11 @@
 
 @layer base {
   :root {
-    --color-primary: 255 184 0;
+    /* --color-primary: 255 184 0; */
+    --color-primary: 65 117 5;
     --color-foreground: 31 31 31;
     --color-background: 239 239 239;
+    /* --color-background: 255 249 231; */
     --color-base: 255 255 255;
   }
   :root[class~='dark'] {
@@ -41,21 +43,21 @@
 
 .yellow-card {
   display: block;
-  background: rgb(255, 184, 0);
+  background: rgb(65, 117, 5);
   background: radial-gradient(
     circle at top left,
-    rgba(255, 184, 0, 0.6) 0%,
-    rgba(255, 184, 0, 0) 100%
+    rgba(65, 117, 5, 0.45) 0%,
+    rgba(65, 117, 5, 0) 92%
   );
 }
 
 /* for dark mode */
 .dark .yellow-card {
-  background: rgb(255, 184, 0);
+  background: rgb(65, 117, 5);
   background: radial-gradient(
     circle at top left,
-    hsla(43, 85%, 65%, 0.6) 0%,
-    rgba(255, 184, 0, 0) 100%
+    rgba(65, 117, 5, 0.6) 0%,
+    rgba(65, 117, 5, 0) 100%
   );
 }
 

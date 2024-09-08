@@ -5,7 +5,8 @@ import Footer from '../../components/Footer.astro'
 import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts'
 import { getCollection } from 'astro:content'
 import BlogCard from '../../components/BlogCard.astro'
-import '@fontsource/silkscreen'
+// import '@fontsource/silkscreen'
+import '@fontsource/allura'
 import '@fontsource-variable/manrope'
 
 const posts = (await getCollection('blog')).sort(
@@ -88,8 +89,8 @@ const posts = (await getCollection('blog')).sort(
     <Header />
     <div class="bg-background">
       <main class="app-container pt-36 pb-20">
-        <h1 class="font-title uppercase text-7xl pb-8">Blog</h1>
-        <p class="md:w-2/3 text-lg leading-[2rem]">
+        <h1 class="font-title text-7xl pb-8">Blog</h1>
+        <p class="md:w-2/3 font-light text-lg leading-[2rem]">
           Welcome to my blog! Here you'll find a collection of my thoughts and
           experiences. I hope you enjoy reading them as much as I enjoyed
           writing them.
@@ -98,7 +99,7 @@ const posts = (await getCollection('blog')).sort(
     </div>
     <section class="app-container py-12">
       <!-- <BlogCardSection posts={posts} /> -->
-      <ul class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <ul class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         {
           posts.map((post) => (
             <li>

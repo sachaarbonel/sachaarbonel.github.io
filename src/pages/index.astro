@@ -4,6 +4,7 @@ import Header from '../components/Header.astro'
 import Footer from '../components/Footer.astro'
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts'
 import '@fontsource/silkscreen'
+import '@fontsource/allura'
 import '@fontsource-variable/manrope'
 import { Icon } from 'astro-icon/components'
 import Card from '../components/Card.astro'
@@ -67,6 +68,29 @@ const technologies = [
     link: 'https://www.linuxfoundation.org/',
   },
 ]
+
+const socials = [
+  {
+    name: 'GitHub',
+    link: 'https://github.com/yashjawale',
+    icon: 'mdi:github',
+  },
+  {
+    name: 'LinkedIn',
+    link: 'https://www.linkedin.com/in/yashjawale/',
+    icon: 'mdi:linkedin',
+  },
+  {
+    name: 'Twitter',
+    link: 'https://twitter.com/imyashjawale',
+    icon: 'mdi:twitter',
+  },
+  {
+    name: 'Instagram',
+    link: 'https://www.instagram.com/imyashjawale/',
+    icon: 'mdi:instagram',
+  },
+]
 ---
 
 <!doctype html>
@@ -76,7 +100,7 @@ const technologies = [
   </head>
   <body class="text-foreground bg-basecolor">
     <Header title={SITE_TITLE} />
-    <main
+    <!-- <main
       class="bg-background flex flex-col gap-12 justify-center items-center min-h-[96vh] p-4 relative transition-colors duration-300"
       id="pixel"
     >
@@ -86,18 +110,40 @@ const technologies = [
         Yash Jawale
       </h1>
       <HeaderSocials />
-      <!-- <a
-        class="text-foreground px-4 py-3 rounded-full text-center bg-neutral-300 dark:bg-neutral-700 hover:bg-neutral-400 dark:hover:bg-neutral-600 transition-colors"
-        href="https://yashjawale.github.io/playground/"
-        target="_blank"
-        >Explore Playground<span class="hidden md:inline"
-          >: Interactive simulators for CS Concepts</span
-        ></a
-      > -->
+    </main> -->
+    <main class="bg-background">
+      <div
+        class="app-container relative min-h-[96vh] flex flex-col pt-36 md:pt-0 gap-4 md:gap-12 md:justify-center overflow-y-clip"
+      >
+        <p class="font-light text-primary text-2xl">Hi, I'm</p>
+        <h1 class="font-title text-6xl md:text-8xl">Yash Jawale</h1>
+        <p class="font-light md:w-1/2">
+          A computer engineering student in India. Working his way through the
+          world of web development and Linux.
+        </p>
+        <div class="flex flex-wrap gap-2">
+          {
+            socials.map((social) => (
+              <a
+                class="text-sm block px-2 py-1 rounded-full border-[1px] border-foreground"
+                href={social.link}
+                target="_blank"
+              >
+                {social.name}
+              </a>
+            ))
+          }
+        </div>
+        <img
+          class="absolute opacity-30 md:opacity-70 w-[620px] right-0 top-auto bottom-[-80px] md:bottom-auto md:top-24"
+          src="/art.svg"
+          alt=""
+        />
+      </div>
     </main>
 
     <section class="app-container py-20 grid md:grid-cols-2 gap-10">
-      <Card title="About Me" class="border-[1px] border-foreground">
+      <Card title="About" class="border-[1px] border-foreground">
         <p>
           I'm a Computer Engineering student at <a
             href="https://engg.dypvp.edu.in/"
@@ -111,14 +157,14 @@ const technologies = [
           with Linux & exploring its possibilities.
         </p>
       </Card>
-      <Card title="Read my blog!" class="yellow-card">
+      <Card title="Blog" class="yellow-card">
         <p>
           I write about web development, Linux, and other tech stuff on my blog.
           Check it out to learn something new or to get a different perspective
           on a topic.
         </p>
         <a
-          class="flex px-3 py-2 mt-8 gap-2 bg-foreground items-center text-basecolor rounded-md text-lg transition-transform hover:-translate-y-1 hover:shadow-lg w-fit"
+          class="flex px-4 py-2 mt-8 gap-2 bg-primary items-center text-basecolor rounded-full text-lg transition-transform hover:-translate-y-1 hover:shadow-lg w-fit"
           href="/blog"
           target="_blank"
           >Read Blog
@@ -126,7 +172,7 @@ const technologies = [
         </a>
       </Card>
       <Card
-        title="Explore Playground"
+        title="Playground"
         class="playground-card relative overflow-hidden bg-background"
       >
         <p class="z-10">
@@ -145,7 +191,7 @@ const technologies = [
           name="mdi:puzzle"
         />
       </Card>
-      <Card title="My toolkit" class="border-[1px] border-foreground">
+      <Card title="Toolkit" class="border-[1px] border-foreground">
         <div class="flex gap-3 flex-wrap">
           {
             technologies.map((tech) => (
