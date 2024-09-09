@@ -14,11 +14,38 @@
     --color-base: 18 18 18;
   }
 
+  /* Spring */
+  :root.spring {
+    --color-primary: 227 92 142;
+  }
+  :root.spring.dark {
+    --color-primary: 255 128 175;
+  }
+  :root.summer {
+    --color-primary: 226 162 0;
+  }
+  :root.summer.dark {
+    --color-primary: 246 212 123;
+  }
   :root.monsoon {
     --color-primary: 65 117 5;
   }
   :root.monsoon.dark {
     --color-primary: 139 191 81;
+  }
+  :root.autumn {
+    --color-primary: 213 137 54;
+  }
+  :root.autumn.dark {
+    --color-primary: 234 177 116;
+  }
+  :root.winter {
+    /* --color-primary: 92 163 206; */
+    --color-primary: 62 131 174;
+  }
+  :root.winter.dark {
+    --color-primary: 115 201 255;
+    /* --color-primary: 62 131 174; */
   }
 }
 
