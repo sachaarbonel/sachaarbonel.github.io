@@ -1,120 +1,102 @@
 ---
 import type { CollectionEntry } from 'astro:content'
-import BaseHead from '../components/BaseHead.astro'
-import Header from '../components/Header.astro'
-import Footer from '../components/Footer.astro'
 import FormattedDate from '../components/FormattedDate.astro'
-import '@fontsource/silkscreen'
-import '@fontsource/allura'
-import '@fontsource-variable/manrope'
 import { Icon } from 'astro-icon/components'
+import BaseLayout from './BaseLayout.astro'
 
 type Props = CollectionEntry<'blog'>['data']
 
 const { title, description, pubDate, updatedDate, heroImage } = Astro.props
 ---
 
-<html lang="en" class="monsoon">
-  <head>
-    <BaseHead title={title} description={description} />
-  </head>
-
-  <body class="text-foreground bg-basecolor">
-    <Header />
-    <main>
-      <article>
-        <div class="bg-background pt-28 md:pt-32 pb-8 md:pb-16">
-          <div class="app-container">
-            <p class="font-title text-4xl text-foreground/70">
-              <a href="/blog" class="hover:text-primary transition-colors"
-                >Blog</a
-              > /
+<BaseLayout title={title} description={description}>
+  <main>
+    <article>
+      <div class="bg-background pt-28 md:pt-32 pb-8 md:pb-16">
+        <div class="app-container">
+          <p class="font-title text-4xl text-foreground/70">
+            <a href="/blog" class="hover:text-primary transition-colors">Blog</a
+            > /
+          </p>
+          <h1
+            class="font-semibold text-5xl md:text-6xl leading-snug md:w-4/5 py-6"
+          >
+            {title}
+          </h1>
+          <hr
+            class="bg-primary/50 text-primary border-none h-[1.5px] rounded-full md:mt-2 mb-4"
+          />
+          <div class="flex gap-12 flex-wrap items-center">
+            <div class="text-lg flex items-center gap-2 flex-nowrap">
+              <Icon name="mdi:calendar" size={24} class="inline-block" />
+              <FormattedDate date={pubDate} />
+              <!-- {
+                  updatedDate && (
+                    <span>
+                      <Icon
+                        name="mdi:calendar-month"
+                        size={32}
+                        class="inline-block"
+                      />
+                      Last updated on <FormattedDate date={updatedDate} />
+                    </span>
+                  )
+                } -->
+            </div>
+            <div class="text-lg flex items-center gap-2 flex-nowrap">
+              <Icon name="mdi:access-time" size={24} class="inline-block" />
+              12 mins
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="app-container flex flex-col md:flex-row justify-between gap-8 py-8 md:py-12"
+      >
+        <div class="blog-content md:max-w-3xl w-full md:w-3/4">
+          <slot />
+        </div>
+        <div class="md:w-1/4">
+          <img src={heroImage} alt={title} class="rounded-3xl shadow-lg mb-8" />
+          <div
+            class="bg-background p-8 rounded-3xl sticky top-24 transition-opacity"
+            id="mailing-list-callout"
+          >
+            <h2 class="font-title text-4xl">Join My Mailing List</h2>
+            <p class="pt-6">
+              Get the latest posts delivered right to your inbox. Plus a few
+              interesting finds I discover along the way.
             </p>
-            <h1
-              class="font-semibold text-5xl md:text-6xl leading-snug md:w-4/5 py-6"
-            >
-              {title}
-            </h1>
-            <hr
-              class="bg-primary/50 text-primary border-none h-[1.5px] rounded-full md:mt-2 mb-4"
-            />
-            <div class="flex gap-12 flex-wrap items-center">
-              <div class="text-lg flex items-center gap-2 flex-nowrap">
-                <Icon name="mdi:calendar" size={24} class="inline-block" />
-                <FormattedDate date={pubDate} />
-                <!-- {
-                    updatedDate && (
-                      <span>
-                        <Icon
-                          name="mdi:calendar-month"
-                          size={32}
-                          class="inline-block"
-                        />
-                        Last updated on <FormattedDate date={updatedDate} />
-                      </span>
-                    )
-                  } -->
-              </div>
-              <div class="text-lg flex items-center gap-2 flex-nowrap">
-                <Icon name="mdi:access-time" size={24} class="inline-block" />
-                12 mins
-              </div>
-            </div>
+            <a
+              class="btn-primary"
+              href="https://yashjawale.beehiiv.com/subscribe"
+              target="_blank"
+              >Subscribe
+            </a>
           </div>
         </div>
-        <div
-          class="app-container flex flex-col md:flex-row justify-between gap-8 py-8 md:py-12"
-        >
-          <div class="blog-content md:max-w-3xl w-full md:w-3/4">
-            <slot />
-          </div>
-          <div class="md:w-1/4">
-            <img
-              src={heroImage}
-              alt={title}
-              class="rounded-3xl shadow-lg mb-8"
-            />
-            <div
-              class="bg-background p-8 rounded-3xl sticky top-24 transition-opacity"
-              id="mailing-list-callout"
-            >
-              <h2 class="font-title text-4xl">Join My Mailing List</h2>
-              <p class="pt-6">
-                Get the latest posts delivered right to your inbox. Plus a few
-                interesting finds I discover along the way.
-              </p>
-              <a
-                class="btn-primary"
-                href="https://yashjawale.beehiiv.com/subscribe"
-                target="_blank"
-                >Subscribe
-              </a>
-            </div>
-          </div>
-        </div>
-      </article>
-    </main>
-    <style>
-      .callout-dulled {
-        @apply md:opacity-50 saturate-0 hover:saturate-100 hover:opacity-100;
+      </div>
+    </article>
+  </main>
+  <style>
+    .callout-dulled {
+      @apply md:opacity-50 saturate-0 hover:saturate-100 hover:opacity-100;
+    }
+  </style>
+  <script is:inline>
+    window.onscroll = function () {
+      if (
+        document.body.scrollTop > 768 ||
+        document.documentElement.scrollTop > 768
+      ) {
+        document
+          .getElementById('mailing-list-callout')
+          .classList.add('callout-dulled')
+      } else {
+        document
+          .getElementById('mailing-list-callout')
+          .classList.remove('callout-dulled')
       }
-    </style>
-    <script is:inline>
-      window.onscroll = function () {
-        if (
-          document.body.scrollTop > 768 ||
-          document.documentElement.scrollTop > 768
-        ) {
-          document
-            .getElementById('mailing-list-callout')
-            .classList.add('callout-dulled')
-        } else {
-          document
-            .getElementById('mailing-list-callout')
-            .classList.remove('callout-dulled')
-        }
-      }
-    </script>
-    <Footer />
-  </body>
-</html>
+    }
+  </script>
+</BaseLayout>

@@ -1,14 +1,8 @@
 ---
-import BaseHead from '../components/BaseHead.astro'
-import Header from '../components/Header.astro'
-import Footer from '../components/Footer.astro'
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts'
-import '@fontsource/silkscreen'
-import '@fontsource/allura'
-import '@fontsource-variable/manrope'
 import { Icon } from 'astro-icon/components'
 import Card from '../components/Card.astro'
 import getSeason from '../utils/getSeason'
+import BaseLayout from '../layouts/BaseLayout.astro'
 
 const technologies = [
   {
@@ -93,122 +87,112 @@ const socials = [
 ]
 ---
 
-<!doctype html>
-<html lang="en" class={getSeason()}>
-  <head>
-    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-  </head>
-  <body class="text-foreground bg-basecolor">
-    <Header title={SITE_TITLE} />
-    <main class="bg-background">
-      <div
-        class="app-container relative min-h-[96vh] flex flex-col pt-36 md:pt-0 gap-4 md:gap-12 md:justify-center overflow-y-clip"
-      >
-        <p class="font-light text-primary text-2xl">Hi, I'm</p>
-        <h1 class="font-title text-6xl md:text-8xl">Yash Jawale</h1>
-        <p class="font-light md:w-1/2">
-          A computer engineering student in India. Working his way through the
-          world of web development and Linux.
-        </p>
-        <div class="flex flex-wrap gap-2">
-          {
-            socials.map((social) => (
-              <a
-                class="text-sm block px-2 py-1 rounded-full border-[1px] border-foreground hover:bg-primary/30"
-                href={social.link}
-                target="_blank"
-              >
-                {social.name}
-              </a>
-            ))
-          }
-        </div>
-        <img
-          class="absolute opacity-30 md:opacity-70 w-[620px] ld:w-[800px] right-0 top-auto bottom-[-80px] md:bottom-auto md:top-24"
-          src={`/seasons/${getSeason()}.svg`}
-          alt=""
-        />
-      </div>
-    </main>
-
-    <section class="app-container py-20 grid md:grid-cols-2 gap-10">
-      <Card title="About" class="border-[1px] border-foreground/30">
-        <p>
-          I'm a Computer Engineering student at <a
-            href="https://engg.dypvp.edu.in/"
-            class="underline"
-            target="_blank">DIT, Pimpri</a
-          >. Anything even remotely related to computers excites me. I'm
-          proficient in web development & have been making websites for
-          businesses from a few years.
-        </p><p>
-          I'm always learning about new stuff in web. I enjoy messing around
-          with Linux & exploring its possibilities.
-        </p>
-      </Card>
-      <Card
-        title="Blog"
-        class="bg-radient-circle-tl from-primary/40 from-0% to-transparent to-92%"
-      >
-        <p>
-          I write about web development, Linux, and other tech stuff on my blog.
-          Check it out to learn something new or to get a different perspective
-          on a topic.
-        </p>
-        <a class="btn-primary" href="/blog" target="_blank"
-          >Read Blog
-          <Icon size={24} name="mdi:arrow-right" />
-        </a>
-      </Card>
-      <Card
-        title="Playground"
-        class="playground-card relative overflow-hidden bg-background"
-      >
-        <p class="z-10">
-          Interactive simulators for Computer Science concepts.
-        </p>
-        <a class="btn-primary" href="/blog" target="_blank"
-          >Go to Playground
-          <Icon size={24} name="mdi:open-in-new" />
-        </a>
-        <Icon
-          size={240}
-          class="text-primary absolute bottom-0 -right-8 rotate-45 opacity-20"
-          name="mdi:puzzle"
-        />
-      </Card>
-      <Card title="Toolkit" class="border-[1px] border-foreground/30">
-        <div class="flex gap-2 flex-wrap">
-          {
-            technologies.map((tech) => (
-              <a
-                class="border-[1px] border-foreground px-3 py-2 rounded-full text-xs transition-colors duration-75  hover:bg-primary/30"
-                href={tech.link}
-                target="_blank"
-              >
-                {tech.name}
-              </a>
-            ))
-          }
-        </div>
-      </Card>
-    </section>
-    <section
-      class="app-container pb-20 flex flex-col justify-center items-center gap-8"
+<BaseLayout>
+  <main class="bg-background">
+    <div
+      class="app-container relative min-h-[96vh] flex flex-col pt-36 md:pt-0 gap-4 md:gap-12 md:justify-center overflow-y-clip"
     >
-      <h2 class="font-title text-5xl pb-8 text-center">Get in Touch</h2>
-      <a class="underline text-xl" href="mailto:yash25.j@gmail.com"
-        >yash25.j@gmail.com</a
-      >
-      <a
-        class="btn-primary btn-lg"
-        href="https://yashjawale.github.io/resume/cv.pdf"
-        download
-        target="_blank"
-        >Download Resume
-        <Icon size={24} name="mdi:tray-download" />
+      <p class="font-light text-primary text-2xl">Hi, I'm</p>
+      <h1 class="font-title text-6xl md:text-8xl">Yash Jawale</h1>
+      <p class="font-light md:w-1/2">
+        A computer engineering student in India. Working his way through the
+        world of web development and Linux.
+      </p>
+      <div class="flex flex-wrap gap-2">
+        {
+          socials.map((social) => (
+            <a
+              class="text-sm block px-2 py-1 rounded-full border-[1px] border-foreground hover:bg-primary/30"
+              href={social.link}
+              target="_blank"
+            >
+              {social.name}
+            </a>
+          ))
+        }
+      </div>
+      <img
+        class="absolute opacity-30 md:opacity-70 w-[620px] ld:w-[800px] right-0 top-auto bottom-[-80px] md:bottom-auto md:top-24"
+        src={`/seasons/${getSeason()}.svg`}
+        alt=""
+      />
+    </div>
+  </main>
+
+  <section class="app-container py-20 grid md:grid-cols-2 gap-10">
+    <Card title="About" class="border-[1px] border-foreground/30">
+      <p>
+        I'm a Computer Engineering student at <a
+          href="https://engg.dypvp.edu.in/"
+          class="underline"
+          target="_blank">DIT, Pimpri</a
+        >. Anything even remotely related to computers excites me. I'm
+        proficient in web development & have been making websites for businesses
+        from a few years.
+      </p><p>
+        I'm always learning about new stuff in web. I enjoy messing around with
+        Linux & exploring its possibilities.
+      </p>
+    </Card>
+    <Card
+      title="Blog"
+      class="bg-radient-circle-tl from-primary/40 from-0% to-transparent to-92%"
+    >
+      <p>
+        I write about web development, Linux, and other tech stuff on my blog.
+        Check it out to learn something new or to get a different perspective on
+        a topic.
+      </p>
+      <a class="btn-primary" href="/blog" target="_blank"
+        >Read Blog
+        <Icon size={24} name="mdi:arrow-right" />
       </a>
-    </section>
-    <Footer />
-  </body>
-</html>
+    </Card>
+    <Card
+      title="Playground"
+      class="playground-card relative overflow-hidden bg-background"
+    >
+      <p class="z-10">Interactive simulators for Computer Science concepts.</p>
+      <a class="btn-primary" href="/blog" target="_blank"
+        >Go to Playground
+        <Icon size={24} name="mdi:open-in-new" />
+      </a>
+      <Icon
+        size={240}
+        class="text-primary absolute bottom-0 -right-8 rotate-45 opacity-20"
+        name="mdi:puzzle"
+      />
+    </Card>
+    <Card title="Toolkit" class="border-[1px] border-foreground/30">
+      <div class="flex gap-2 flex-wrap">
+        {
+          technologies.map((tech) => (
+            <a
+              class="border-[1px] border-foreground px-3 py-2 rounded-full text-xs transition-colors duration-75  hover:bg-primary/30"
+              href={tech.link}
+              target="_blank"
+            >
+              {tech.name}
+            </a>
+          ))
+        }
+      </div>
+    </Card>
+  </section>
+  <section
+    class="app-container pb-20 flex flex-col justify-center items-center gap-8"
+  >
+    <h2 class="font-title text-5xl pb-8 text-center">Get in Touch</h2>
+    <a class="underline text-xl" href="mailto:yash25.j@gmail.com"
+      >yash25.j@gmail.com</a
+    >
+    <a
+      class="btn-primary btn-lg"
+      href="https://yashjawale.github.io/resume/cv.pdf"
+      download
+      target="_blank"
+      >Download Resume
+      <Icon size={24} name="mdi:tray-download" />
+    </a>
+  </section>
+</BaseLayout>

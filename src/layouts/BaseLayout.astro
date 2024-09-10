@@ -1,0 +1,31 @@
+---
+import BaseHead from '../components/BaseHead.astro'
+import Header from '../components/Header.astro'
+import Footer from '../components/Footer.astro'
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts'
+import '@fontsource/allura'
+import '@fontsource-variable/manrope'
+import getSeason from '../utils/getSeason'
+const { title, description }: Props = Astro.props
+
+// Types for props
+interface Props {
+  title?: string
+  description?: string
+}
+---
+
+<!doctype html>
+<html lang="en" class={getSeason()}>
+  <head>
+    <BaseHead
+      title={title ?? SITE_TITLE}
+      description={description ?? SITE_DESCRIPTION}
+    />
+  </head>
+  <body class="text-foreground bg-basecolor">
+    <Header title={SITE_TITLE} />
+    <slot />
+    <Footer />
+  </body>
+</html>
