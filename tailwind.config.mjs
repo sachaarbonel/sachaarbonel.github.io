@@ -7,23 +7,8 @@ export default {
 	theme: {
 		extend: {
 			colors: {
-				primary: 'rgb(var(--color-primary) / <alpha-value>)',
 				foreground: 'rgb(var(--color-foreground) / <alpha-value>)',
 				background: 'rgb(var(--color-background) / <alpha-value>)',
-				basecolor: 'rgb(var(--color-base) / <alpha-value>)',
-			},
-			fontFamily: {
-				title: ["Silkscreen", ...defaultTheme.fontFamily.sans],
-				sans: ["Manrope", ...defaultTheme.fontFamily.sans]
-			},
-			keyframes: {
-				wiggle: {
-					// '0%, 100%': { transform: '' },
-					'50%': { opacity: '10%' },
-				}
-			},
-			animation: {
-				wiggle: 'wiggle 1s ease infinite',
 			}
 		},
 	},

@@ -20,61 +20,14 @@ const links = [
 ---
 
 <header class="fixed top-0 w-full z-40">
-  <nav class="bg-background text-foreground transition-colors duration-300">
+  <nav class="bg-background text-foreground">
     <div
       class="container mx-auto flex px-6 justify-between items-center py-4 sm:px-20 2xl:px-16"
     >
       <h2>
-        <a href="/" class="text-foreground"
-          ><svg
-            role="img"
-            width="40"
-            viewBox="0 0 67 45"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            class="main-logo group"
-          >
-            <title>Home</title>
-            <rect
-              x="18.6135"
-              y="31.6147"
-              width="34.7861"
-              height="8.08374"
-              rx="1.79536"
-              transform="rotate(-45 18.6135 31.6147)"
-              class="yellow-logo-bar group-hover:animate-pulse duration-75"
-              style="animation-duration: 800ms; transition-timing-function: ease;"
-              fill="#FFB800"></rect>
-            <rect
-              x="45.6096"
-              y="37.8223"
-              width="21.9932"
-              height="8.18162"
-              rx="1.79536"
-              transform="rotate(-45 45.6096 37.8223)"
-              fill="currentColor"></rect>
-            <rect
-              width="22.9509"
-              height="8.12147"
-              rx="1.79536"
-              transform="matrix(-0.707107 -0.707107 -0.707107 0.707107 66.9343 16.6172)"
-              fill="currentColor"></rect>
-            <rect
-              width="23.2013"
-              height="8.39914"
-              rx="1.79536"
-              transform="matrix(-0.707107 -0.707107 -0.707107 0.707107 23.2441 38.6763)"
-              fill="currentColor"></rect>
-            <rect
-              x="1.31689"
-              y="16.8687"
-              width="21.9932"
-              height="7.76636"
-              rx="1.79536"
-              transform="rotate(-45 1.31689 16.8687)"
-              fill="currentColor"></rect>
-          </svg><span class="hidden">Home</span></a
-        >
+        <a href="/" class="text-foreground">
+          <img src="/newlogo.svg" alt="YJ." />
+        </a>
       </h2>
       <div class="gap-14 hidden md:flex items-center">
         {
@@ -103,7 +56,7 @@ const links = [
 
       <!-- Mobile nav -->
       <div
-        class="translate-x-full fixed top-0 right-0 bg-white dark:bg-neutral-900 h-screen w-5/6 px-8 py-6 transition-transform z-40 border-l-[1px] border-background"
+        class="translate-x-full fixed top-0 right-0 bg-white shadow-xl dark:bg-neutral-900 h-screen w-5/6 px-8 py-6 transition-transform z-40 border-l-[1px] border-background"
         id="mobile-menu"
       >
         <!-- <div class="flex justify-between">
