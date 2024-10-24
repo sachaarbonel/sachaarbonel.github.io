@@ -16,40 +16,36 @@ const links = [
     display: 'Projects',
     location: '/projects',
   },
+  {
+    display: 'Playground',
+    location: '/playground',
+  },
+  {
+    display: 'Contact',
+    location: 'mailto:yash25.j@gmail.com',
+  },
 ]
 ---
 
 <header class="fixed top-0 w-full z-40">
   <nav class="bg-background text-foreground">
     <div
-      class="container mx-auto flex px-6 justify-between items-center py-4 sm:px-20 2xl:px-16"
+      class="container mx-auto flex px-6 justify-between items-center py-5 sm:px-20 2xl:px-16"
     >
       <h2>
         <a href="/" class="text-foreground">
-          <img src="/newlogo.svg" alt="YJ." />
+          <img src="/newlogo.svg" alt="YJ." class="h-7" />
         </a>
       </h2>
-      <div class="gap-14 hidden md:flex items-center">
+      <div class="gap-12 hidden md:flex items-center">
         {
           links.map((link) => (
-            <HeaderLink class:list="font-medium uppercase" href={link.location}>
+            <HeaderLink class="text-lg" href={link.location}>
               {link.display}
             </HeaderLink>
           ))
         }
       </div>
-      <!-- <button
-        class="md:block hidden"
-        id="theme-toggle"
-        aria-label="Toggle Dark Mode"
-      >
-        <Icon name="mdi:brightness-6" size={26} />
-      </button> -->
-      <a
-        href="mailto:yash25.j@gmail.com"
-        class="md:block hidden border-[1px] border-foreground px-4 py-2 rounded-lg font-semibold text-sm uppercase transition-colors duration-75 hover:text-basecolor hover:bg-foreground"
-        >Contact</a
-      >
       <button class="md:hidden" id="nav-open-btn">
         <Icon name="mdi:menu" size={32} />
       </button>
@@ -59,31 +55,17 @@ const links = [
         class="translate-x-full fixed top-0 right-0 bg-white shadow-xl dark:bg-neutral-900 h-screen w-5/6 px-8 py-6 transition-transform z-40 border-l-[1px] border-background"
         id="mobile-menu"
       >
-        <!-- <div class="flex justify-between">
-          <button>
-            <Icon name="mdi:brightness-6" size={32} />
-          </button>
-          <button id="nav-close-btn">
-            <Icon name="mdi:close" size={32} />
-          </button>
-        </div> -->
         <button id="nav-close-btn" class="ml-auto block">
           <Icon name="mdi:close" size={32} />
         </button>
-        <div class="flex flex-col h-full items-start gap-8 pt-28">
+        <div class="flex flex-col h-full items-start gap-8 pt-16">
           {
             links.map((link) => (
-              <HeaderLink class="text-5xl font-light" href={link.location}>
+              <HeaderLink class="text-4xl font-light" href={link.location}>
                 {link.display}
               </HeaderLink>
             ))
           }
-          <HeaderLink
-            class="text-5xl font-light"
-            href="mailto:yash25.j@gmail.com"
-          >
-            Contact
-          </HeaderLink>
           <ThemeSelector class:list="mt-4" />
         </div>
       </div>

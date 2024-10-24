@@ -17,7 +17,7 @@ const { class: className } = Astro.props
   >
     <Icon
       name="mdi:brightness-auto"
-      class:list="duration-0 text-3xl md:text-xl"
+      class:list="duration-0 text-2xl md:text-xl"
     />
   </button>
   <!-- class="p-2 text-primary bg-primary bg-opacity-10 rounded-full" -->
@@ -28,7 +28,7 @@ const { class: className } = Astro.props
   >
     <Icon
       name="mdi:white-balance-sunny"
-      class:list="duration-0 text-3xl md:text-xl"
+      class:list="duration-0 text-2xl md:text-xl"
     />
   </button>
   <button
@@ -38,14 +38,14 @@ const { class: className } = Astro.props
   >
     <Icon
       name="mdi:moon-and-stars"
-      class:list="duration-0 text-3xl md:text-xl"
+      class:list="duration-0 text-2xl md:text-xl"
     />
   </button>
 </div>
 
 <style>
   button.theme-button {
-    @apply p-2 md:p-1 rounded-full duration-0;
+    @apply p-1 rounded-full duration-0;
   }
   button.active {
     @apply text-background bg-foreground bg-opacity-90;
