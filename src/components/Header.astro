@@ -2,36 +2,12 @@
 import HeaderLink from './HeaderLink.astro'
 import { Icon } from 'astro-icon/components'
 import ThemeSelector from './ThemeSelector.astro'
-
-const links = [
-  {
-    display: 'Home',
-    location: '/',
-  },
-  {
-    display: 'Blog',
-    location: '/blog',
-  },
-  {
-    display: 'Projects',
-    location: '/projects',
-  },
-  {
-    display: 'Playground',
-    location: '/playground',
-  },
-  {
-    display: 'Contact',
-    location: 'mailto:yash25.j@gmail.com',
-  },
-]
+import { WebsiteLinks } from '../consts'
 ---
 
 <header class="fixed top-0 w-full z-40">
   <nav class="bg-background text-foreground">
-    <div
-      class="container mx-auto flex px-6 justify-between items-center py-5 sm:px-20 2xl:px-16"
-    >
+    <div class="app-container flex justify-between items-center py-5">
       <h2>
         <a href="/" class="text-foreground">
           <img src="/newlogo.svg" alt="YJ." class="h-7" />
@@ -39,9 +15,9 @@ const links = [
       </h2>
       <div class="gap-12 hidden md:flex items-center">
         {
-          links.map((link) => (
-            <HeaderLink class="text-lg" href={link.location}>
-              {link.display}
+          WebsiteLinks.map((link) => (
+            <HeaderLink class="text-lg" href={link.url}>
+              {link.name}
             </HeaderLink>
           ))
         }
@@ -60,9 +36,9 @@ const links = [
         </button>
         <div class="flex flex-col h-full items-start gap-8 pt-16">
           {
-            links.map((link) => (
-              <HeaderLink class="text-4xl font-light" href={link.location}>
-                {link.display}
+            WebsiteLinks.map((link) => (
+              <HeaderLink class="text-4xl font-light" href={link.url}>
+                {link.name}
               </HeaderLink>
             ))
           }
@@ -71,12 +47,6 @@ const links = [
       </div>
     </div>
   </nav>
-  <!-- 
-  <style lang="css">
-    [data-icon] {
-      width: 26px;
-    }
-  </style> -->
 
   <script>
     function toggleNav() {

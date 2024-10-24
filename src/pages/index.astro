@@ -2,7 +2,14 @@
 import BaseHead from '../components/BaseHead.astro'
 import Header from '../components/Header.astro'
 import Footer from '../components/Footer.astro'
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts'
+import { SITE_TITLE, SITE_DESCRIPTION, SocialLinks } from '../consts'
+import { Icon } from 'astro-icon/components'
+import BlogCard from '../components/BlogCard.astro'
+import { getCollection } from 'astro:content'
+
+const posts = (await getCollection('blog'))
+  .sort((a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf())
+  .slice(0, 4)
 ---
 
 <!doctype html>
@@ -10,17 +17,73 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts'
   <head>
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
   </head>
-  <body class="text-foreground bg-basecolor">
+  <body class="text-foreground bg-background">
     <Header title={SITE_TITLE} />
     <main
-      class="bg-background flex flex-col gap-12 justify-center items-center min-h-[96vh] p-4 relative"
+      class="app-container flex flex-col justify-center min-h-[88vh] py-36 relative"
     >
-      <h1
-        class="font-title text-7xl md:text-[112px] text-center leading-none px-4 hero-title z-10"
-      >
-        Yash Jawale
-      </h1>
+      <p class="block text-3xl opacity-60 mt-8">Hi!</p>
+      <h1 class="text-6xl md:text-8xl leading-none">I'm Yash Jawale</h1>
+      <p class="text-2xl md:w-1/2 font-light my-4">
+        A student & software engineer specialising in Web Development.
+      </p>
+      <div class="flex flex-wrap gap-8 my-3">
+        {
+          SocialLinks.map((link) => (
+            <a class="text-xl font-normal" href={link.url} target="_blank">
+              {link.name}
+            </a>
+          ))
+        }
+      </div>
+      <a
+        class="w-fit flex gap-2 bg-foreground text-background px-4 py-2 rounded items-center mt-4 hover:opacity-75"
+        href="https://yashjawale.github.io/resume/cv.pdf"
+        download
+        target="_blank"
+        >Download Resume
+        <Icon size={20} name="mdi:arrow-collapse-down" />
+      </a>
     </main>
+
+    <!-- Recent Posts Section -->
+    <section class="app-container">
+      <h2 class="text-4xl">Recent Posts</h2>
+      <div
+        class="grid my-6 md:grid-cols-4 border-t border-l border-foreground border-opacity-25"
+      >
+        {
+          posts.map((post) => {
+            return <BlogCard post={post} />
+          })
+        }
+      </div>
+      <a
+        class="w-fit flex gap-2 px-4 py-2 items-center mt-4 border-foreground/50 border rounded hover:bg-foreground/5 transition-colors"
+        href="https://yashjawale.github.io/resume/cv.pdf"
+        download
+        target="_blank"
+        >Read All
+        <Icon size={20} name="mdi:arrow-right" />
+      </a>
+    </section>
+
+    <!-- Recent Posts Section -->
+    <section class="app-container my-24">
+      <h2 class="text-4xl">Explore Playground</h2>
+      <p class="text-xl md:w-1/2 font-light my-4">
+        A collection of interactive simulators demonstrating CS Concepts. Feel
+        free to contribute your favourite problems on GitHub!
+      </p>
+      <a
+        class="w-fit flex gap-2 px-4 py-2 items-center mt-4 border-foreground/50 border rounded hover:bg-foreground/5 transition-colors"
+        href="https://yashjawale.github.io/resume/cv.pdf"
+        download
+        target="_blank"
+        >Go to Playground
+        <Icon size={20} name="mdi:arrow-right" />
+      </a>
+    </section>
     <Footer />
   </body>
 </html>

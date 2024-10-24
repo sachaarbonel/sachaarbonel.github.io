@@ -1,24 +1,25 @@
 ---
+import { Icon } from 'astro-icon/components'
 import FormattedDate from './FormattedDate.astro'
 
 const { post } = Astro.props
 ---
 
-<!-- <a href={`/blog/${post.slug}/`} class="block bg-background"> -->
 <a
   href={`/blog/${post.slug}/`}
-  class="block border border-foreground rounded-lg overflow-hidden hover:bg-background h-full"
+  class="flex flex-col gap-4 w-full p-3 border-b border-r border-black border-opacity-25 hover:bg-foreground/5 transition-colors"
 >
-  <img width={720} height={360} src={post.data.heroImage} alt="" />
-  <div class="p-4">
-    <h4 class="text-2xl font-semibold py-2 leading-7 -mt-2">
-      {post.data.title}
-    </h4>
-    <!-- <p class="py-2">
-      {post.data.description}
-    </p> -->
-    <p>
+  <img src={post.data.heroImage} alt="" class="w-full h-44 object-cover" />
+  <h4 class="text-2xl">
+    {post.data.title}
+  </h4>
+  <p class="font-light line-clamp-2">
+    {post.data.description}
+  </p>
+  <div class="flex justify-between items-center mt-auto">
+    <p class="uppercase font-light">
       <FormattedDate date={post.data.pubDate} />
     </p>
+    <Icon name="mdi:arrow-right" size={24} />
   </div>
 </a>
