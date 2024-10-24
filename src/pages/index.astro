@@ -30,7 +30,11 @@ const posts = (await getCollection('blog'))
       <div class="flex flex-wrap gap-8 my-3">
         {
           SocialLinks.map((link) => (
-            <a class="text-xl font-normal" href={link.url} target="_blank">
+            <a
+              class="text-xl font-normal hover:underline underline-offset-4"
+              href={link.url}
+              target="_blank"
+            >
               {link.name}
             </a>
           ))

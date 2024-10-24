@@ -38,7 +38,7 @@ export const WebsiteLinks = [
   },
   {
     name: 'Playground',
-    url: '/playground',
+    url: 'https://yashjawale.github.io/playground',
   },
   {
     name: 'Contact',
