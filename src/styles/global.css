@@ -9,8 +9,12 @@
   }
   :root[class~='dark'] {
     --color-foreground: 250 250 250;
-    --color-background: 29 29 29;
+    --color-background: 32 32 32;
   }
+}
+
+.dark .logosvg {
+  filter: brightness(0) invert(1);
 }
 
 .app-container {

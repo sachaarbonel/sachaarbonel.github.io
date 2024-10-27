@@ -17,7 +17,7 @@ const posts = (await getCollection('blog'))
   <head>
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
   </head>
-  <body class="text-foreground bg-background">
+  <body class="text-foreground bg-background transition-colors">
     <Header title={SITE_TITLE} />
     <main
       class="app-container flex flex-col justify-center min-h-[88vh] py-36 relative"

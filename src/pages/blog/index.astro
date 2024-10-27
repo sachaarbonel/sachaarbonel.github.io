@@ -18,7 +18,7 @@ const posts = (await getCollection('blog')).sort(
   <head>
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
   </head>
-  <body class="text-foreground bg-background">
+  <body class="text-foreground bg-background transition-colors">
     <Header />
     <div class="bg-background">
       <main class="app-container pt-36">
@@ -32,7 +32,7 @@ const posts = (await getCollection('blog')).sort(
     </div>
     <section class="app-container py-12">
       <ul
-        class="grid my-6 md:grid-cols-4 border-t border-l border-foreground border-opacity-25"
+        class="grid my-6 md:grid-cols-4 border-t border-l border-foreground/25"
       >
         {
           posts.map((post) => (
