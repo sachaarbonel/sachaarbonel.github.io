@@ -4,16 +4,16 @@ import BaseHead from '../components/BaseHead.astro'
 import Header from '../components/Header.astro'
 import Footer from '../components/Footer.astro'
 import FormattedDate from '../components/FormattedDate.astro'
-import '@fontsource/silkscreen'
-import '@fontsource-variable/manrope'
-import { Icon } from 'astro-icon/components'
+import type { MarkdownHeading } from 'astro'
+import TableOfContents from '../components/TableOfContents.astro'
 
-type Props = CollectionEntry<'blog'>['data']
+type Props = CollectionEntry<'blog'>['data'] & { headings: MarkdownHeading[] }
 
-const { title, description, pubDate, updatedDate, heroImage } = Astro.props
+const { title, description, pubDate, updatedDate, heroImage, headings } =
+  Astro.props
 ---
 
-<html lang="en">
+<html lang="en" class="scroll-smooth">
   <head>
     <BaseHead title={title} description={description} />
   </head>
@@ -22,74 +22,37 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props
     <Header />
     <main>
       <article>
-        <div class="bg-background pt-28 md:pt-32 pb-8 md:pb-16">
-          <div class="app-container">
-            <p class="font-title uppercase text-3xl opacity-70">
-              <a href="/blog" class="hover:text-primary transition-colors"
-                >Blog</a
-              > /
-            </p>
-            <h1
-              class="font-semibold text-5xl md:text-6xl leading-snug md:w-4/5 py-6"
-            >
-              {title}
-            </h1>
-            <hr
-              class="bg-foreground h-[1.5px] opacity-50 rounded-full md:mt-2 mb-4"
-            />
-            <div class="flex gap-12 flex-wrap items-center">
-              <div class="text-lg flex items-center gap-2 flex-nowrap">
-                <Icon name="mdi:calendar" size={24} class="inline-block" />
-                <FormattedDate date={pubDate} />
-                <!-- {
+        <div
+          class="app-container flex flex-col md:flex-row justify-between gap-8 py-24 relative"
+        >
+          <div class="grow w-full md:max-w-[85ch]">
+            <div>
+              <div>
+                <h1 class="text-5xl leading-snug pt-7">
+                  {title}
+                </h1>
+                <div
+                  class="text-lg uppercase flex items-center gap-2 flex-nowrap py-6"
+                >
+                  <FormattedDate date={pubDate} />
+                  {
                     updatedDate && (
-                      <span>
-                        <Icon
-                          name="mdi:calendar-month"
-                          size={32}
-                          class="inline-block"
-                        />
+                      <span class="italic capitalize">
                         Last updated on <FormattedDate date={updatedDate} />
                       </span>
                     )
-                  } -->
-              </div>
-              <div class="text-lg flex items-center gap-2 flex-nowrap">
-                <Icon name="mdi:access-time" size={24} class="inline-block" />
-                12 mins
+                  }
+                </div>
+                <img src={heroImage} alt={title} class="rounded-lg mb-8" />
               </div>
             </div>
+            <div class="blog-content">
+              <slot />
+            </div>
           </div>
-        </div>
-        <div
-          class="app-container flex flex-col md:flex-row justify-between gap-8 py-8 md:py-12"
-        >
-          <div class="blog-content md:max-w-3xl w-full md:w-3/4">
-            <slot />
-          </div>
-          <div class="md:w-1/4">
-            <img
-              src={heroImage}
-              alt={title}
-              class="rounded-lg shadow-lg mb-8"
-            />
-            <div
-              class="bg-background p-8 rounded-lg sticky top-24 transition-opacity"
-              id="mailing-list-callout"
-            >
-              <h2 class="font-title uppercase text-4xl">
-                Join My Mailing List
-              </h2>
-              <p class="py-6">
-                Get the latest posts delivered right to your inbox. Plus a few
-                interesting finds I discover along the way.
-              </p>
-              <a
-                class="px-3 py-2 gap-2 bg-foreground text-basecolor rounded-md uppercase font-medium transition-opacity hover:opacity-70"
-                href="https://yashjawale.beehiiv.com/subscribe"
-                target="_blank"
-                >Subscribe
-              </a>
+          <div class="md:w-1/4 relative">
+            <div class="sticky top-0 md:top-28">
+              <TableOfContents headings={headings} />
             </div>
           </div>
         </div>
