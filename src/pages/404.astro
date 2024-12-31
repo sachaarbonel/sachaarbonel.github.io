@@ -1,6 +1,6 @@
 ---
 import BaseHead from '../components/BaseHead.astro'
-import Header from '../components/Header.astro'
+import Navbar from '../components/Navbar.astro'
 import Footer from '../components/Footer.astro'
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts'
 import '@fontsource-variable/manrope';
@@ -13,7 +13,7 @@ import '@fontsource-variable/jetbrains-mono';
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
   </head>
   <body class="text-foreground bg-basecolor">
-    <Header title={SITE_TITLE} />
+    <Navbar title={SITE_TITLE} />
     <div class="bg-background">
       <main
         class="app-container h-[95vh] flex flex-col gap-6 justify-center py-56 items-center"
