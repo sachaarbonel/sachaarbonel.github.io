@@ -5,8 +5,8 @@ import Footer from '../../components/Footer.astro'
 import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts'
 import { getCollection } from 'astro:content'
 import BlogCard from '../../components/BlogCard.astro'
-import '@fontsource/silkscreen'
-import '@fontsource-variable/manrope'
+import '@fontsource-variable/manrope';
+import '@fontsource-variable/jetbrains-mono';
 
 const posts = (await getCollection('blog')).sort(
   (a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
@@ -22,10 +22,10 @@ const posts = (await getCollection('blog')).sort(
     <Header />
     <div class="bg-background">
       <main class="app-container pt-36">
-        <h1 class="text-5xl pb-8">Blog</h1>
+        <h1 class="text-5xl pb-8 font-medium">Blog</h1>
         <p class="md:w-2/3 text-lg leading-[2rem]">
           Welcome to my blog! Here you'll find a collection of my thoughts and
-          experiences. I hope you enjoy reading them as much as I enjoyed
+          experiences. I hope you enjoy reading them as much as I enjoy
           writing them.
         </p>
       </main>

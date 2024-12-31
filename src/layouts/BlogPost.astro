@@ -11,6 +11,9 @@ type Props = CollectionEntry<'blog'>['data'] & { headings: MarkdownHeading[] }
 
 const { title, description, pubDate, updatedDate, heroImage, headings } =
   Astro.props
+
+import '@fontsource-variable/manrope';
+import '@fontsource-variable/jetbrains-mono';
 ---
 
 <html lang="en" class="scroll-smooth">
@@ -25,10 +28,11 @@ const { title, description, pubDate, updatedDate, heroImage, headings } =
         <div
           class="app-container flex flex-col md:flex-row justify-between gap-8 py-24 relative"
         >
-          <div class="grow w-full md:max-w-[85ch]">
+          <!--<div class="grow w-full md:max-w-[85ch]">-->
+          <div class="grow w-full md:max-w-[75ch]">
             <div>
               <div>
-                <h1 class="text-5xl leading-snug pt-7">
+                <h1 class="text-5xl leading-snug pt-7 font-semibold">
                   {title}
                 </h1>
                 <div

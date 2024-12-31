@@ -1,24 +1,19 @@
 ---
-import { SocialLinks, WebsiteLinks } from '../consts'
+import {SocialLinks, WebsiteLinks} from '../consts'
 import ThemeSelector from './ThemeSelector.astro'
 
 const today = new Date()
 ---
 
-<!-- <footer class="bg-black">
-  <div class="container mx-auto px-6 py-3 text-white text-center">
-    &copy; {today.getFullYear()} Yash Jawale
-  </div>
-</footer> -->
-<footer class="bg-[#eaeaea] dark:bg-[#1a1a1a]">
+<footer class="bg-[#eaeaea] bg-[#2e323b] dark:bg-[#1a1a1a]">
   <div class="app-container grid md:grid-cols-3 gap-8 py-16">
     <div>
       <a href="/" class="block w-fit">
-        <img src="/newlogo.svg" alt="YJ." class="h-7 logosvg" />
+        <img src="/newlogo.svg" alt="YJ." class="h-7 logosvg"/>
       </a>
     </div>
     <div>
-      <h3 class="font-medium text-2xl">Links</h3>
+      <h3 class="font-semibold text-2xl">Links</h3>
       <div class="flex flex-wrap gap-4 mt-4">
         {
           WebsiteLinks.filter((link) => link.name !== 'Home').map((link) => (
@@ -35,7 +30,7 @@ const today = new Date()
       </div>
     </div>
     <div>
-      <h3 class="font-medium text-2xl">Socials</h3>
+      <h3 class="font-semibold text-2xl">Socials</h3>
       <div class="flex flex-wrap gap-4 mt-4">
         {
           SocialLinks.map((link) => (
@@ -53,13 +48,13 @@ const today = new Date()
     </div>
   </div>
   <div
-    class="app-container flex justify-between items-center pb-3 text-foreground text-center"
+    class="app-container flex justify-between items-center pb-3 text-[#dad6cd] text-center"
   >
     <p class="text-center md:text-left w-full">
       &copy; {today.getFullYear()} Yash Jawale
     </p>
     <div class="hidden md:block">
-      <ThemeSelector />
+      <ThemeSelector/>
     </div>
   </div>
 </footer>

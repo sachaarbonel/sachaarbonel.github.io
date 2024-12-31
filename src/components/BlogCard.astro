@@ -10,14 +10,14 @@ const { post } = Astro.props
   class="flex flex-col gap-4 w-full h-full p-3 border-b border-r border-foreground/25 hover:bg-foreground/5 transition-colors"
 >
   <img src={post.data.heroImage} alt="" class="w-full h-44 object-cover" />
-  <h4 class="text-2xl">
+  <h4 class="text-2xl font-medium">
     {post.data.title}
   </h4>
-  <p class="font-light line-clamp-2">
+  <p class="font-light line-clamp-3 opacity-80">
     {post.data.description}
   </p>
   <div class="flex justify-between items-center mt-auto">
-    <p class="uppercase font-light">
+    <p class="uppercase font-normal text-sm">
       <FormattedDate date={post.data.pubDate} />
     </p>
     <Icon name="mdi:arrow-right" size={24} />

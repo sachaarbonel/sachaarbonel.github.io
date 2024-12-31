@@ -6,7 +6,7 @@ export const SITE_DESCRIPTION = "Yash's Portfolio Website"
 
 export const SocialLinks = [
   {
-    name: 'Github',
+    name: 'GitHub',
     url: 'https://github.com/yashjawale',
   },
   {
@@ -14,7 +14,7 @@ export const SocialLinks = [
     url: 'https://www.linkedin.com/in/yashjawale/',
   },
   {
-    name: 'X/Twitter',
+    name: 'X / Twitter',
     url: 'https://twitter.com/imyashjawale',
   },
   {
