@@ -67,7 +67,6 @@ import { WebsiteLinks } from '../consts'
 
 <script is:inline>
   function reComputeTheme() {
-    console.log('Ran reComputeTheme')
     if (
       localStorage.theme === 'dark' ||
       (!('theme' in localStorage) &&
@@ -85,9 +84,7 @@ import { WebsiteLinks } from '../consts'
   }
 
   function addThemeEventListeners() {
-    console.log('Ran addThemeEventListeners')
     themeButtons = document.querySelectorAll('.theme-button')
-    console.log(themeButtons.length)
     themeButtons.forEach((button) => {
       button.addEventListener('click', () => {
         themeButtons.forEach((btn) => btn.classList.remove('active'))

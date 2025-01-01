@@ -32,7 +32,7 @@ const posts = (await getCollection('blog')).sort(
     </div>
     <section class="app-container py-12">
       <ul
-        class="grid my-6 md:grid-cols-4 border-t border-l border-foreground/25"
+        class="grid my-6 md:grid-cols-2 lg:grid-cols-4 border-t border-l border-foreground/25"
       >
         {
           posts.map((post) => (
