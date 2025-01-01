@@ -9,7 +9,7 @@ import { getCollection } from 'astro:content'
 
 const posts = (await getCollection('blog'))
   .sort((a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf())
-  .slice(0, 4)
+  .slice(0, 1)
 import '@fontsource-variable/manrope';
 import '@fontsource-variable/jetbrains-mono';
 ---
@@ -74,7 +74,7 @@ import '@fontsource-variable/jetbrains-mono';
         </p>
         <a
           class="btn-secondary"
-          href="https://yashjawale.github.io/resume/cv.pdf"
+          href="https://yashjawale.github.io/playground/"
           download
           target="_blank"
           >Go to Playground

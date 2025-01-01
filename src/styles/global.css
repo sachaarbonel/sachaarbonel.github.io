@@ -90,7 +90,7 @@
 }
 
 .blog-content img {
-  @apply mx-auto my-4 rounded shadow-lg;
+  @apply mx-auto my-4 rounded-lg;
 }
 
 .blog-content table {
@@ -115,4 +115,12 @@
 
 .blog-content kbd {
   @apply bg-background inline-block text-foreground text-sm rounded px-[6px] py-[2px] shadow-black shadow-sm mx-1 hover:scale-95 transition-transform cursor-default;
+}
+
+.blog-content figure img {
+  @apply mb-4 bg-red-700 w-full max-w-lg overflow-hidden;
+}
+
+.blog-content figcaption {
+  @apply text-sm text-center italic mb-7;
 }

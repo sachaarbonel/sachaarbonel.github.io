@@ -1,0 +1,33 @@
+---
+import '@fontsource-variable/manrope';
+import '@fontsource-variable/jetbrains-mono';
+import BaseHead from "../../components/BaseHead.astro";
+import {SITE_TITLE, SITE_DESCRIPTION} from "../../consts";
+import Navbar from "../../components/Navbar.astro";
+import Footer from "../../components/Footer.astro";
+---
+
+<!doctype html>
+<html lang="en">
+<head>
+  <BaseHead title='Projects | Yash Jawale' description={SITE_DESCRIPTION} />
+</head>
+<body class="text-foreground bg-basecolor">
+<Navbar />
+<div class="bg-background">
+  <main
+    class="app-container h-[95vh] flex flex-col gap-6 justify-center py-56 items-center"
+  >
+    <h1
+      class="font-title text-4xl text-center leading-none px-4 font-medium z-10"
+    >
+      Coming Soon
+    </h1>
+    <p class="text-lg text-center max-w-[480px]">
+      This page is still under construction.
+    </p>
+  </main>
+</div>
+<Footer />
+</body>
+</html>
