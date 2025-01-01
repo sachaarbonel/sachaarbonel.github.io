@@ -1,6 +1,6 @@
 # My Portfolio Website
 
-Website for showcasing my projects & sharing my links
+Website for sharing my blog posts & other stuff.
 
 Visit at [https://yashjawale.github.io/](https://yashjawale.github.io/)
 
