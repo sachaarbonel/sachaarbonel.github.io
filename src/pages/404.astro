@@ -1,0 +1,40 @@
+---
+import BaseHead from '../components/BaseHead.astro'
+import Navbar from '../components/Navbar.astro'
+import Footer from '../components/Footer.astro'
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts'
+import '@fontsource-variable/manrope';
+import '@fontsource-variable/jetbrains-mono';
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <body class="text-foreground bg-basecolor">
+    <Navbar title={SITE_TITLE} />
+    <div class="bg-background">
+      <main
+        class="app-container h-[95vh] flex flex-col gap-6 justify-center py-56 items-center"
+      >
+        <h1
+          class="font-title text-9xl md:text-[128px] text-center leading-none px-4 hero-title z-10"
+        >
+          404
+        </h1>
+        <p class="text-xl text-center max-w-[480px]">
+          The page you're looking for wasn't found. Please check the link again.
+        </p>
+        <a
+          class="btn-primary"
+          href="/"
+          download
+          target="_blank"
+          >Go to Home Page
+        </a>
+      </main>
+    </div>
+    <Footer />
+  </body>
+</html>

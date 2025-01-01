@@ -1,0 +1,48 @@
+---
+import BaseHead from '../../components/BaseHead.astro'
+import Navbar from '../../components/Navbar.astro'
+import Footer from '../../components/Footer.astro'
+import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts'
+import { getCollection } from 'astro:content'
+import BlogCard from '../../components/BlogCard.astro'
+import '@fontsource-variable/manrope';
+import '@fontsource-variable/jetbrains-mono';
+
+const posts = (await getCollection('blog')).sort(
+  (a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
+)
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <body class="text-foreground bg-background transition-colors">
+    <Navbar />
+    <div class="bg-background">
+      <main class="app-container pt-36">
+        <h1 class="text-5xl pb-8 font-medium">Blog</h1>
+        <p class="md:w-2/3 text-lg leading-[2rem]">
+          Welcome to my blog! Here you'll find a collection of my thoughts and
+          experiences. I hope you enjoy reading them as much as I enjoy
+          writing them.
+        </p>
+      </main>
+    </div>
+    <section class="app-container py-12">
+      <ul
+        class="grid my-6 md:grid-cols-4 border-t border-l border-foreground/25"
+      >
+        {
+          posts.map((post) => (
+            <li>
+              <BlogCard post={post} />
+            </li>
+          ))
+        }
+      </ul>
+    </section>
+    <Footer />
+  </body>
+</html>
