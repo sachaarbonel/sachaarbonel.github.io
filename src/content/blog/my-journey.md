@@ -43,7 +43,7 @@ Fast forward to more recent times, I'm pursuing Bachelor's in Computer Engineeri
 
 I got to work as an intern at [XDE Studios](https://xdestudios.com/), learning a lot about project management & dealing with clients. While having some of the most memorable experiences of my life with some amazing & talented people.
 
-I'm about to join my 2nd organisation, [rtCamp](https://rtcamp.com/) with more experiences ahead & funny thing is I'll be primarily working with [WordPress](https://wordpress.org/) (sort of feels like a full circle here).
+I'm about to join my 2nd organisation, [rtCamp](https://rtcamp.com/) with more experiences ahead & interesting thing is I'll be primarily working with [WordPress](https://wordpress.org/) (sort of feels like a full circle here).
 
 It wasn't possible to include all of my experiences into a blog post (as this is already getting quite long), but I'm thankful to all the wonderful people I met & all the failures and successes till date. As this new year nears, hoping that it brings some of the best times to all the people.
 
