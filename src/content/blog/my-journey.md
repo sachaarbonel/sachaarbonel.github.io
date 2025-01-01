@@ -5,11 +5,12 @@ pubDate: 'Jan 01 2024'
 heroImage: '/blog-images/journey.jpg'
 ---
 
-As I'm writing this post, the day's about to end & it's the last day of this year. I'll also be completing my bachelor's degree in a few months. All this makes me think about all the series of events that led me to this day. I was also about to write my very first blog post on my website so I figured, why not let this be it!
+As I'm writing this post, this is the first day of thie new year. I'll also be completing my bachelor's degree in a few months. All this makes me think about all the series of events that led me to this day. I was also about to write my very first blog post on my website so I figured, why not let this be it!
 
-So here it goes...
+I thought this would be a nice way to document my journey. So here it goes...
 
-> This is the very first blog post I'm writing, you've been warned for some weird grammar structures & loads of cringeness ahead. Feel free to email me your suggestions on how should I improve.
+> Disclaimer \
+> This is my very first blog post. Be prepared for a boatload of cringeness & some rather unusual grammatical structures ahead. 😅
 
 My journey into web development began all the way back in 2019, I had just given my 10th board exams & was awaiting results during the vacations. This is when I got my first real world project (I still had no idea about anything other than HTML & CSS).
 
