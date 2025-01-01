@@ -1,7 +1,7 @@
 ---
 title: 'My Journey Yet'
 description: 'A look back at my journey since the beginning.'
-pubDate: 'Jan 01 2024'
+pubDate: 'Jan 01 2025'
 heroImage: '/blog-images/journey.jpg'
 ---
 
