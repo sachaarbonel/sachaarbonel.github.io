@@ -5,7 +5,7 @@ pubDate: 'Jan 01 2025'
 heroImage: '/blog-images/journey.jpg'
 ---
 
-As I'm writing this post, this is the first day of thie new year. I'll also be completing my bachelor's degree in a few months. All this makes me think about all the series of events that led me to this day. I was also about to write my very first blog post on my website so I figured, why not let this be it!
+As I'm writing this post, this is the first day of this new year. I'll also be completing my bachelor's degree in a few months. All this makes me think about all the series of events that led me to this day. I was also about to write my very first blog post on my website so I figured, why not let this be it!
 
 I thought this would be a nice way to document my journey. So here it goes...
 
@@ -31,15 +31,15 @@ I'm quite grateful to those random explorations. They helped me make better, mor
 
 Now coming back to that project, It was given to me by a good friend of my dad, as it was just at the concept stage. The requirement was to make a user form which when submitted would save the data to a database & output a generated ID card image. And there I was, without the idea of what a database even was.
 
-He was from a non development background but had given me a hint that he had heard "PHP" was being used to make such things. I got to work, learning along the way. After a lot of confusion and suffering the app was ready & I somehow figured out the workflow for deployment too. In the end, that app never went to productipn but it did serve as a valuable learning experience & I viewed web development as a career choice for me.
+He was from a non development background but had given me a hint that he had heard "PHP" was being used to make such things. I got to work, learning along the way. After a lot of confusion and suffering the app was ready & I somehow figured out the workflow for deployment too. In the end, that app never went to production but it did serve as a valuable learning experience & I viewed web development as a career choice for me.
 
 Later I got the project to make a new site for a local school. With the design already provided. I ended up making it with HTML & CSS. As this was my first medium sized project the code got quite messy... But by some miracle the client themselves wanted to redo the whole design of the website & asked if I was okay with it. Smiling internally, I said that was fine & was quite happy that I got to redo it again, this time with a proper structure.
 
-This project then went on a hold due to redesign & till then I got a project to develop a site in Wordpress for a local dentist. This was my very first WordPress experience. Later my dad's friend introduced me to one of his friends who was a developer, I got advice that I should explore making apps with NodeJS.
+This project then went on a hold due to redesign & till then I got a project to develop a site in WordPress for a local dentist. This was my very first WordPress experience. Later my dad's friend introduced me to one of his friends who was a developer, I got advice that I should explore making apps with NodeJS.
 
 The school project continued again & then I ended up hooking the site with NodeJS backend & Strapi CMS. Later helping the school setup & maintain GSuite for Education (Now known as Google Workspace). Further into time, I got some more projects for developing some static sites, further helping to solidify understanding of CSS & layouts.
 
-Fast forward to more recent times, I'm pursuing Bachelor's in Computer Engineering, fiddling around with Linux based systems, learning different frameworks & other platform specific application development approaches. With a sprinkle of certifications.
+Fast forward to more recent times, I'm pursuing a Bachelor's in Computer Engineering, fiddling around with Linux based systems, learning different frameworks & other platform specific application development approaches. With a sprinkle of certifications.
 
 I got to work as an intern at [XDE Studios](https://xdestudios.com/), learning a lot about project management & dealing with clients. While having some of the most memorable experiences of my life with some amazing & talented people.
 
