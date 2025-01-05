@@ -58,7 +58,7 @@
 }
 
 .blog-content p {
-  @apply pb-3 text-[17px] leading-loose
+  @apply pb-3 text-[17px] leading-loose;
 }
 
 .blog-content a {
