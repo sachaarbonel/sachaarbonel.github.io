@@ -9,7 +9,7 @@ import TableOfContents from '../components/TableOfContents.astro'
 
 type Props = CollectionEntry<'blog'>['data'] & { headings: MarkdownHeading[] }
 
-const { title, description, pubDate, updatedDate, heroImage, headings } =
+const { title, description, pubDate, updatedDate, heroImage, heroImageCredit, headings } =
   Astro.props
 
 import '@fontsource-variable/manrope';
@@ -47,7 +47,8 @@ import '@fontsource-variable/jetbrains-mono';
                     )
                   }
                 </div>
-                <img src={heroImage} alt={title} class="rounded-lg mb-8" />
+                <img src={heroImage} alt={title} class="rounded-lg" />
+                <p class="mt-2 mb-8 opacity-80 italic text-sm">Image Credit: {heroImageCredit}</p>
               </div>
             </div>
             <div class="blog-content">

@@ -3,6 +3,7 @@ title: 'My Journey Yet'
 description: 'A look back at my journey since the beginning.'
 pubDate: 'Jan 01 2025'
 heroImage: '/blog-images/journey.jpg'
+heroImageCredit: 'Tirachard Kumtanom, Pexels'
 ---
 
 As I'm writing this post, this is the first day of this new year. I'll also be completing my bachelor's degree in a few months. All this makes me think about all the series of events that led me to this day. I was also about to write my very first blog post on my website so I figured, why not let this be it!

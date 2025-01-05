@@ -11,10 +11,11 @@ export async function getStaticPaths() {
       return data.headings
     })
   )
-  return posts.map((post, index) => ({
+  return posts.map((post, index) => {
+    return {
     params: { slug: post.slug },
     props: { post, headings: headings[index] },
-  }))
+  }})
 }
 type Props = { post: CollectionEntry<'blog'>; headings: MarkdownHeading[] }
 
