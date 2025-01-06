@@ -34,6 +34,10 @@ These are the topics I recall from the exam, for reference. I believe the questi
 - Verified GitHub Actions
 - GitHub Projects layouts
 - Access management with identity providers
+- Special files like `README.md`, `CODEOWNERS`, `SECURITY.md`, `CODE_OF_CONDUCT.md`, etc
+- Template files like Pull request templates, Issue templates, etc
+
+> While I've tried listing all resources in this post, I already had quite a bit of experience with Git & GitHub before studying for exam. Your mileage may vary. I recommend searching for content & experimenting on your own too.
 
 ## Troubleshooting for student discount
 I faced an issue earlier where the discount code wasn't getting applied by itself. 
