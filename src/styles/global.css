@@ -62,7 +62,7 @@
 }
 
 .blog-content a {
-  @apply underline;
+  @apply underline decoration-2 underline-offset-2;
 }
 
 .blog-content ul {
@@ -75,6 +75,10 @@
 
 .blog-content li {
   @apply pb-2;
+}
+
+.blog-content li:last-child {
+  @apply pb-5;
 }
 
 .blog-content blockquote {
