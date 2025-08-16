@@ -1,11 +1,9 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
 
 @layer base {
   :root {
     --color-foreground: 12 12 12;
-     --color-background: 255 255 255;
+    --color-background: 255 255 255;
   }
   :root[class~='dark'] {
     --color-foreground: 250 250 250;
