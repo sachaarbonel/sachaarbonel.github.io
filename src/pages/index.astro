@@ -10,6 +10,7 @@ import { getCollection } from 'astro:content'
 const posts = (await getCollection('blog'))
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
   .slice(0, 4)
+
 import '@fontsource-variable/manrope';
 import '@fontsource-variable/jetbrains-mono';
 ---

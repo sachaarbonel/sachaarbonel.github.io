@@ -1,18 +1,33 @@
 @import 'tailwindcss';
 
-@layer base {
-  :root {
-    --color-foreground: 12 12 12;
-    --color-background: 255 255 255;
-  }
-  :root[class~='dark'] {
-    --color-foreground: 250 250 250;
-    --color-background: 32 32 32;
-  }
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --font-sans: 'Manrope Variable', sans-serif;
+  --font-mono: 'JetBrains Mono Variable', monospace;
+
+  --color-foreground: #0c0c0c;
+  --color-background: #ffffff;
+	--color-foreground-dark: #fafafa;
+	--color-background-dark: #202020;
 }
 
-.dark .logosvg {
-  filter: brightness(0) invert(1);
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
 }
 
 .app-container {
@@ -20,11 +35,11 @@
 }
 
 .btn-primary {
-  @apply w-fit flex gap-2 bg-foreground text-background px-4 py-2 rounded items-center mt-4 hover:opacity-75;
+  @apply w-fit flex gap-2 bg-foreground text-background px-4 py-2 rounded-sm items-center mt-4 hover:opacity-75;
 }
 
 .btn-secondary {
-  @apply w-fit flex gap-2 px-4 py-2 items-center mt-4 border-foreground/50 border rounded hover:bg-foreground/5 transition-colors;
+  @apply w-fit flex gap-2 px-4 py-2 items-center mt-4 border-foreground/50 border rounded-sm hover:bg-foreground/5 transition-colors;
 }
 
 .blog-content {
@@ -80,11 +95,11 @@
 }
 
 .blog-content blockquote {
-  @apply border-l-4 border-foreground pl-4 py-4 my-6 bg-background rounded [&>p]:py-0;
+  @apply border-l-4 border-foreground pl-4 py-4 my-6 bg-background rounded-sm [&>p]:py-0;
 }
 
 .blog-content pre {
-  @apply p-4 bg-background text-foreground rounded overflow-x-auto mt-2 mb-6 shadow-lg;
+  @apply p-4 bg-background text-foreground rounded-sm overflow-x-auto mt-2 mb-6 shadow-lg;
 }
 
 .blog-content code {
@@ -96,11 +111,11 @@
 }
 
 .blog-content table {
-  @apply w-full border-collapse rounded my-4 text-sm overflow-x-scroll;
+  @apply w-full border-collapse rounded-sm my-4 text-sm overflow-x-scroll;
 }
 
 .blog-content th {
-  @apply bg-foreground/5 bg-opacity-25 text-foreground border border-foreground p-2;
+  @apply bg-foreground/25 text-foreground border border-foreground p-2;
 }
 
 .blog-content td {
@@ -112,11 +127,11 @@
 }
 
 .blog-content mark {
-  @apply bg-yellow-400 bg-opacity-50 text-foreground rounded px-[3px];
+  @apply bg-yellow-400/50 text-foreground rounded-sm px-[3px];
 }
 
 .blog-content kbd {
-  @apply bg-background inline-block text-foreground text-sm rounded px-[6px] py-[2px] shadow-black shadow-sm mx-1 hover:scale-95 transition-transform cursor-default;
+  @apply bg-background inline-block text-foreground text-sm rounded-sm px-[6px] py-[2px] shadow-black shadow-xs mx-1 hover:scale-95 transition-transform cursor-default;
 }
 
 .blog-content figure img {
