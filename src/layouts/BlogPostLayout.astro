@@ -51,7 +51,7 @@ import '@fontsource-variable/jetbrains-mono';
                 <p class="mt-2 mb-8 opacity-80 italic text-sm">Image Credit: {heroImageCredit}</p>
               </div>
             </div>
-            <div class="blog-content">
+            <div class="prose prose-slate prose-lg md:prose-xl dark:prose-invert prose-img:rounded-xl  prose-figure:text-center prose-img:mx-auto">
               <slot />
             </div>
           </div>
@@ -64,6 +64,8 @@ import '@fontsource-variable/jetbrains-mono';
       </article>
     </main>
     <style>
+			@reference "../styles/global.css";
+
       .callout-dulled {
         @apply md:opacity-70 hover:opacity-100;
       }
