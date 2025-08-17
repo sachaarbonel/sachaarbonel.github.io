@@ -1,20 +1,8 @@
 ---
-import '@fontsource-variable/manrope';
-import '@fontsource-variable/jetbrains-mono';
-import BaseHead from "../../components/BaseHead.astro";
-import {SITE_TITLE, SITE_DESCRIPTION} from "../../consts";
-import Navbar from "../../components/Navbar.astro";
-import Footer from "../../components/Footer.astro";
+import BaseLayout from '../../layouts/BaseLayout.astro'
 ---
 
-<!doctype html>
-<html lang="en">
-<head>
-  <BaseHead title='Projects | Yash Jawale' description={SITE_DESCRIPTION} />
-</head>
-<body class="text-foreground bg-basecolor">
-<Navbar />
-<div class="bg-background">
+<BaseLayout title="Projects | Yash Jawale">
   <main
     class="app-container h-[95vh] flex flex-col gap-6 justify-center py-56 items-center"
   >
@@ -27,7 +15,4 @@ import Footer from "../../components/Footer.astro";
       This page is still under construction.
     </p>
   </main>
-</div>
-<Footer />
-</body>
-</html>
+</BaseLayout>

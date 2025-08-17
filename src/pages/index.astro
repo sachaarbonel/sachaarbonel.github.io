@@ -1,8 +1,6 @@
 ---
-import BaseHead from '../components/BaseHead.astro'
-import Navbar from '../components/Navbar.astro'
-import Footer from '../components/Footer.astro'
-import { SITE_TITLE, SITE_DESCRIPTION, SocialLinks } from '../consts'
+import BaseLayout from '../layouts/BaseLayout.astro'
+import { SocialLinks } from '../consts'
 import { Icon } from 'astro-icon/components'
 import BlogCard from '../components/BlogCard.astro'
 import { getCollection } from 'astro:content'
@@ -10,102 +8,93 @@ import { getCollection } from 'astro:content'
 const posts = (await getCollection('blog'))
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
   .slice(0, 4)
-
-import '@fontsource-variable/manrope';
-import '@fontsource-variable/jetbrains-mono';
 ---
 
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-  </head>
-  <body class="text-foreground bg-background transition-colors">
-    <Navbar title={SITE_TITLE} />
-    <main
-      class="app-container flex flex-col justify-center min-h-[88vh] py-36 relative"
-    >
-      <p class="block text-3xl opacity-60 mt-9">Hi!</p>
-      <h1 class="text-6xl md:text-8xl font-medium leading-none">I'm Yash Jawale</h1>
-      <p class="text-2xl md:w-1/2 font-light my-5 leading-normal">
-        A student & software engineer specialising in Web Development.
-      </p>
-      <div class="flex flex-wrap gap-8 my-6">
-        {
-          SocialLinks.map((link) => (
-            <a
-              class="text-xl font-normal hover:underline underline-offset-4"
-              href={link.url}
-              target="_blank"
-            >
-              {link.name}
-            </a>
-          ))
-        }
-      </div>
-    </main>
+<BaseLayout>
+  <main
+    class="app-container flex flex-col justify-center min-h-[88vh] py-36 relative"
+  >
+    <p class="block text-3xl opacity-60 mt-9">Hi!</p>
+    <h1 class="text-6xl md:text-8xl font-medium leading-none">
+      I'm Yash Jawale
+    </h1>
+    <p class="text-2xl md:w-1/2 font-light my-5 leading-normal">
+      A student & software engineer specialising in Web Development.
+    </p>
+    <div class="flex flex-wrap gap-8 my-6">
+      {
+        SocialLinks.map((link) => (
+          <a
+            class="text-xl font-normal hover:underline underline-offset-4"
+            href={link.url}
+            target="_blank"
+          >
+            {link.name}
+          </a>
+        ))
+      }
+    </div>
+  </main>
 
-    <!-- Recent Posts Section -->
-    <section class="app-container">
-      <h2 class="text-4xl">Recent Posts</h2>
-      <div
-        class="grid my-6 md:grid-cols-4 border-t border-l border-foreground border-opacity-25"
-      >
-        {
-          posts.map((post) => {
-            return <BlogCard post={post} />
-          })
-        }
-      </div>
+  <!-- Recent Posts Section -->
+  <section class="app-container">
+    <h2 class="text-4xl">Recent Posts</h2>
+    <div
+      class="grid my-6 md:grid-cols-4 border-t border-l border-foreground border-opacity-25"
+    >
+      {
+        posts.map((post) => {
+          return <BlogCard post={post} />
+        })
+      }
+    </div>
+    <a
+      class="w-fit flex gap-2 px-4 py-2 items-center mt-4 border-foreground/50 border rounded hover:bg-foreground/5 transition-colors"
+      href="/blog"
+      >Read All
+      <Icon size={20} name="mdi:arrow-right" />
+    </a>
+  </section>
+
+  <!-- Recent Posts Section -->
+  <section class="app-container my-24 grid md:grid-cols-2 gap-28 md:gap-10">
+    <div class="space-y-6">
+      <h2 class="text-4xl">Explore Playground</h2>
+      <p class="text-lg font-light">
+        A collection of interactive simulators demonstrating CS Concepts. Feel
+        free to contribute your favourite problems on GitHub!
+      </p>
       <a
-        class="w-fit flex gap-2 px-4 py-2 items-center mt-4 border-foreground/50 border rounded hover:bg-foreground/5 transition-colors"
-        href="/blog"
-        >Read All
+        class="btn-secondary"
+        href="https://yashjawale.github.io/playground/"
+        target="_blank"
+        >Go to Playground
         <Icon size={20} name="mdi:arrow-right" />
       </a>
-    </section>
-
-    <!-- Recent Posts Section -->
-    <section class="app-container my-24 grid md:grid-cols-2 gap-28 md:gap-10">
-      <div class="space-y-6">
-        <h2 class="text-4xl">Explore Playground</h2>
-        <p class="text-lg font-light">
-          A collection of interactive simulators demonstrating CS Concepts. Feel
-          free to contribute your favourite problems on GitHub!
-        </p>
+    </div>
+    <div class="space-y-6">
+      <h2 class="text-4xl">Want to connect professionally?</h2>
+      <p class="text-lg font-light">
+        Use the buttons below for my resume & email.
+      </p>
+      <div class="flex flex-wrap gap-4 mt-auto">
+        <a
+          class="btn-primary"
+          href="mailto:yash25.j@gmail.com"
+          download
+          target="_blank"
+          >Get in touch
+          <Icon size={20} name="mdi:email" />
+        </a>
         <a
           class="btn-secondary"
-          href="https://yashjawale.github.io/playground/"
+          href="https://yashjawale.github.io/resume/cv.pdf"
+          download
           target="_blank"
-          >Go to Playground
-          <Icon size={20} name="mdi:arrow-right" />
+          >Download Resume
+          <Icon size={20} name="mdi:arrow-collapse-down" />
         </a>
       </div>
-      <div class="space-y-6">
-        <h2 class="text-4xl">Want to connect professionally?</h2>
-        <p class="text-lg font-light">
-          Use the buttons below for my resume & email.
-        </p>
-        <div class="flex flex-wrap gap-4 mt-auto">
-          <a
-            class="btn-primary"
-            href="mailto:yash25.j@gmail.com"
-            download
-            target="_blank"
-          >Get in touch
-            <Icon size={20} name="mdi:email" />
-          </a>
-          <a
-            class="btn-secondary"
-            href="https://yashjawale.github.io/resume/cv.pdf"
-            download
-            target="_blank"
-            >Download Resume
-            <Icon size={20} name="mdi:arrow-collapse-down" />
-          </a>
-        </div>
-      </div>
-    </section>
-    <Footer />
-  </body>
-</html>
+    </div>
+  </section>
+</BaseLayout>
