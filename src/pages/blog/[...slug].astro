@@ -4,18 +4,17 @@ import BlogPostLayout from '../../layouts/BlogPostLayout.astro'
 import type { MarkdownHeading } from 'astro'
 
 export async function getStaticPaths() {
-  const posts = await getCollection('blog')
-  const headings = await Promise.all(
-    posts.map(async (post) => {
-      const data = await post.render()
-      return data.headings
-    })
-  )
-  return posts.map((post, index) => {
-    return {
-    params: { slug: post.slug },
-    props: { post, headings: headings[index] },
-  }})
+	const posts = await getCollection('blog')
+	const headings = await Promise.all(
+		posts.map(async (post) => {
+			const data = await post.render()
+			return data.headings
+		})
+	)
+	return posts.map((post, index) => ({
+		params: { slug: post.slug },
+		props: { post, headings: headings[index] },
+	}))
 }
 type Props = { post: CollectionEntry<'blog'>; headings: MarkdownHeading[] }
 
@@ -24,5 +23,5 @@ const { Content } = await post.render()
 ---
 
 <BlogPostLayout {...post.data} headings={headings}>
-  <Content />
+	<Content />
 </BlogPostLayout>

@@ -1,130 +1,36 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+@plugin "@tailwindcss/typography";
 
-@layer base {
-  :root {
-    --color-foreground: 12 12 12;
-     --color-background: 255 255 255;
-  }
-  :root[class~='dark'] {
-    --color-foreground: 250 250 250;
-    --color-background: 32 32 32;
-  }
-}
+@custom-variant dark (&:is(.dark *));
 
-.dark .logosvg {
-  filter: brightness(0) invert(1);
+@theme {
+	--font-sans: 'Inter Variable', sans-serif;
+	--font-mono: 'JetBrains Mono Variable', monospace;
+
+	--color-foreground: #0c0c0c;
+	--color-foreground-dark: #fafafa;
+	--color-background: #ffffff;
+	--color-background-dark: #2b2b2b;
+	--color-primary: #0784b5;
+	--color-primary-dark: #9bd4e4;
 }
 
 .app-container {
-  @apply container mx-auto px-6 sm:px-20 2xl:px-16;
+	@apply container mx-auto px-6 sm:px-12 2xl:px-16;
 }
 
 .btn-primary {
-  @apply w-fit flex gap-2 bg-foreground text-background px-4 py-2 rounded items-center mt-4 hover:opacity-75;
+	@apply w-fit flex gap-2 bg-foreground text-background dark:bg-foreground-dark dark:text-background-dark px-4 py-2 rounded-sm items-center mt-4 hover:opacity-75;
 }
 
 .btn-secondary {
-  @apply w-fit flex gap-2 px-4 py-2 items-center mt-4 border-foreground/50 border rounded hover:bg-foreground/5 transition-colors;
+	@apply w-fit flex gap-2 px-4 py-2 items-center mt-4 border-foreground/50 dark:border-foreground-dark/50 border rounded-sm hover:bg-foreground/5 dark:hover:bg-foreground-dark/5 transition-colors;
 }
 
-.blog-content {
-  @apply leading-relaxed;
+.section-title {
+	@apply text-4xl font-semibold;
 }
 
-.blog-content h1 {
-  @apply text-4xl pb-3 pt-4 font-medium;
-}
-
-.blog-content h2 {
-  @apply text-3xl pb-3 pt-4 scroll-m-24 font-medium;
-}
-
-.blog-content h3 {
-  @apply text-2xl pb-2 pt-3 font-medium;
-}
-
-.blog-content h4 {
-  @apply text-xl pb-2 pt-3 font-medium;
-}
-
-.blog-content h5 {
-  @apply text-lg pb-1 pt-2 font-medium;
-}
-
-.blog-content h6 {
-  @apply text-base pb-1 pt-1 font-medium;
-}
-
-.blog-content p {
-  @apply pb-3 text-[17px] leading-loose;
-}
-
-.blog-content a {
-  @apply underline decoration-2 underline-offset-2;
-}
-
-.blog-content ul {
-  @apply list-disc pl-6;
-}
-
-.blog-content ol {
-  @apply list-decimal pl-6;
-}
-
-.blog-content li {
-  @apply pb-2;
-}
-
-.blog-content li:last-child {
-  @apply pb-5;
-}
-
-.blog-content blockquote {
-  @apply border-l-4 border-foreground pl-4 py-4 my-6 bg-background rounded [&>p]:py-0;
-}
-
-.blog-content pre {
-  @apply p-4 bg-background text-foreground rounded overflow-x-auto mt-2 mb-6 shadow-lg;
-}
-
-.blog-content code {
-  @apply text-sm font-mono;
-}
-
-.blog-content img {
-  @apply mx-auto my-4 rounded-lg;
-}
-
-.blog-content table {
-  @apply w-full border-collapse rounded my-4 text-sm overflow-x-scroll;
-}
-
-.blog-content th {
-  @apply bg-foreground/5 bg-opacity-25 text-foreground border border-foreground p-2;
-}
-
-.blog-content td {
-  @apply text-foreground border border-foreground p-2 [&>code]:font-mono [&>code]:p-[2px] [&>code]:bg-background;
-}
-
-.blog-content hr {
-  @apply my-6 border-foreground;
-}
-
-.blog-content mark {
-  @apply bg-yellow-400 bg-opacity-50 text-foreground rounded px-[3px];
-}
-
-.blog-content kbd {
-  @apply bg-background inline-block text-foreground text-sm rounded px-[6px] py-[2px] shadow-black shadow-sm mx-1 hover:scale-95 transition-transform cursor-default;
-}
-
-.blog-content figure img {
-  @apply mb-4 bg-red-700 w-full max-w-lg overflow-hidden;
-}
-
-.blog-content figcaption {
-  @apply text-sm text-center italic mb-7;
+.posts-grid-container {
+	@apply grid my-6 md:grid-cols-2 xl:grid-cols-4 gap-6;
 }
