@@ -1,15 +1,16 @@
 ---
 import {SocialLinks, WebsiteLinks} from '../consts'
+import Logo from './Logo.astro'
 import ThemeSelector from './ThemeSelector.astro'
 
 const today = new Date()
 ---
 
-<footer class="bg-[#eaeaea]">
-  <div class="app-container grid md:grid-cols-3 gap-8 py-16">
+<footer>
+  <div class="app-container grid md:grid-cols-3 gap-12 py-16 border-t-2 border-foreground/50 dark:border-foreground-dark/50">
     <div>
-      <a href="/" class="block w-fit">
-        <img src="/logo.svg" alt="YJ." class="h-7 logosvg"/>
+      <a href="/" class="block w-fit" aria-label="Home">
+				<Logo />
       </a>
     </div>
     <div>
@@ -48,9 +49,9 @@ const today = new Date()
     </div>
   </div>
   <div
-    class="app-container flex justify-between items-center pb-3 text-center"
+    class="app-container flex justify-between items-center pb-6 text-center"
   >
-    <p class="text-center md:text-left w-full">
+    <p class="text-left md:text-center w-full">
       &copy; {today.getFullYear()} Yash Jawale
     </p>
   </div>
