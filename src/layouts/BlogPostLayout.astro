@@ -15,16 +15,16 @@ import BaseLayout from './BaseLayout.astro'
     <main>
       <article>
         <div
-          class="app-container flex flex-col md:flex-row justify-between gap-8 py-24 relative"
+          class="app-container flex flex-col lg:flex-row justify-between gap-8 py-24 relative"
         >
           <div class="grow w-full md:max-w-[75ch]">
             <div>
               <div>
-                <h1 class="text-5xl leading-snug pt-7 font-semibold">
+                <h1 class="text-5xl leading-snug pt-12 font-bold">
                   {title}
                 </h1>
                 <div
-                  class="text-lg uppercase flex items-center gap-2 flex-nowrap py-6"
+                  class="text-lg uppercase flex items-center gap-2 flex-nowrap py-8"
                 >
                   <FormattedDate date={pubDate} />
                   {
@@ -35,7 +35,7 @@ import BaseLayout from './BaseLayout.astro'
                     )
                   }
                 </div>
-                <img src={heroImage} alt={title} class="rounded-lg" />
+                <img src={heroImage} alt={title} class="rounded-lg aspect-video object-cover" />
                 <p class="mt-2 mb-8 opacity-80 italic text-sm">Image Credit: {heroImageCredit}</p>
               </div>
             </div>
