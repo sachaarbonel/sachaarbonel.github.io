@@ -12,7 +12,7 @@ const posts = (await getCollection('blog'))
 
 <BaseLayout>
 	<main
-		class="app-container flex flex-col gap-12 justify-center py-48 pt-56 relative"
+		class="app-container flex flex-col gap-12 justify-center py-36  md:py-48 pt-44 md:pt-56 relative"
 	>
 		<div>
 			<p class="block text-3xl opacity-70 mt-9 mb-4">Hi!, I'm</p>
@@ -43,7 +43,7 @@ const posts = (await getCollection('blog'))
 			{posts.map((post) => <BlogCard post={post} />)}
 		</div>
 		<a
-			class="w-fit flex gap-2 px-4 py-2 items-center mt-4 border-foreground/50 border rounded hover:bg-foreground/5 transition-colors"
+			class="btn-secondary"
 			href="/blog"
 			>Read All
 			<Icon size={20} name="mdi:arrow-right" />
