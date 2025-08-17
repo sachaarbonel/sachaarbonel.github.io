@@ -2,7 +2,7 @@
 // You can import this data from anywhere in your site by using the `import` keyword.
 
 export const SITE_TITLE = 'Yash Jawale'
-export const SITE_DESCRIPTION = "Yash's Portfolio Website"
+export const SITE_DESCRIPTION = "A site for sharing my thoughts & experiments with the world."
 
 export const SocialLinks = [
   {
