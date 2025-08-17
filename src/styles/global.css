@@ -44,3 +44,7 @@
 .btn-secondary {
   @apply w-fit flex gap-2 px-4 py-2 items-center mt-4 border-foreground/50 border rounded-sm hover:bg-foreground/5 transition-colors;
 }
+
+.section-title {
+	@apply text-4xl font-semibold;
+}
