@@ -12,15 +12,15 @@ import Logo from './Logo.astro'
 			<a href="/" aria-label="Home">
 				<Logo />
 			</a>
-      <div class="gap-12 hidden md:flex items-center">
+      <div class="gap-8 hidden md:flex items-center">
         {
           WebsiteLinks.map((link) => (
-            <!--Open external links in new tab -->
             <NavbarLink class="text-lg" href={link.url} target={link.url.charAt(0) === 'h' ? '_blank' : '_self'}>
               {link.name}
             </NavbarLink>
           ))
         }
+			<ThemeSelector />
       </div>
       <button class="md:hidden" id="nav-open-btn">
         <Icon name="mdi:menu" size={32} />

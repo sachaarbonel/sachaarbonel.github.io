@@ -25,23 +25,11 @@ export const SocialLinks = [
 
 export const WebsiteLinks = [
   {
-    name: 'Home',
-    url: '/',
-  },
-  {
     name: 'Blog',
     url: '/blog',
   },
   {
-    name: 'Projects',
-    url: '/projects',
-  },
-  {
     name: 'Playground',
     url: 'https://yashjawale.github.io/playground',
-  },
-  {
-    name: 'Contact',
-    url: 'mailto:yash25.j@gmail.com',
   },
 ]
