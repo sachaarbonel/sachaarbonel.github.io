@@ -23,7 +23,7 @@ import '@fontsource-variable/jetbrains-mono'
       description={description || SITE_DESCRIPTION}
     />
   </head>
-  <body class="text-foreground bg-background transition-colors">
+  <body class="text-foreground bg-background dark:text-foreground-dark dark:bg-background-dark transition-colors">
     <Navbar title={SITE_TITLE} />
     <slot />
     <Footer />
