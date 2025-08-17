@@ -19,7 +19,7 @@ Rewinding into the past even more, I always had a curiosity regarding the inner 
 
 Later to avoid causing mishaps & by fascination from some of PIXAR's creations I steered into the world of 3D Modeling with [Blender](https://blender.org/). I messed with sculpting, texturing & just modeling things of interest for the sheer fun of it.
 
-Next stage led me to exploring game development with [Godot](https://godot.org/) engine & had quite a lot of fun doing it. Although this phase lasted shorter than the others. 
+Next stage led me to exploring game development with [Godot](https://godot.org/) engine & had quite a lot of fun doing it. Although this phase lasted shorter than the others.
 
 Next I watched some Web Development videos & had a comfortable grasp of HTML & CSS. Created some rather ugly looking pages & then paused everything for a few weeks in order to prepare for board exams.
 

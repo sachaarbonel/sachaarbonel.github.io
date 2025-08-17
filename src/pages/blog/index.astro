@@ -4,7 +4,7 @@ import BlogCard from '../../components/BlogCard.astro'
 import BaseLayout from '../../layouts/BaseLayout.astro'
 
 const posts = (await getCollection('blog')).sort(
-  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 )
 ---
 
@@ -17,17 +17,15 @@ const posts = (await getCollection('blog')).sort(
 			them.
 		</p>
 	</main>
-  <section class="app-container py-12">
-    <ul
-      class="posts-grid-container"
-    >
-      {
-        posts.map((post) => (
-          <li>
-            <BlogCard post={post} />
-          </li>
-        ))
-      }
-    </ul>
-  </section>
+	<section class="app-container py-12">
+		<ul class="posts-grid-container">
+			{
+				posts.map((post) => (
+					<li>
+						<BlogCard post={post} />
+					</li>
+				))
+			}
+		</ul>
+	</section>
 </BaseLayout>

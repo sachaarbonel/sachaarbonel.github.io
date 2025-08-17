@@ -2,7 +2,7 @@
 import type { MarkdownHeading } from 'astro'
 
 interface Props {
-  headings: MarkdownHeading[]
+	headings: MarkdownHeading[]
 }
 
 const { headings } = Astro.props
@@ -11,25 +11,23 @@ const filteredHeadings = headings.filter((heading) => heading.depth <= 2)
 ---
 
 {
-  filteredHeadings.length > 0 ? (
-    <nav class="py-12 rounded">
-      <h2 class="text-2xl mr-2 pb-1 mb-3 font-bold">
-        On This Page
-      </h2>
-      <ul class="space-y-3">
-        {filteredHeadings.map((heading) => (
-          <li>
-            <a
-              class="hover:underline underline-offset-4"
-              href={`#${heading.slug}`}
-            >
-              {heading.text}
-            </a>
-          </li>
-        ))}
-      </ul>
-    </nav>
-  ) : (
-    <div />
-  )
+	filteredHeadings.length > 0 ? (
+		<nav class="py-12 rounded">
+			<h2 class="text-2xl mr-2 pb-1 mb-3 font-bold">On This Page</h2>
+			<ul class="space-y-3">
+				{filteredHeadings.map((heading) => (
+					<li>
+						<a
+							class="hover:underline underline-offset-4"
+							href={`#${heading.slug}`}
+						>
+							{heading.text}
+						</a>
+					</li>
+				))}
+			</ul>
+		</nav>
+	) : (
+		<div />
+	)
 }

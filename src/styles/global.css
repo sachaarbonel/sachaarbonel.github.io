@@ -4,27 +4,27 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme {
-  --font-sans: 'Inter Variable', sans-serif;
-  --font-mono: 'JetBrains Mono Variable', monospace;
+	--font-sans: 'Inter Variable', sans-serif;
+	--font-mono: 'JetBrains Mono Variable', monospace;
 
-  --color-foreground: #0c0c0c;
+	--color-foreground: #0c0c0c;
 	--color-foreground-dark: #fafafa;
-  --color-background: #ffffff;
+	--color-background: #ffffff;
 	--color-background-dark: #2b2b2b;
 	--color-primary: #0784b5;
 	--color-primary-dark: #9bd4e4;
 }
 
 .app-container {
-  @apply container mx-auto px-6 sm:px-12 2xl:px-16;
+	@apply container mx-auto px-6 sm:px-12 2xl:px-16;
 }
 
 .btn-primary {
-  @apply w-fit flex gap-2 bg-foreground text-background dark:bg-foreground-dark dark:text-background-dark px-4 py-2 rounded-sm items-center mt-4 hover:opacity-75;
+	@apply w-fit flex gap-2 bg-foreground text-background dark:bg-foreground-dark dark:text-background-dark px-4 py-2 rounded-sm items-center mt-4 hover:opacity-75;
 }
 
 .btn-secondary {
-  @apply w-fit flex gap-2 px-4 py-2 items-center mt-4 border-foreground/50 dark:border-foreground-dark/50 border rounded-sm hover:bg-foreground/5 dark:hover:bg-foreground-dark/5 transition-colors;
+	@apply w-fit flex gap-2 px-4 py-2 items-center mt-4 border-foreground/50 dark:border-foreground-dark/50 border rounded-sm hover:bg-foreground/5 dark:hover:bg-foreground-dark/5 transition-colors;
 }
 
 .section-title {

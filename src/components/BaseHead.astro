@@ -2,9 +2,9 @@
 import '../styles/global.css'
 
 interface Props {
-  title: string
-  description: string
-  image?: string
+	title: string
+	description: string
+	image?: string
 }
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site)
@@ -49,17 +49,16 @@ const { title, description, image = '/portfolioog.jpg' } = Astro.props
 
 <!-- Google tag (gtag.js) -->
 <script
-  type="text/partytown"
-  async
-  src="https://www.googletagmanager.com/gtag/js?id=G-8Q4KF722K3">
-</script>
+	type="text/partytown"
+	async
+	src="https://www.googletagmanager.com/gtag/js?id=G-8Q4KF722K3"></script>
 
 <script type="text/partytown">
-  window.dataLayer = window.dataLayer || []
-  function gtag() {
-    dataLayer.push(arguments)
-  }
-  gtag('js', new Date())
+	window.dataLayer = window.dataLayer || []
+	function gtag(...args) {
+		dataLayer.push(args)
+	}
+	gtag('js', new Date())
 
-  gtag('config', 'G-8Q4KF722K3')
+	gtag('config', 'G-8Q4KF722K3')
 </script>

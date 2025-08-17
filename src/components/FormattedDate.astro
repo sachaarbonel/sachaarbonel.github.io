@@ -1,6 +1,6 @@
 ---
 interface Props {
-  date: Date
+	date: Date
 }
 
 const { date } = Astro.props
@@ -8,5 +8,5 @@ import dayjs from 'dayjs'
 ---
 
 <time datetime={date.toISOString()}>
-  {dayjs(date).format('D MMM YYYY')}
+	{dayjs(date).format('D MMM YYYY')}
 </time>

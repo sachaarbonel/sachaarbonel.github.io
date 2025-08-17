@@ -7,119 +7,123 @@ import Logo from './Logo.astro'
 ---
 
 <header class="fixed top-0 w-full z-40 bg-background dark:bg-background-dark">
-  <nav class="">
-    <div class="app-container flex justify-between items-center py-5">
+	<nav class="">
+		<div class="app-container flex justify-between items-center py-5">
 			<a href="/" aria-label="Home">
 				<Logo />
 			</a>
-      <div class="gap-8 hidden md:flex items-center">
-        {
-          WebsiteLinks.map((link) => (
-            <NavbarLink class="text-lg" href={link.url} target={link.url.charAt(0) === 'h' ? '_blank' : '_self'}>
-              {link.name}
-            </NavbarLink>
-          ))
-        }
-			<ThemeSelector />
-      </div>
-      <button class="md:hidden" id="nav-open-btn">
-        <Icon name="mdi:menu" size={32} />
-      </button>
+			<div class="gap-8 hidden md:flex items-center">
+				{
+					WebsiteLinks.map((link) => (
+						<NavbarLink
+							class="text-lg"
+							href={link.url}
+							target={link.url.charAt(0) === 'h' ? '_blank' : '_self'}
+						>
+							{link.name}
+						</NavbarLink>
+					))
+				}
+				<ThemeSelector />
+			</div>
+			<button class="md:hidden" id="nav-open-btn">
+				<Icon name="mdi:menu" size={32} />
+			</button>
 
-      <!-- Mobile nav -->
-      <div
-        class="translate-x-full fixed top-0 right-0 bg-white shadow-xl h-screen w-5/6 px-8 py-6 transition-transform z-40 border-l-[1px] border-background"
-        id="mobile-menu"
-      >
-        <button id="nav-close-btn" class="ml-auto block">
-          <Icon name="mdi:close" size={32} />
-        </button>
-        <div class="flex flex-col h-full items-start gap-8 pt-16">
-          {
-            WebsiteLinks.map((link) => (
-              <NavbarLink class="text-4xl font-light" href={link.url}>
-                {link.name}
-              </NavbarLink>
-            ))
-          }
-          <ThemeSelector class:list="mt-4" />
-        </div>
-      </div>
-    </div>
-  </nav>
+			<!-- Mobile nav -->
+			<div
+				class="translate-x-full fixed top-0 right-0 bg-white shadow-xl h-screen w-5/6 px-8 py-6 transition-transform z-40 border-l-[1px] border-background"
+				id="mobile-menu"
+			>
+				<button id="nav-close-btn" class="ml-auto block">
+					<Icon name="mdi:close" size={32} />
+				</button>
+				<div class="flex flex-col h-full items-start gap-8 pt-16">
+					{
+						WebsiteLinks.map((link) => (
+							<NavbarLink class="text-4xl font-light" href={link.url}>
+								{link.name}
+							</NavbarLink>
+						))
+					}
+					<ThemeSelector class:list="mt-4" />
+				</div>
+			</div>
+		</div>
+	</nav>
 
-  <script>
-    function toggleNav() {
-      document
-        .querySelector('#mobile-menu')
-        ?.classList.toggle('translate-x-full')
-    }
+	<script>
+		function toggleNav() {
+			document
+				.querySelector('#mobile-menu')
+				?.classList.toggle('translate-x-full')
+		}
 
-    document
-      .querySelector('#nav-open-btn')
-      ?.addEventListener('click', toggleNav)
-    document
-      .querySelector('#nav-close-btn')
-      ?.addEventListener('click', toggleNav)
-  </script>
+		document
+			.querySelector('#nav-open-btn')
+			?.addEventListener('click', toggleNav)
+		document
+			.querySelector('#nav-close-btn')
+			?.addEventListener('click', toggleNav)
+	</script>
 </header>
 
 <script is:inline>
-  function reComputeTheme() {
-    if (
-      localStorage.theme === 'dark' ||
-      (!('theme' in localStorage) &&
-        window.matchMedia('(prefers-color-scheme: dark)').matches)
-    ) {
-      document.documentElement.classList.add('dark')
-    } else {
-      document.documentElement.classList.remove('dark')
-    }
+	function reComputeTheme() {
+		if (
+			localStorage.theme === 'dark' ||
+			(!('theme' in localStorage) &&
+				window.matchMedia('(prefers-color-scheme: dark)').matches)
+		) {
+			document.documentElement.classList.add('dark')
+		} else {
+			document.documentElement.classList.remove('dark')
+		}
 
-    let theme = localStorage.theme || 'auto'
-    document
-      .querySelectorAll(`[data-theme="theme-${theme}"]`)
-      .forEach((el) => el.classList.add('active'))
-  }
+		const theme = localStorage.theme || 'auto'
+		document
+			.querySelectorAll(`[data-theme="theme-${theme}"]`)
+			.forEach((el) => el.classList.add('active'))
+	}
 
-  function addThemeEventListeners() {
-    themeButtons = document.querySelectorAll('.theme-button')
-    themeButtons.forEach((button) => {
-      button.addEventListener('click', () => {
-        themeButtons.forEach((btn) => btn.classList.remove('active'))
-        button.classList.add('active')
-        if (button.dataset.theme === 'theme-auto') {
-          localStorage.removeItem('theme')
-          reComputeTheme()
-        } else {
-          localStorage.theme = button.dataset.theme.replace('theme-', '')
-          document.documentElement.classList.toggle(
-            'dark',
-            button.dataset.theme === 'theme-dark'
-          )
-        }
-      })
-    })
-  }
+	function addThemeEventListeners() {
+		themeButtons = document.querySelectorAll('.theme-button')
+		themeButtons.forEach((button) => {
+			button.addEventListener('click', () => {
+				themeButtons.forEach((btn) => btn.classList.remove('active'))
+				button.classList.add('active')
+				if (button.dataset.theme === 'theme-auto') {
+					localStorage.removeItem('theme')
+					reComputeTheme()
+				} else {
+					localStorage.theme = button.dataset.theme.replace('theme-', '')
+					document.documentElement.classList.toggle(
+						'dark',
+						button.dataset.theme === 'theme-dark'
+					)
+				}
+			})
+		})
+	}
 
-  // Set active class on OS theme change
-  window
-    .matchMedia('(prefers-color-scheme: dark)')
-    .addEventListener('change', (e) => {
-      reComputeTheme()
-    })
+	// Set active class on OS theme change
+	window
+		.matchMedia('(prefers-color-scheme: dark)')
+		.addEventListener('change', (_e) => {
+			reComputeTheme()
+		})
 
-  // run recomputeTheme when screen crosses 768px
-  window.matchMedia('(min-width: 768px)').addEventListener('change', (e) => {
-    addThemeEventListeners()
-    reComputeTheme()
-  })
+	// run recomputeTheme when screen crosses 768px
+	window.matchMedia('(min-width: 768px)').addEventListener('change', (_e) => {
+		addThemeEventListeners()
+		reComputeTheme()
+	})
 
-  reComputeTheme()
+	reComputeTheme()
 
-  // Run on page load
-  window.addEventListener('DOMContentLoaded', () => {
-    addThemeEventListeners()
-    reComputeTheme()
-  })
+	// Run on page load
+	window.addEventListener('DOMContentLoaded', () => {
+		addThemeEventListeners()
+		reComputeTheme()
+	})
 </script>

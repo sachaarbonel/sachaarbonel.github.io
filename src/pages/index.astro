@@ -6,95 +6,89 @@ import BlogCard from '../components/BlogCard.astro'
 import { getCollection } from 'astro:content'
 
 const posts = (await getCollection('blog'))
-  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
-  .slice(0, 4)
+	.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+	.slice(0, 4)
 ---
 
 <BaseLayout>
-  <main
-    class="app-container flex flex-col gap-12 justify-center py-48 pt-56 relative"
-  >
-    <div>
-      <p class="block text-3xl opacity-70 mt-9 mb-4">Hi!, I'm</p>
-      <h1 class="text-8xl font-bold leading-none">Yash Jawale</h1>
-    </div>
-    <p class="text-2xl max-w-2xl font-light leading-normal">
-      A student & software engineer specialising in Web Development.
-    </p>
-    <div class="flex flex-wrap gap-8">
-      {
-        SocialLinks.map((link) => (
-          <a
-            class="text-xl text-primary dark:text-primary-dark underline hover:underline underline-offset-4"
-            href={link.url}
-            target="_blank"
-          >
-            {link.name}
-          </a>
-        ))
-      }
-    </div>
-  </main>
+	<main
+		class="app-container flex flex-col gap-12 justify-center py-48 pt-56 relative"
+	>
+		<div>
+			<p class="block text-3xl opacity-70 mt-9 mb-4">Hi!, I'm</p>
+			<h1 class="text-8xl font-bold leading-none">Yash Jawale</h1>
+		</div>
+		<p class="text-2xl max-w-2xl font-light leading-normal">
+			A student & software engineer specialising in Web Development.
+		</p>
+		<div class="flex flex-wrap gap-8">
+			{
+				SocialLinks.map((link) => (
+					<a
+						class="text-xl text-primary dark:text-primary-dark underline hover:underline underline-offset-4"
+						href={link.url}
+						target="_blank"
+					>
+						{link.name}
+					</a>
+				))
+			}
+		</div>
+	</main>
 
-  <!-- Recent Posts Section -->
-  <section class="app-container">
-    <h2 class="section-title">Recent Posts</h2>
-    <div
-      class="posts-grid-container"
-    >
-      {
-        posts.map((post) => {
-          return <BlogCard post={post} />
-        })
-      }
-    </div>
-    <a
-      class="w-fit flex gap-2 px-4 py-2 items-center mt-4 border-foreground/50 border rounded hover:bg-foreground/5 transition-colors"
-      href="/blog"
-      >Read All
-      <Icon size={20} name="mdi:arrow-right" />
-    </a>
-  </section>
+	<!-- Recent Posts Section -->
+	<section class="app-container">
+		<h2 class="section-title">Recent Posts</h2>
+		<div class="posts-grid-container">
+			{posts.map((post) => <BlogCard post={post} />)}
+		</div>
+		<a
+			class="w-fit flex gap-2 px-4 py-2 items-center mt-4 border-foreground/50 border rounded hover:bg-foreground/5 transition-colors"
+			href="/blog"
+			>Read All
+			<Icon size={20} name="mdi:arrow-right" />
+		</a>
+	</section>
 
-  <!-- Recent Posts Section -->
-  <section class="app-container py-42 grid lg:grid-cols-2 gap-28 lg:gap-10">
-    <div class="space-y-6">
-      <h2 class="section-title">Explore Playground</h2>
-      <p class="text-lg max-w-xl">
-        A collection of interactive simulators demonstrating CS Concepts. Feel
-        free to contribute your favourite problems on GitHub!
-      </p>
-      <a
-        class="btn-secondary"
-        href="https://yashjawale.github.io/playground/"
-        target="_blank"
-        >Go to Playground
-        <Icon size={20} name="mdi:arrow-right" />
-      </a>
-    </div>
-    <div class="space-y-6">
-      <h2 class="section-title">Get in touch</h2>
-      <p class="text-lg max-w-xl">
-        Use the buttons below for my resume & email.
-      </p>
-      <div class="flex flex-wrap mt-auto space-x-4">
-        <a
-          class="btn-primary"
-          href="mailto:yash25.j@gmail.com"
-          download
-          target="_blank"
-          >Get in touch
-          <Icon size={20} name="mdi:email" />
-        </a>
-        <a
-          class="btn-secondary"
-          href="https://yashjawale.github.io/resume/cv.pdf"
-          download
-          target="_blank"
-          >Download Resume
-          <Icon size={20} name="mdi:arrow-collapse-down" />
-        </a>
-      </div>
-    </div>
-  </section>
+	<!-- Recent Posts Section -->
+	<section class="app-container py-42 grid lg:grid-cols-2 gap-28 lg:gap-10">
+		<div class="space-y-6">
+			<h2 class="section-title">Explore Playground</h2>
+			<p class="text-lg max-w-xl">
+				A collection of interactive simulators demonstrating CS Concepts. Feel
+				free to contribute your favourite problems on GitHub!
+			</p>
+			<a
+				class="btn-secondary"
+				href="https://yashjawale.github.io/playground/"
+				target="_blank"
+				>Go to Playground
+				<Icon size={20} name="mdi:arrow-right" />
+			</a>
+		</div>
+		<div class="space-y-6">
+			<h2 class="section-title">Get in touch</h2>
+			<p class="text-lg max-w-xl">
+				Use the buttons below for my resume & email.
+			</p>
+			<div class="flex flex-wrap mt-auto space-x-4">
+				<a
+					class="btn-primary"
+					href="mailto:yash25.j@gmail.com"
+					download
+					target="_blank"
+					>Get in touch
+					<Icon size={20} name="mdi:email" />
+				</a>
+				<a
+					class="btn-secondary"
+					href="https://yashjawale.github.io/resume/cv.pdf"
+					download
+					target="_blank"
+					>Download Resume
+					<Icon size={20} name="mdi:arrow-collapse-down" />
+				</a>
+			</div>
+		</div>
+	</section>
 </BaseLayout>

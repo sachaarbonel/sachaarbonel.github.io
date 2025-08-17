@@ -1,58 +1,57 @@
 ---
-import {SocialLinks, WebsiteLinks} from '../consts'
+import { SocialLinks, WebsiteLinks } from '../consts'
 import Logo from './Logo.astro'
-import ThemeSelector from './ThemeSelector.astro'
 
 const today = new Date()
 ---
 
 <footer>
-  <div class="app-container grid md:grid-cols-3 gap-12 py-16 border-t-2 border-foreground/50 dark:border-foreground-dark/50">
-    <div>
-      <a href="/" class="block w-fit" aria-label="Home">
+	<div
+		class="app-container grid md:grid-cols-3 gap-12 py-16 border-t-2 border-foreground/50 dark:border-foreground-dark/50"
+	>
+		<div>
+			<a href="/" class="block w-fit" aria-label="Home">
 				<Logo />
-      </a>
-    </div>
-    <div>
-      <h3 class="font-semibold text-2xl">Links</h3>
-      <div class="flex flex-wrap gap-4 mt-4">
-        {
-          WebsiteLinks.filter((link) => link.name !== 'Home').map((link) => (
-            <a
-              class="text-lg"
-              href={link.url}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              {link.name}
-            </a>
-          ))
-        }
-      </div>
-    </div>
-    <div>
-      <h3 class="font-semibold text-2xl">Socials</h3>
-      <div class="flex flex-wrap gap-4 mt-4">
-        {
-          SocialLinks.map((link) => (
-            <a
-              class="text-lg"
-              href={link.url}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              {link.name}
-            </a>
-          ))
-        }
-      </div>
-    </div>
-  </div>
-  <div
-    class="app-container flex justify-between items-center pb-6 text-center"
-  >
-    <p class="text-left md:text-center w-full">
-      &copy; {today.getFullYear()} Yash Jawale
-    </p>
-  </div>
+			</a>
+		</div>
+		<div>
+			<h3 class="font-semibold text-2xl">Links</h3>
+			<div class="flex flex-wrap gap-4 mt-4">
+				{
+					WebsiteLinks.filter((link) => link.name !== 'Home').map((link) => (
+						<a
+							class="text-lg"
+							href={link.url}
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							{link.name}
+						</a>
+					))
+				}
+			</div>
+		</div>
+		<div>
+			<h3 class="font-semibold text-2xl">Socials</h3>
+			<div class="flex flex-wrap gap-4 mt-4">
+				{
+					SocialLinks.map((link) => (
+						<a
+							class="text-lg"
+							href={link.url}
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							{link.name}
+						</a>
+					))
+				}
+			</div>
+		</div>
+	</div>
+	<div class="app-container flex justify-between items-center pb-6 text-center">
+		<p class="text-left md:text-center w-full">
+			&copy; {today.getFullYear()} Yash Jawale
+		</p>
+	</div>
 </footer>
