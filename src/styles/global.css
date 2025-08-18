@@ -20,15 +20,15 @@
 }
 
 .btn-primary {
-	@apply w-fit flex gap-2 bg-foreground text-background dark:bg-foreground-dark dark:text-background-dark px-4 py-2 rounded-sm items-center mt-4 hover:opacity-75;
+	@apply w-fit flex gap-2 bg-foreground text-background dark:bg-foreground-dark dark:text-background-dark px-5 py-3 md:px-4 md:py-2 rounded-lg items-center mt-4 hover:opacity-75 transition-opacity;
 }
 
 .btn-secondary {
-	@apply w-fit flex gap-2 px-4 py-2 items-center mt-4 border-foreground/50 dark:border-foreground-dark/50 border rounded-sm hover:bg-foreground/5 dark:hover:bg-foreground-dark/5 transition-colors;
+	@apply w-fit flex gap-2 bg-foreground/10 text-foreground dark:bg-foreground-dark/10 dark:text-foreground-dark px-5 py-3 md:px-4 md:py-2 rounded-lg items-center mt-4 hover:opacity-75 transition-opacity;
 }
 
 .section-title {
-	@apply text-4xl font-semibold;
+	@apply text-4xl font-semibold pb-3;
 }
 
 .posts-grid-container {
