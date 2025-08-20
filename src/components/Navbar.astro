@@ -3,14 +3,14 @@ import NavbarLink from './NavbarLink.astro'
 import { Icon } from 'astro-icon/components'
 import ThemeSelector from './ThemeSelector.astro'
 import { WebsiteLinks } from '../consts'
-import Logo from './Logo.astro'
+import LogoSVG from '../assets/logo.svg'
 ---
 
 <header class="fixed top-0 w-full z-40 bg-background dark:bg-background-dark">
 	<nav class="">
 		<div class="app-container flex justify-between items-center py-5">
 			<a href="/" aria-label="Home">
-				<Logo />
+				<LogoSVG />
 			</a>
 			<div class="gap-8 hidden md:flex items-center">
 				{
