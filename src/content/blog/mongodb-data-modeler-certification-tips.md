@@ -36,4 +36,4 @@ All the courses on MongoDB University are free. So feel free to explore whatever
 - Learn all the different ways you could model relationships in MongoDB for example, for one to many there are multiple ways like embedding, references, parent references, etc. This [article on MongoDB blog](https://www.mongodb.com/blog/post/6-rules-of-thumb-for-mongodb-schema-design) covers it quite well.
 - Understand JSON Schema validation & the effects of ValidationLevel & ValidationAction fields.
 
-![Shaun the sheep thumbs up](../../assets/blogimages/mongodb-data-modeler-certification-tips/shaun.gif "All the best for your exam 👍")
+![Shaun the sheep thumbs up](../../assets/blogimages/mongodb-data-modeler-certification-tips/shaun.gif 'All the best for your exam 👍')

@@ -21,8 +21,7 @@ Later to avoid causing mishaps & by fascination from some of PIXAR's creations I
 Next stage led me to exploring game development with [Godot](https://godot.org/) engine & had quite a lot of fun doing it. Although this phase lasted shorter than the others.
 
 Next I watched some Web Development videos & had a comfortable grasp of HTML & CSS. Created some rather ugly looking pages & then paused everything for a few weeks in order to prepare for board exams.
-		
-![Confused Dog GIF](../../assets/blogimages/my-journey/short-attention-span-dog.gif "Pretty much sums up my condition during those times.")
+![Confused Dog GIF](../../assets/blogimages/my-journey/short-attention-span-dog.gif 'Pretty much sums up my condition during those times.')
 
 I'm quite grateful to those random explorations. They helped me make better, more informed choices.
 

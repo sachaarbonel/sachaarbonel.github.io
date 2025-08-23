@@ -17,7 +17,11 @@ export async function getStaticPaths() {
 	}))
 }
 
-type Props = { post: CollectionEntry<'blog'>; headings: MarkdownHeading[]; slug: string }
+type Props = {
+	post: CollectionEntry<'blog'>
+	headings: MarkdownHeading[]
+	slug: string
+}
 
 const { post, headings, slug } = Astro.props
 const { Content } = await post.render()
