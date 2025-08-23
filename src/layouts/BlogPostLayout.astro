@@ -1,22 +1,32 @@
 ---
 import type { CollectionEntry } from 'astro:content'
 import FormattedDate from '../components/FormattedDate.astro'
-import type { MarkdownHeading } from 'astro'
+import type { MarkdownHeading, ImageMetadata } from 'astro'
 import TableOfContents from '../components/TableOfContents.astro'
 
-type Props = CollectionEntry<'blog'>['data'] & { headings: MarkdownHeading[] }
+type Props = CollectionEntry<'blog'>['data'] & {
+	headings: MarkdownHeading[]
+	slug: string
+}
 
 const {
 	title,
 	description,
 	pubDate,
 	updatedDate,
-	heroImage,
-	heroImageCredit,
+	coverImageCredit,
 	headings,
+	slug,
 } = Astro.props
 
 import BaseLayout from './BaseLayout.astro'
+import { Image } from 'astro:assets'
+
+const blogImages = import.meta.glob<{ default: ImageMetadata }>(
+	'/src/assets/blogimages/**/*.{jpeg,jpg,png,gif}'
+)
+
+const coverImagePath = `/src/assets/blogimages/${slug}/cover.jpg`
 ---
 
 <BaseLayout title={title} description={description}>
@@ -43,14 +53,23 @@ import BaseLayout from './BaseLayout.astro'
 									)
 								}
 							</div>
-							<img
-								src={heroImage}
-								alt={title}
-								class="rounded-lg aspect-video object-cover"
-							/>
-							<p class="mt-2 mb-8 opacity-80 italic text-sm">
-								Image Credit: {heroImageCredit}
-							</p>
+
+							{
+								blogImages[coverImagePath] && (
+									<>
+										<Image
+											src={blogImages[coverImagePath]()}
+											alt={title}
+											class="rounded-lg"
+										/>
+										{coverImageCredit && (
+											<p class="mt-2 mb-8 opacity-80 italic text-sm">
+												Image Credit: {coverImageCredit}
+											</p>
+										)}
+									</>
+								)
+							}
 						</div>
 					</div>
 					<div
@@ -67,7 +86,4 @@ import BaseLayout from './BaseLayout.astro'
 			</div>
 		</article>
 	</main>
-	<style>
-		@reference "../styles/global.css";
-	</style>
 </BaseLayout>
