@@ -32,5 +32,5 @@ export const WebsiteLinks = [
 	{
 		name: 'Playground',
 		url: 'https://yashjawale.github.io/playground',
-	},
+	}
 ]
