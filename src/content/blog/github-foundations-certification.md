@@ -3,6 +3,7 @@ title: GitHub Foundations Certification Tips
 description: Useful resources & other information helpful for GitHub Foundations Certification
 pubDate: Jan 05 2025
 coverImageCredit: GitHub Education Website
+tags: certification, github
 ---
 
 I recently completed GitHub Foundations Certification. Also being the first formal technical certification. In this post, I share the resources I found useful as well as other tips that might be helpful for anyone preparing for the same.
