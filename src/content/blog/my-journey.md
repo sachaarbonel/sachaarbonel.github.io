@@ -2,7 +2,7 @@
 title: 'My Journey Yet'
 description: 'A look back at my journey since the beginning.'
 pubDate: 'Jan 01 2025'
-heroImage: '/blog-images/journey.jpg'
+heroImage: '/src/assets/blogimages/my-journey/cover.jpg'
 heroImageCredit: 'Tirachard Kumtanom, Pexels'
 ---
 

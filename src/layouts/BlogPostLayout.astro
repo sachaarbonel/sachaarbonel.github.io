@@ -1,7 +1,7 @@
 ---
 import type { CollectionEntry } from 'astro:content'
 import FormattedDate from '../components/FormattedDate.astro'
-import type { MarkdownHeading } from 'astro'
+import type { MarkdownHeading, ImageMetadata } from 'astro'
 import TableOfContents from '../components/TableOfContents.astro'
 
 type Props = CollectionEntry<'blog'>['data'] & { headings: MarkdownHeading[] }
@@ -17,6 +17,12 @@ const {
 } = Astro.props
 
 import BaseLayout from './BaseLayout.astro'
+import { Image } from 'astro:assets'
+
+const blogImages = import.meta.glob<{ default: ImageMetadata }>(
+	'/src/assets/blogimages/**/*.{jpeg,jpg,png,gif}'
+)
+
 ---
 
 <BaseLayout title={title} description={description}>
@@ -43,14 +49,14 @@ import BaseLayout from './BaseLayout.astro'
 									)
 								}
 							</div>
-							<img
-								src={heroImage}
-								alt={title}
-								class="rounded-lg aspect-video object-cover"
-							/>
-							<p class="mt-2 mb-8 opacity-80 italic text-sm">
-								Image Credit: {heroImageCredit}
-							</p>
+							{
+								blogImages[heroImage] && (
+									<Image src={blogImages[heroImage]()} alt={title} class='rounded-lg' />
+									<p class="mt-2 mb-8 opacity-80 italic text-sm">
+										Image Credit: {heroImageCredit}
+									</p>
+								)
+							}
 						</div>
 					</div>
 					<div

@@ -2,7 +2,7 @@
 title: 'MongoDB Data Modeler Certification Tips'
 description: 'Information to help you prepare for MongoDB Data Modeler Certification exam'
 pubDate: 'Jan 11 2025'
-heroImage: '/blog-images/mdbmodeler.jpg'
+heroImage: '/src/assets/blogimages/mongodb-data-modeler-certification-tips/cover.jpg'
 heroImageCredit: 'MongoDB University'
 ---
 
