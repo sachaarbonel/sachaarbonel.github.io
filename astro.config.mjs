@@ -5,6 +5,7 @@ import sitemap from '@astrojs/sitemap'
 import partytown from '@astrojs/partytown'
 import icon from 'astro-icon'
 import rehypeFigureTitle from 'rehype-figure-title'
+import { rehypeAccessibleEmojis } from 'rehype-accessible-emojis'
 
 // https://astro.build/config
 export default defineConfig({
@@ -23,6 +24,6 @@ export default defineConfig({
 		plugins: [tailwindcss()],
 	},
 	markdown: {
-		rehypePlugins: [rehypeFigureTitle],
+		rehypePlugins: [rehypeFigureTitle, rehypeAccessibleEmojis],
 	},
 })
