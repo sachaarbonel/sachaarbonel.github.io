@@ -19,6 +19,10 @@
 	@apply container mx-auto px-6 sm:px-12 2xl:px-16;
 }
 
+#mobile-menu.mobile-nav-open {
+	@apply translate-x-0 shadow-xl/30;
+}
+
 .btn-primary {
 	@apply w-fit flex gap-2 bg-foreground text-background dark:bg-foreground-dark dark:text-background-dark px-5 py-3 md:px-4 md:py-2 rounded-lg items-center mt-4 hover:opacity-75 transition-opacity;
 }
