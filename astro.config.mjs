@@ -4,6 +4,7 @@ import mdx from '@astrojs/mdx'
 import sitemap from '@astrojs/sitemap'
 import partytown from '@astrojs/partytown'
 import icon from 'astro-icon'
+import rehypeFigureTitle from 'rehype-figure-title';
 
 // https://astro.build/config
 export default defineConfig({
@@ -21,4 +22,7 @@ export default defineConfig({
 	vite: {
 		plugins: [tailwindcss()],
 	},
+	markdown: {
+		rehypePlugins: [ rehypeFigureTitle ]
+	}
 })
