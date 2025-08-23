@@ -3,6 +3,10 @@ import type { CollectionEntry } from 'astro:content'
 import FormattedDate from '../components/FormattedDate.astro'
 import type { MarkdownHeading, ImageMetadata } from 'astro'
 import TableOfContents from '../components/TableOfContents.astro'
+import dayjs from 'dayjs'
+import utc from 'dayjs/plugin/utc'
+
+dayjs.extend(utc)
 
 type Props = CollectionEntry<'blog'>['data'] & {
 	headings: MarkdownHeading[]
@@ -30,6 +34,10 @@ const blogImages = import.meta.glob<{ default: ImageMetadata }>(
 )
 
 const coverImagePath = `/src/assets/blogimages/${slug}/cover.jpg`
+
+const lastModified = dayjs(remarkPluginFrontmatter.lastModified)
+	.utc()
+	.format('D MMM YYYY')
 ---
 
 <BaseLayout title={title} description={description}>
@@ -109,6 +117,9 @@ const coverImagePath = `/src/assets/blogimages/${slug}/cover.jpg`
 							><Icon name="mdi:pencil-outline" class="inline-block" />
 							Suggest an edit
 						</a>
+						<p class="opacity-70">
+							Last modified: {lastModified}
+						</p>
 					</div>
 				</div>
 				<div class="md:w-1/4 relative">
