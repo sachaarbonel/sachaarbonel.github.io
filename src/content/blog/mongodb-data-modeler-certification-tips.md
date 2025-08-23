@@ -1,8 +1,8 @@
 ---
-title: 'MongoDB Data Modeler Certification Tips'
-description: 'Information to help you prepare for MongoDB Data Modeler Certification exam'
-pubDate: 'Jan 11 2025'
-coverImageCredit: 'MongoDB University'
+title: MongoDB Data Modeler Certification Tips
+description: Information to help you prepare for MongoDB Data Modeler Certification exam
+pubDate: Jan 11 2025
+coverImageCredit: MongoDB University
 ---
 
 I just became a MongoDB Certified Associate Data Modeler 🎉 \
