@@ -7,6 +7,7 @@ import icon from 'astro-icon'
 import rehypeFigureTitle from 'rehype-figure-title'
 import { rehypeAccessibleEmojis } from 'rehype-accessible-emojis'
 import { remarkReadingTime } from './src/plugins/remark-reading-time.mjs'
+import pagefind from 'astro-pagefind'
 
 // https://astro.build/config
 export default defineConfig({
@@ -15,6 +16,7 @@ export default defineConfig({
 		mdx(),
 		sitemap(),
 		icon(),
+		pagefind(),
 		partytown({
 			config: {
 				forward: ['dataLayer.push'],

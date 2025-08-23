@@ -4,6 +4,7 @@ import { Icon } from 'astro-icon/components'
 import ThemeSelector from './ThemeSelector.astro'
 import { WebsiteLinks } from '../consts'
 import LogoSVG from '../assets/logo.svg'
+import Search from "astro-pagefind/components/Search";
 ---
 
 <header class="fixed top-0 w-full z-40 bg-background dark:bg-background-dark">
@@ -25,6 +26,7 @@ import LogoSVG from '../assets/logo.svg'
 					))
 				}
 				<ThemeSelector />
+				<Search id="search" className="pagefind-ui" uiOptions={{ showImages: false }} />
 			</div>
 			<button class="md:hidden cursor-pointer" id="nav-open-btn">
 				<Icon name="mdi:menu" size={32} />
