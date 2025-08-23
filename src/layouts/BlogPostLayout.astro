@@ -98,6 +98,18 @@ const coverImagePath = `/src/assets/blogimages/${slug}/cover.jpg`
 					>
 						<slot />
 					</div>
+
+					<!-- Suggest edit -->
+					<div class="flex justify-between mt-16 gap-4 flex-wrap italic">
+						<a
+							href={`https://github.com/yashjawale/yashjawale.github.io/edit/main/src/content/blog/${slug}.md`}
+							target="_blank"
+							rel="noopener noreferrer"
+							class="hover:underline underline-offset-4 opacity-70 hover:opacity-100"
+							><Icon name="mdi:pencil-outline" class="inline-block" />
+							Suggest an edit
+						</a>
+					</div>
 				</div>
 				<div class="md:w-1/4 relative">
 					<div class="sticky top-0 md:top-28 hidden lg:block">
