@@ -14,7 +14,7 @@ const {
 	description,
 	pubDate,
 	updatedDate,
-	heroImageCredit,
+	coverImageCredit,
 	headings,
 	slug,
 } = Astro.props
@@ -26,7 +26,7 @@ const blogImages = import.meta.glob<{ default: ImageMetadata }>(
 	'/src/assets/blogimages/**/*.{jpeg,jpg,png,gif}'
 )
 
-const heroImagePath = `/src/assets/blogimages/${slug}/cover.jpg`
+const coverImagePath = `/src/assets/blogimages/${slug}/cover.jpg`
 ---
 
 <BaseLayout title={title} description={description}>
@@ -55,16 +55,16 @@ const heroImagePath = `/src/assets/blogimages/${slug}/cover.jpg`
 							</div>
 
 							{
-								blogImages[heroImagePath] && (
+								blogImages[coverImagePath] && (
 									<>
 										<Image
-											src={blogImages[heroImagePath]()}
+											src={blogImages[coverImagePath]()}
 											alt={title}
 											class="rounded-lg"
 										/>
-										{heroImageCredit && (
+										{coverImageCredit && (
 											<p class="mt-2 mb-8 opacity-80 italic text-sm">
-												Image Credit: {heroImageCredit}
+												Image Credit: {coverImageCredit}
 											</p>
 										)}
 									</>
