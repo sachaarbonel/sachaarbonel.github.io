@@ -26,16 +26,16 @@ import LogoSVG from '../assets/logo.svg'
 				}
 				<ThemeSelector />
 			</div>
-			<button class="md:hidden" id="nav-open-btn">
+			<button class="md:hidden cursor-pointer" id="nav-open-btn">
 				<Icon name="mdi:menu" size={32} />
 			</button>
 
 			<!-- Mobile nav -->
 			<div
-				class="translate-x-full fixed top-0 right-0 bg-background dark:bg-background-dark shadow-xl/30 h-screen w-5/6 px-8 py-6 transition-transform z-40 border-l-[1px] border-background"
+				class="translate-x-full fixed top-0 right-0 bg-background dark:bg-background-dark h-screen w-5/6 px-8 py-6 transition-transform z-40 border-l-[1px] border-background"
 				id="mobile-menu"
 			>
-				<button id="nav-close-btn" class="ml-auto block">
+				<button id="nav-close-btn" class="ml-auto block cursor-pointer">
 					<Icon name="mdi:close" size={32} />
 				</button>
 				<div class="flex flex-col h-full items-start gap-8 pt-16">
@@ -56,7 +56,7 @@ import LogoSVG from '../assets/logo.svg'
 		function toggleNav() {
 			document
 				.querySelector('#mobile-menu')
-				?.classList.toggle('translate-x-full')
+				?.classList.toggle('mobile-nav-open')
 		}
 
 		document
