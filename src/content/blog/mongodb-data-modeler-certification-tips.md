@@ -2,8 +2,7 @@
 title: 'MongoDB Data Modeler Certification Tips'
 description: 'Information to help you prepare for MongoDB Data Modeler Certification exam'
 pubDate: 'Jan 11 2025'
-heroImage: '/blog-images/mdbmodeler.jpg'
-heroImageCredit: 'MongoDB University'
+coverImageCredit: 'MongoDB University'
 ---
 
 I just became a MongoDB Certified Associate Data Modeler 🎉 \
@@ -37,7 +36,4 @@ All the courses on MongoDB University are free. So feel free to explore whatever
 - Learn all the different ways you could model relationships in MongoDB for example, for one to many there are multiple ways like embedding, references, parent references, etc. This [article on MongoDB blog](https://www.mongodb.com/blog/post/6-rules-of-thumb-for-mongodb-schema-design) covers it quite well.
 - Understand JSON Schema validation & the effects of ValidationLevel & ValidationAction fields.
 
-<figure>
-    <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExeGJwZ3U1c2tqd2g2eHZzM2cwbHY2b2d5NjRmNWZmazRod3JrOGlwMSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/tIeCLkB8geYtW/giphy.webp" alt="Shaun the sheep thumbs up" />
-    <figcaption>All the best for your exam 👍</figcaption>
-</figure>
+![Shaun the sheep thumbs up](../../assets/blogimages/mongodb-data-modeler-certification-tips/shaun.gif 'All the best for your exam 👍')
