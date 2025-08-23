@@ -12,31 +12,37 @@ const { class: className } = Astro.props
 	<button
 		data-theme="theme-auto"
 		aria-label="Auto Theme"
+		title="Set theme to follow system preference"
 		class="theme-button theme-auto"
 	>
 		<Icon
 			name="mdi:brightness-auto"
 			class:list="duration-0 text-2xl md:text-xl"
+			aria-hidden
 		/>
 	</button>
 	<button
 		data-theme="theme-light"
 		aria-label="Light Theme"
+		title="Set theme to light"
 		class="theme-button theme-light"
 	>
 		<Icon
 			name="mdi:white-balance-sunny"
 			class:list="duration-0 text-2xl md:text-xl"
+			aria-hidden
 		/>
 	</button>
 	<button
 		data-theme="theme-dark"
 		aria-label="Dark Theme"
+		title="Set theme to dark"
 		class="theme-button theme-dark"
 	>
 		<Icon
 			name="mdi:moon-and-stars"
 			class:list="duration-0 text-2xl md:text-xl"
+			aria-hidden
 		/>
 	</button>
 </div>
