@@ -50,7 +50,7 @@ const blogImages = import.meta.glob<{ default: ImageMetadata }>(
 								}
 							</div>
 							{
-								blogImages[heroImage] && (
+								heroImage && blogImages[heroImage] && (
 									<Image src={blogImages[heroImage]()} alt={title} class='rounded-lg' />
 									<p class="mt-2 mb-8 opacity-80 italic text-sm">
 										Image Credit: {heroImageCredit}

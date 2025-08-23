@@ -2,7 +2,6 @@
 title: 'GitHub Foundations Certification Tips'
 description: 'Useful resources & other information helpful for GitHub Foundations Certification'
 pubDate: 'Jan 05 2025'
-heroImage: '/src/assets/blogimages/github-foundations-certification/cover.jpg'
 heroImageCredit: 'GitHub Education Website'
 ---
 
