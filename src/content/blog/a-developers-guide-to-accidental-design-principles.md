@@ -5,17 +5,13 @@ pubDate: 'Aug 25 2025'
 coverImageCredit: 'NordWood Themes, Unsplash'
 ---
 
-> TODO: Add timeframe info
-
 As developers, we build things to be functional. But making them usable and clear is a different challenge. This post documents the design evolution of my personal website, and the key design principles I learned through the iterations.
 
 Now I didn't learn these principles while making the site themselves but in fact resonated with them after going throught the process myself first. I outline the laws in between the post content as I think they might be part of a reason that led me to keep making iterations...
 
 ## Iteration 1: Pixels all the way
 
-During the first time building the site, I wanted by site to have a unique character & coincidentally, I was quite impressed by the Hyundai elevators installed in my college had a pixelated font. (Similar to Ioniq 5 of that time)
-
-> TODO: Picture of elevator/ioniq
+During the first time building the site (Around December of 2023), I wanted by site to have a unique character & coincidentally, I was quite intrigued by the Hyundai elevators installed in my college used a pixelated font. (Similar to Ioniq 5 of that time)
 
 I wanted to have some part of that design in my site & stumbled upon the SilkScreen font for the same
 
@@ -23,9 +19,9 @@ Now this font wasn't readable in small text so to balance its striking appearanc
 
 For the color scheme I decided to stick with grey/yellow pair as I always liked that combo & my backpack had that same color scheme 😝
 
-> TODO: Picture of backpack
+![Picture of my backpack](../../assets/blogimages/a-developers-guide-to-accidental-design-principles/backpack.jpg 'My backpack with gray & yellow color scheme')
 
-> TODO: Site screenshot
+![Pixel design iteration](../../assets/blogimages/a-developers-guide-to-accidental-design-principles/pixel-iteration.jpg 'Very first iteration of the site')
 
 At the time, I just knew the heading didn't feel quite right, that it took a moment too long to read. It's only now, while writing this post, that I've found the formal design principle that explains that friction...
 
@@ -39,11 +35,11 @@ At the time, I just knew the heading didn't feel quite right, that it took a mom
 
 While I was happy with the look of previous iteration, I never quite felt that it reflected me as a person. I wanted my site to have a friendly image & some connection to natural elements. I'm quite fond of plants & am still fascinated by them.
 
-So the idea behind this was to bring in the plant elements & represent it with ASCII Art to bring in that "Developer Effect". While working on that I had chosen a green theme & it reminded me a lot of monsoon season in India (Typically runs from about Aug to November) TODO: Confirm. That's when it struck me that what if the art & color scheme changed according to the current season. Then this was made.
+So the idea behind this was to bring in the plant elements & represent it with ASCII Art to bring in that "Developer Effect". While working on that I had chosen a green theme & it reminded me a lot of monsoon season in India (Typically runs from about June to September, although Global Warming might disagree). That's when it struck me that what if the art & color scheme changed according to the current season. Then this was made (Around September 2024).
 
-> TODO: Site pictures
+![Plants design iteration](../../assets/blogimages/a-developers-guide-to-accidental-design-principles/plants-iteration.jpg 'Second iteration with plants inspired design')
 
-> TODO: Color scheme pictures
+![Site color schemes according to seasons](../../assets/blogimages/a-developers-guide-to-accidental-design-principles/plants-seasons.jpg 'Site theme changes according to current season')
 
 This one never went live as I got busy with work in internship at that time & when I finally found time to update the site after a few months, the design had lost its appeal in my mind for some reason...
 
@@ -65,11 +61,11 @@ Back then, my reason for abandoning this version was just a vague feeling that i
 
 By this time, I had realized that I've probably spent more time thinking about the design of my site than I ideally should & was determined to make a design that I won't be compelled to change or losing resonance with me. This time I just wanted something simple which brought out the beauty of typography itself instead of additional design elements.
 
-> TODO: Iteration 3
+![Old minimal design iteration](../../assets/blogimages/a-developers-guide-to-accidental-design-principles/minimal-iteration-old.jpg 'Older iteration of minimal design without accent colors')
 
 Now I created that exact thing & stuck with it for a while, later just adding some accent color so that clickable things can be distinguised easily & to lose some of that monotonous look which I still do like but I've come to know that many do not appreciate, striking a balance.
 
-> TODO: Iteration 4
+![New minimal design iteration](../../assets/blogimages/a-developers-guide-to-accidental-design-principles/minimal-iteration-new.jpg 'Latest iteration of minimal design with accent color & bolder typefaces')
 
 I'm sharing all these iterations so that...
 
@@ -94,15 +90,19 @@ Now I'm by no means a designer or someone who understands the world of web desig
 
 Thanks for making it till here & I hope the time spent reading this post was worthwhile. My best wishes to the wonderful marvels you create next 🍀
 
-<!-- Styling for laws -->
 <style>
+	/* Styling for laws */
 	.post-dfd-laws {
 		border: 1px solid currentColor;
-		border-radius: 1.5rem;
+		border-radius: 0.75rem;
 		padding: 3rem 2.5rem 2rem 2.5rem;
 		margin: 3rem 1rem;
 	}
 	.post-dfd-laws h3 {
 		margin-top: 0;
+	}
+	/* Backpack image */
+	img[alt="Picture of my backpack"] {
+  	max-width: 360px;
 	}
 </style>
