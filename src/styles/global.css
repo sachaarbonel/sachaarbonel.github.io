@@ -15,6 +15,11 @@
 	--color-primary-dark: #9bd4e4;
 }
 
+html {
+	scroll-padding-top: 6.5rem;
+	scroll-behavior: smooth;
+}
+
 .app-container {
 	@apply container mx-auto px-6 sm:px-12 2xl:px-16;
 }
