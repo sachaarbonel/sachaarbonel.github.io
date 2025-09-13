@@ -47,6 +47,14 @@ const { title, description, image = '/portfolioogv2.jpg' } = Astro.props
 <meta property="twitter:description" content={description} />
 <meta property="twitter:image" content={new URL(image, Astro.url)} />
 
+<!-- RSS Auto-discovery -->
+<link
+	rel="alternate"
+	type="application/rss+xml"
+	title="Yash Jawale"
+	href={new URL('rss.xml', Astro.site)}
+/>
+
 <!-- Google tag (gtag.js) -->
 <script
 	type="text/partytown"
