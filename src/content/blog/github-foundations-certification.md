@@ -1,6 +1,6 @@
 ---
 title: 'GitHub Foundations Certification Tips'
-description: 'Useful resources & other information helpful for GitHub Foundations Certification'
+description: 'Useful resources and other information helpful for GitHub Foundations Certification'
 pubDate: 'Jan 05 2025'
 coverImageCredit: 'GitHub Education Website'
 ---
