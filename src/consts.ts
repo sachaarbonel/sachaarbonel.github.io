@@ -18,10 +18,10 @@ export const SocialLinks = [
 		name: 'X / Twitter',
 		url: 'https://twitter.com/sachaarbonel',
 	},
-	{
-		name: 'Instagram',
-		url: 'https://instagram.com/imyashjawale',
-	},
+	// {
+	// 	name: 'Instagram',
+	// 	url: 'https://instagram.com/imyashjawale',
+	// },
 ]
 
 export const WebsiteLinks = [
