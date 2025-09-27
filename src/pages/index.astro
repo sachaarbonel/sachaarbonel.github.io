@@ -19,26 +19,18 @@ const posts = (await getCollection('blog'))
 			<h1 class="text-8xl font-bold leading-none">Sacha Arbonel</h1>
 		</div>
 		<p class="text-2xl max-w-2xl font-light leading-normal">
-			A student & software engineer specialising in Web Development.
+			I build speech AI and video infra.
 		</p>
 		<div class="flex flex-wrap gap-8">
-			{
-				SocialLinks.map((link) => (
-					<a
-						class="text-xl text-primary dark:text-primary-dark underline hover:underline underline-offset-4"
-						href={link.url}
-						target="_blank"
-					>
-						{link.name}
-					</a>
-				))
-			}
+			<a class="btn-secondary" href="/blog">Read writing</a>
+			<a class="btn-primary" href="#selected-work">View projects</a>
+			<a class="text-xl text-primary dark:text-primary-dark underline hover:underline underline-offset-4" href="mailto:sacha@arbonel.com">Email me</a>
 		</div>
 	</main>
 
 	<!-- Recent Posts Section -->
 	<section class="app-container">
-		<h2 class="section-title">Recent Posts</h2>
+		<h2 class="section-title">Recent writing</h2>
 		<div class="posts-grid-container">
 			{posts.map((post) => <BlogCard post={post} />)}
 		</div>
@@ -48,44 +40,47 @@ const posts = (await getCollection('blog'))
 		</a>
 	</section>
 
-	<!-- Recent Posts Section -->
+	<!-- Intro Block -->
 	<section class="app-container py-42 grid lg:grid-cols-2 gap-28 lg:gap-10">
 		<div class="space-y-6">
-			<h2 class="section-title">Explore Playground</h2>
+			<h2 class="section-title">Intro</h2>
 			<p class="text-lg max-w-xl pb-4">
-				A collection of interactive simulators demonstrating CS Concepts. Feel
-				free to contribute your favourite problems on GitHub!
+				I work on ASR, WebRTC, and GPU runtimes.<br/>
+				I publish code and numbers.<br/>
+				I keep things simple and fast.
 			</p>
-			<a
-				class="btn-secondary"
-				href="https://sachaarbonel.github.io/playground/"
-				target="_blank"
-				>Go to Playground
-				<Icon size={20} name="mdi:arrow-right" />
-			</a>
 		</div>
 		<div class="space-y-6">
 			<h2 class="section-title">Get in touch</h2>
 			<p class="text-lg max-w-xl">
-				Use the buttons below for my resume & email.
+				Want to ship faster?<br/>
+				Email me.<br/>
+				I reply in 24 hours.
 			</p>
 			<div class="flex flex-wrap mt-auto space-x-4">
-				<a
-					class="btn-primary"
-					href="mailto:yash25.j@gmail.com"
-					download
-					target="_blank"
-					>Get in touch
+				<a class="btn-primary" href="mailto:sacha.arbonel@hotmail.fr">
+					Email me
 					<Icon height={20} name="mdi:email" />
 				</a>
-				<a
-					class="btn-secondary"
-					href="https://sachaarbonel.github.io/resume/cv.pdf"
-					download
-					target="_blank"
-					>Download Resume
-					<Icon height={20} name="mdi:arrow-collapse-down" />
-				</a>
+			</div>
+		</div>
+	</section>
+
+	<!-- Selected Work -->
+	<section id="selected-work" class="app-container py-12">
+		<h2 class="section-title">Selected Work</h2>
+		<div class="grid gap-8 md:grid-cols-2">
+			<div class="p-6 border rounded-xl">
+				<h3 class="text-2xl font-semibold">Whisper@Scale</h3>
+				<p class="mt-2 text-lg">Served Whisper to 30+ customers at 2k reqs/min at peak. p90 latency cut by 50%. 35x cheaper than OpenAI.</p>
+			</div>
+			<div class="p-6 border rounded-xl">
+				<h3 class="text-2xl font-semibold">ASR Guardrails</h3>
+				<p class="mt-2 text-lg">Reduced hallucinations on noise. Simple rules. No fine-tuning.</p>
+			</div>
+			<div class="p-6 border rounded-xl">
+				<h3 class="text-2xl font-semibold">Whisper-Hallucination (Noise)</h3>
+				<p class="mt-2 text-lg">Multilingual noise dataset for false-speech.</p>
 			</div>
 		</div>
 	</section>

@@ -1,9 +1,9 @@
 // Place any global data in this file.
 // You can import this data from anywhere in your site by using the `import` keyword.
 
-export const SITE_TITLE = 'Sacha Arbonel'
+export const SITE_TITLE = 'Sacha Arbonel — Speech AI and Media Infra'
 export const SITE_DESCRIPTION =
-	'A site for sharing my thoughts & experiments with the world.'
+	'I build ASR and real-time media systems. I contribute to open-source projects and share my work.'
 
 export const SocialLinks = [
 	{
@@ -32,9 +32,5 @@ export const WebsiteLinks = [
 	{
 		name: 'Blog',
 		url: '/blog',
-	},
-	{
-		name: 'Playground',
-		url: 'https://sachaarbonel.github.io/playground',
 	},
 ]
