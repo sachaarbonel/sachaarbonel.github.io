@@ -44,7 +44,6 @@ Paper, “Investigation of Whisper ASR Hallucinations Induced by Non-Speech Audi
 Dataset, “sachaarbonel/whisper-hallucinations,” on Hugging Face, with viewer and schema. ([Hugging Face][3])
 Background, Whisper training overview and decoding heuristics with the 0.6 and −1.0 thresholds. ([OpenAI][1])
 
-If you want, I can add a short box that explains how to set `no_speech_threshold` and `logprob_threshold`, and I can include an Aho-Corasick snippet you can drop into a production filter.
 
 [1]: https://openai.com/index/whisper/?utm_source=chatgpt.com 'Introducing Whisper'
 [2]: https://dl.acm.org/doi/fullHtml/10.1145/3630106.3658996?utm_source=chatgpt.com 'Careless Whisper: Speech-to-Text Hallucination Harms'
