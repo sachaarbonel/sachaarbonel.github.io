@@ -75,8 +75,8 @@ const posts = (await getCollection('blog'))
 			<div class="p-6 border rounded-xl">
 				<h3 class="text-2xl font-semibold">Whisper@Scale</h3>
 				<p class="mt-2 text-lg">
-					Serving Whisper to 30+ customers at Stream 2k reqs/min at peak. p90 latency
-					cut by 50%. 35-40x cheaper than OpenAI.
+					Serving Whisper to 30+ customers at Stream 2k reqs/min at peak. p90
+					latency cut by 50%. 35-40x cheaper than OpenAI.
 				</p>
 			</div>
 			<div class="p-6 border rounded-xl">
@@ -92,5 +92,33 @@ const posts = (await getCollection('blog'))
 				<p class="mt-2 text-lg">Multilingual noise dataset for false-speech.</p>
 			</div>
 		</div>
+	</section>
+
+	<!-- Talks -->
+	<section id="talks" class="app-container py-12">
+		<h2 class="section-title">Talks</h2>
+		<ul class="grid gap-8 md:grid-cols-2">
+			<li class="p-6 border rounded-xl">
+				<h3 class="text-2xl font-semibold">
+					<a
+						href="https://www.youtube.com/watch?v=MSEoOkg8oPY"
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						Reinventing Speech-to-Text Transcriptions with Go and Whisper
+					</a>
+				</h3>
+				<p class="mt-2 text-lg">
+					"You have to build the transcriptions feature as good as Google and
+					Zoom but we don't have a similar budget". That was a challenge we
+					faced and solved with hundreds of coffee cups and incredible hair
+					loss, our solution is cost-effective, open-source, and fits within our
+					Go stack. Whisper.cpp is a lightweight implementation of Open AI’s
+					Whisper speech-to-text model, that comes with Go bindings. This
+					solution is leveraged by a lot of emerging startups and existing
+					companies.
+				</p>
+			</li>
+		</ul>
 	</section>
 </BaseLayout>
