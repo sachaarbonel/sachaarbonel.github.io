@@ -5,7 +5,7 @@ export async function GET(context) {
 	const blog = await getCollection('blog')
 	return rss({
 		// `<title>` field in output xml
-		title: 'Yash Jawale',
+		title: 'Sacha Arbonel',
 		// `<description>` field in output xml
 		description:
 			'Website for sharing my thoughts on whatever I find interesting with the world',
