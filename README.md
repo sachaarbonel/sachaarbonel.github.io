@@ -6,7 +6,6 @@
 
 Website for sharing my thoughts on whatever I find interesting with the world!
 
-![Homepage Screenshot](./screenshot.png)
 
 Visit at [https://sachaarbonel.github.io/](https://sachaarbonel.github.io/)
 
